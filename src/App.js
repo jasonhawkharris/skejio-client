@@ -1,13 +1,13 @@
+import React from 'react';
+import Routes from './config/Routes';
 import './App.css';
 
-function Hello(props) {
+function App(props) {
   return (
     <div className='App'>
-      <div className='sidebar'>sidebar</div>
-      <div className='content'>content</div>
-      <div className='todo-list'>todo-list</div>
+      <Routes />
     </div>
   );
 }
 
-export default Hello;
+export default App;
