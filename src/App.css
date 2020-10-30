@@ -1,14 +1,17 @@
 .App {
   text-align: center;
-  display: flex;
-  flex-flow: row nowrap;
-  justify-content: space-between;
 }
 
 .main {
-  border: 1px solid black;
-  width: 525px;
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
   height: 100vh;
+}
+
+.feed {
+  width: 525px;
+  border: 1px solid black;
 }
 
 .App-logo {

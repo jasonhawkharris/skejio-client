@@ -4,6 +4,7 @@ import UserModel from '../models/UserModel';
 
 import { useSetRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
+import { NavLink } from 'react-router-dom';
 
 const Login = props => {
     const [email, setEmail] = useState('');
@@ -49,6 +50,7 @@ const Login = props => {
 
                 <input type='submit' value='Login' />
             </form>
+            <NavLink to='/register'>Register</NavLink>
         </div>
     )
 }
