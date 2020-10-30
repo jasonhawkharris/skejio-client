@@ -2,7 +2,13 @@
   text-align: center;
   display: flex;
   flex-flow: row nowrap;
-  justify-content: center;
+  justify-content: space-between;
+}
+
+.main {
+  border: 1px solid black;
+  width: 525px;
+  height: 100vh;
 }
 
 .App-logo {
