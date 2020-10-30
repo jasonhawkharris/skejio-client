@@ -1,4 +1,6 @@
 import React from 'react';
+
+import Routes from '../config/Routes';
 import Nav from '../components/sidebar/Nav';
 import Todos from '../components/todos/Todos';
 
@@ -9,7 +11,7 @@ const Home = () => {
                 <Nav />
             </div>
             <div className="feed">
-                <h1>Welcome to skej.io</h1>
+                <Routes />
             </div>
             <div>
                 <Todos />

@@ -1,12 +1,11 @@
 import React from 'react';
-import Nav from './components/sidebar/Nav';
-import Routes from './config/Routes';
+import Home from './pages/Home';
 import './App.css';
 
 function App(props) {
 	return (
 		<div className='App'>
-			<Routes />
+			<Home />
 		</div>
 	);
 }
