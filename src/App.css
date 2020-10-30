@@ -1,5 +1,6 @@
 * {
   background-color: #eee;
+  /* border: 1px solid black; */
 }
 
 .App {
@@ -16,8 +17,16 @@
 .feed {
   border: 1px solid black;
   min-width: 525px;
+  max-width: 525px;
   width: calc(55% - 211px);
   margin: 0px 0px 0px 211px;
+}
+
+.todos {
+    min-width: 250px;
+    max-width: 250px;
+    height: 150vh;
+    border: 1px solid black;
 }
 
 .App-logo {

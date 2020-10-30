@@ -35,7 +35,7 @@ const Nav = props => {
                     <>
                         <div>{user.username}</div>
                         <NavLink className="item" to={"/feed"}>Activity</NavLink>
-                        <NavLink className="item" to={"/tours"}>Tour</NavLink>
+                        <NavLink className="item" to={"/tours"}>Tours</NavLink>
                         <NavLink className="item" to={"/tour-dates"}>Dates</NavLink>
                         <NavLink className="item" to={"/profile"}>My Profile</NavLink>
                         <NavLink className="item" to={"/team"}>My Team</NavLink>
