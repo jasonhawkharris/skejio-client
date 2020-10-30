@@ -36,7 +36,7 @@ const Nav = props => {
                         <>
                             <li>{user.username}</li>
                             <li>
-                                <NavLink to={"/"}>Home</NavLink>
+                                <NavLink to={"/feed"}>Home</NavLink>
                             </li>
                             <li>
                                 <NavLink to={"/tours"}>Tours</NavLink>

@@ -18,20 +18,23 @@ const Routes = props => {
     const loggedIn = useRecoilValue(loggedInState);
     return (
         <Switch>
-            <Route path='/login' component={Login} />
-            <Route path='/register' component={Register} />
-            {loggedIn && (
-                <Switch>
-                    <Route exact path='/' component={Feed} />
-                    <Route exact path='/tours' component={Tours} />
-                    <Route exact path='/tour-dates' component={Dates} />
-                    <Route exact path='/profile' component={Profile} />
-                    <Route exact path='/team' component={Team} />
-                    <Route exact path='/forms' component={Forms} />
-                    <Route exact path='/settings' component={Settings} />
-
-                </Switch>
-            )}
+            {!loggedIn ? (
+                <>
+                    <Route path='/login' component={Login} />
+                    <Route path='/register' component={Register} />
+                </>
+            ) : (
+                    <>
+                        <Route path='/feed' component={Feed} />
+                        <Route path='/tours' component={Tours} />
+                        <Route path='/tour-dates' component={Dates} />
+                        <Route path='/profile' component={Profile} />
+                        <Route path='/team' component={Team} />
+                        <Route path='/forms' component={Forms} />
+                        <Route path='/settings' component={Settings} />
+                    </>
+                )
+            }
         </Switch>
     );
 }
