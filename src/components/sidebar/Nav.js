@@ -30,49 +30,33 @@ const Nav = props => {
             <div className='logo'>
                 skej.io
             </div>
-            <div className='links'>
-                <ul>
-                    {user ? (
+            <div className='ui secondary vertical pointing menu' id="side-nav">
+                {user ? (
+                    <>
+                        <div>{user.username}</div>
+                        <NavLink className="item" to={"/feed"}>Activity</NavLink>
+                        <NavLink className="item" to={"/tours"}>Tour</NavLink>
+                        <NavLink className="item" to={"/tour-dates"}>Dates</NavLink>
+                        <NavLink className="item" to={"/profile"}>My Profile</NavLink>
+                        <NavLink className="item" to={"/team"}>My Team</NavLink>
+                        <NavLink className="item" to={"/forms"}>My Forms</NavLink>
+                        <NavLink className="item" to={"/settings"}>Settings</NavLink>
+                        <div className="item" onClick={logout}>
+                            Log Out
+                        </div>
+                    </>
+                ) : (
                         <>
-                            <li>{user.username}</li>
                             <li>
-                                <NavLink to={"/feed"}>Home</NavLink>
+                                <NavLink to={"/login"}>Login</NavLink>
                             </li>
                             <li>
-                                <NavLink to={"/tours"}>Tours</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={"/tour-dates"}>Dates</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={"/profile"}>Profile</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={"/team"}>Team</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={"/forms"}>Forms</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={"/settings"}>Settings</NavLink>
-                            </li>
-                            <li className='btn' onClick={logout}>
-                                Log Out
+                                <NavLink to={"/register"}>Register</NavLink>
                             </li>
                         </>
-                    ) : (
-                            <>
-                                <li>
-                                    <NavLink to={"/login"}>Login</NavLink>
-                                </li>
-                                <li>
-                                    <NavLink to={"/register"}>Register</NavLink>
-                                </li>
-                            </>
-                        )}
-                </ul>
+                    )}
             </div>
-        </div>
+        </div >
     )
 }
 

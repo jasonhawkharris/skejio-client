@@ -1,3 +1,7 @@
+* {
+  background-color: #eee;
+}
+
 .App {
   text-align: center;
 }
@@ -10,8 +14,10 @@
 }
 
 .feed {
-  width: 525px;
   border: 1px solid black;
+  min-width: 525px;
+  width: calc(55% - 211px);
+  margin: 0px 0px 0px 211px;
 }
 
 .App-logo {
