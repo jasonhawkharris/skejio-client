@@ -16,10 +16,10 @@ const Home = () => {
             <div className="feed">
                 <Routes />
             </div>
-            <div class="todos">
+            <div className="todos">
                 <h1>My Todo-List</h1>
-                <button onClick={fetchTodos}>Refresh</button>
-                {todos.length ? <Todos data={todos} /> : <h1>Loading...</h1>}
+                <button className="ui button" onClick={fetchTodos}>Refresh</button>
+                <Todos data={todos} />
             </div>
         </div>
     );

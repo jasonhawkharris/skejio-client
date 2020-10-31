@@ -1,36 +1,32 @@
 import React from 'react';
 
 const TodoCard = props => {
-    const { tourDate, content, dueDate, completed, createdAt } = props.todo;
+    const { tourDate, content, completed } = props.todo;
     return (
-        <div class="card">
-            <div class="content">
-                <div class="header">
-                    {tourDate}
+        <div className="ui raised segment">
+            <div className="card">
+                <div className="content">
+                    <div className="header">
+                        {tourDate}
+                    </div>
+                    <div className="description">
+                        {content}
+                    </div>
                 </div>
-                <div class="meta">
-                    <ul>
-                        <li>Created: {createdAt}</li>
-                        <li>Due: {dueDate}</li>
-                    </ul>
-                </div>
-                <div class="description">
-                    {content}
-                </div>
-
-            </div>
-            <div class="extra content">
-                <div class="ui checkbox">
-                    {completed ? (
-                        <input type="checkbox" name="completed" checked />
-                    ) : (
-                            <input type="checkbox" name="completed" />
-                        )
-                    }
-                    <label>Done</label>
+                <div className="extra content">
+                    <div className="ui checkbox">
+                        {completed ? (
+                            <input type="checkbox" name="completed" checked />
+                        ) : (
+                                <input type="checkbox" name="completed" />
+                            )
+                        }
+                        <label>Done</label>
+                    </div>
                 </div>
             </div>
         </div>
+
     )
 }
 

@@ -47,12 +47,8 @@ const Nav = props => {
                     </>
                 ) : (
                         <>
-                            <li>
-                                <NavLink to={"/login"}>Login</NavLink>
-                            </li>
-                            <li>
-                                <NavLink to={"/register"}>Register</NavLink>
-                            </li>
+                            <NavLink className="item" to={"/login"}>Login</NavLink>
+                            <NavLink className="item" to={"/register"}>Register</NavLink>
                         </>
                     )}
             </div>

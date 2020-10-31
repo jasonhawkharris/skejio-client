@@ -6,6 +6,8 @@ import { useSetRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
 import { NavLink } from 'react-router-dom';
 
+import './Login.css';
+
 const Login = props => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -26,31 +28,35 @@ const Login = props => {
     }
 
     return (
-        <div>
-            <h2>Login</h2>
-            <form onSubmit={handleSubmit}>
-                <div className='form-input'>
-                    <label htmlFor='email'>Email</label>
-                    <input
-                        type='text'
-                        name='email'
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
-                </div>
-                <div className='form-input'>
-                    <label htmlFor='password'>Password</label>
-                    <input
-                        type='password'
-                        name='password'
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                    />
-                </div>
+        <div className="login">
+            <div className="ui raised segment">
+                <h2>Login</h2>
+                <form className="ui form" onSubmit={handleSubmit}>
+                    <div className="field">
+                        <input
+                            type='text'
+                            name='email'
+                            onChange={(e) => setEmail(e.target.value)}
+                            value={email}
+                            placeholder="Email"
+                        />
+                    </div>
+                    <div className="field">
+                        <input
+                            type="password"
+                            name="password"
+                            onChange={(e) => setPassword(e.target.value)}
+                            value={password}
+                            placeholder="Password"
+                        />
+                    </div>
 
-                <input type='submit' value='Login' />
-            </form>
-            <NavLink to='/register'>Register</NavLink>
+                    <button className="ui button" type="submit">
+                        Log In
+                    </button>
+                </form>
+            </div>
+            <NavLink to='/register'>No account? Register here.</NavLink>
         </div>
     )
 }

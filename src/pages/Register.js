@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 
 import AuthModel from '../models/AuthModel';
 
+import './Register.css';
+
 const Register = props => {
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -32,59 +34,74 @@ const Register = props => {
     }
 
     return (
-        <div>
-            <h2>Register for an Account</h2>
-            {error && <p style={{ color: 'red' }}>{error}</p>}
-            <form onSubmit={handleSubmit}>
-                <div className="form-input">
-                    <label htmlFor="firstName">First Name</label>
-                    <input
-                        type="text"
-                        name="firstName"
-                        onChange={(e) => setFirstName(e.target.value)}
-                        value={firstName}
-                    />
-                    <label htmlFor="lastName">Last Name</label>
-                    <input
-                        type="text"
-                        name="lastName"
-                        onChange={(e) => setLastName(e.target.value)}
-                        value={lastName}
-                    />
-                    <label htmlFor="username">Username</label>
-                    <input
-                        type="text"
-                        name="username"
-                        onChange={(e) => setUsername(e.target.value)}
-                        value={username}
-                    />
-                    <label htmlFor="email">Email</label>
-                    <input
-                        type="text"
-                        name="email"
-                        onChange={(e) => setEmail(e.target.value)}
-                        value={email}
-                    />
-                    <label htmlFor="accountType">Choose an account type:</label>
-                    <select
-                        value={accountType}
-                        onChange={(e) => setAccountType(e.target.value)}
-                    >
-                        <option value="Artist">Artist</option>
-                        <option value="Manager">Manager</option>
-                        <option value="Teammate">Teammate</option>
-                    </select>
-                    <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        name="password"
-                        onChange={(e) => setPassword(e.target.value)}
-                        value={password}
-                    />
-                </div>
+        <div className="register">
+            <div className="ui raised segment">
+                <div className="ui form">
+                    <h2>Register for an Account</h2>
+                    {error && <p style={{ color: 'red' }}>{error}</p>}
+                    <form onSubmit={handleSubmit}>
+                        <div className="field">
+                            <input
+                                type="text"
+                                name="firstName"
+                                onChange={(e) => setFirstName(e.target.value)}
+                                value={firstName}
+                                placeholder="First Name"
+                            />
+                        </div>
+                        <div className="field">
+                            <input
+                                type="text"
+                                name="lastName"
+                                onChange={(e) => setLastName(e.target.value)}
+                                value={lastName}
+                                placeholder="Last Name"
+                            />
+                        </div>
+                        <div className="field">
+                            <input
+                                type="text"
+                                name="email"
+                                onChange={(e) => setEmail(e.target.value)}
+                                value={email}
+                                placeholder="Email"
+                            />
+                        </div>
+                        <div className="field">
+                            <input
+                                type="text"
+                                name="username"
+                                onChange={(e) => setUsername(e.target.value)}
+                                value={username}
+                                placeholder="Username"
+                            />
+                        </div>
+                        <div className="field">
+                            <select
+                                onChange={(e) => setAccountType(e.target.value)}
+                                className="ui fluid dropdown"
+                            >
+                                <option value="" selected>Choose your account type...</option>
+                                <option value="Artist">Artist</option>
+                                <option value="Manager">Manager</option>
+                                <option value="Teammate">Teammate</option>
+                            </select>
+                        </div>
 
-                <input type='submit' value='register' />
-            </form>
+                        <div className="field">
+                            <input
+                                type="password"
+                                name="password"
+                                onChange={(e) => setPassword(e.target.value)}
+                                value={password}
+                                placeholder="Password"
+                            />
+                        </div>
+
+                        <input className="ui button" type='submit' value='Submit' />
+                    </form>
+                </div>
+            </div >
         </div>
     );
 }

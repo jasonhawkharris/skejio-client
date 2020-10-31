@@ -1,4 +1,4 @@
-const URL = 'http://localhost:3001/api/v1/games';
+const URL = 'http://localhost:3001/api/v1/todos';
 
 class TodoModel {
     static all = () => {
