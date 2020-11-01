@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Feed from '../components/feed/Feed';
-import Tours from '../components/tours/Tours';
+import Tours from '../components/tours/ToursPage';
 import TourDatesPage from '../components/dates/TourDatesPage';
 import Profile from '../components/profile/Profile';
 import Team from '../components/team/Team';

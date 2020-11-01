@@ -2,12 +2,14 @@ import React from 'react';
 
 import './Tours.css';
 
-const Feed = props => {
+const TourCard = props => {
+    const { name, complete } = props.tour;
+
     return (
         <div>
-            <h1>I am the Tours page</h1>
+            <p>{name} : {complete}</p>
         </div>
-    )
+    );
 }
 
-export default Feed;
+export default TourCard;
