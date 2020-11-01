@@ -19,7 +19,11 @@ const Home = () => {
             <div className="todos">
                 <h1>My Todo-List</h1>
                 <button className="ui button" onClick={fetchTodos}>Refresh</button>
-                <Todos data={todos} />
+                {todos.length ?
+                    <Todos data={todos} /> :
+                    <p>No todos</p>
+                }
+
             </div>
         </div>
     );
