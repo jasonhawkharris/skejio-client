@@ -1,13 +1,21 @@
 import React from 'react';
 
-import './Tours.css';
+import Tours from './Tours';
+import useTours from '../../hooks/useTours';
 
-const Feed = props => {
+const ToursPage = () => {
+    const [tours, fetchTours] = useTours();
+
     return (
-        <div>
-            <h1>I am the Tours page</h1>
+        <div className="all-tours">
+            <h1>My Tours</h1>
+            <button className="ui button" onClick={fetchTours}>Refresh</button>
+            {tours.length ?
+                <Tours data={tours} /> :
+                <p>No tours scheduled.</p>
+            }
         </div>
     )
 }
 
-export default Feed;
+export default ToursPage;

@@ -6,7 +6,7 @@ class TourModel {
             const response = await fetch(URL, {
                 method: 'GET',
                 headers: {
-                    authentication: `Bearer ${localStorage.uid}`,
+                    authorization: `Bearer ${localStorage.uid}`,
                 }
             });
             return await response.json();
@@ -20,7 +20,7 @@ class TourModel {
             const response = await fetch(`${URL}/${id}`, {
                 method: 'GET',
                 headers: {
-                    authentication: `Bearer ${localStorage.uid}`,
+                    authorization: `Bearer ${localStorage.uid}`,
                 }
             });
             return await response.json();
