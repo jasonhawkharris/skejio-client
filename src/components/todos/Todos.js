@@ -22,6 +22,7 @@ const Todos = props => {
     }, []);
 
     const generateTodoCards = (todos) => {
+        console.log(props);
         return todos.map(todo => {
             return <TodoCard key={todo._id} todo={todo} />
         });
