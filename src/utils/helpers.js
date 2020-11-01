@@ -17,7 +17,7 @@ export const searchVenues = async (venue) => {
         const res = await axios.get(urlCall);
         const venues = res.data._embedded.venues;
         console.log(venues);
-        return venue;
+        return venues;
     } catch (error) {
         console.log(error);
     }
