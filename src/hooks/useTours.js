@@ -11,7 +11,6 @@ const useTours = tourId => {
             });
         } else {
             TourModel.all().then(data => {
-                console.log(data);
                 setTours(data.tours);
             });
         }

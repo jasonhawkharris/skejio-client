@@ -9,7 +9,6 @@ const ToursPage = () => {
     return (
         <div className="all-tours">
             <h1>My Tours</h1>
-            <button className="ui button" onClick={fetchTours}>Refresh</button>
             {tours.length ?
                 <Tours data={tours} /> :
                 <p>No tours scheduled.</p>
