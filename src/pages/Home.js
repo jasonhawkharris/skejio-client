@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Routes from '../config/Routes';
 import Nav from '../components/sidebar/Nav';
@@ -7,6 +7,10 @@ import useTodos from '../hooks/useTodos';
 
 const Home = () => {
     const [todos, fetchTodos] = useTodos();
+
+    // useEffect(function () {
+    //     fetchTodos();
+    // }, [todos])
 
     return (
         <div className="main">
@@ -18,12 +22,10 @@ const Home = () => {
             </div>
             <div className="todos">
                 <h1>My Todo-List</h1>
-                <button className="ui button" onClick={fetchTodos}>Refresh</button>
                 {todos.length ?
                     <Todos data={todos} /> :
-                    <p>No todos</p>
+                    <p>loading...</p>
                 }
-
             </div>
         </div>
     );

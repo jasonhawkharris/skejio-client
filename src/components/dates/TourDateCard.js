@@ -1,5 +1,4 @@
 import React from 'react';
-import findVenueById from '../../utils/helpers';
 
 import './Dates.css';
 

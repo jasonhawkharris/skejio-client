@@ -10,10 +10,11 @@ class TodoModel {
     }
 
     static create = (todoData) => {
-        return fetch(URL, {
+        return fetch(`${URL}/create`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
+                authorization: `Bearer ${localStorage.uid}`,
             },
             body: JSON.stringify(todoData),
         }).then(response => response.json());
