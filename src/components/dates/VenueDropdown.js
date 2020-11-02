@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { searchVenues } from '../../utils/helpers';
 
+import VenueCard from './VenueCard';
+
 const VenueDropdown = props => {
     const [inputValue, setInputValue] = useState('');
     const [results, setResults] = useState([]);
@@ -24,31 +26,15 @@ const VenueDropdown = props => {
                 onChange={(e) => setInputValue(e.target.value)}
             />
             {results.map(result => {
-                return <div class="ui card">
-                    <div class="image">
-                        <img src="/images/avatar2/large/kristy.png">
-  </div>
-                        <div class="content">
-                            <a class="header">Kristy</a>
-                            <div class="meta">
-                                <span class="date">Joined in 2013</span>
-                            </div>
-                            <div class="description">
-                                Kristy is an art director living in New York.
-    </div>
-                        </div>
-                        <div class="extra content">
-                            <a>
-                                <i class="user icon"></i>
-      22 Friends
-    </a>
-                        </div>
-                    </div>
-
-                    {/* <h1 onClick={() => console.log(result.id)}>{result.name}</h1> */}
+                return <VenueCard
+                    venueId={result.id}
+                    name={result.name}
+                    city={result.city.name}
+                    country={result.country.countryCode}
+                />
             })}
         </div>
     )
-            }
+}
 
 export default VenueDropdown;
