@@ -32,6 +32,7 @@ const Todos = props => {
         event.preventDefault();
         console.log(todoData);
         TodoModel.create(todoData);
+        props.fetch();
         toggleTodoBtnClicked();
     }
 

@@ -21,7 +21,7 @@ const Login = props => {
                 localStorage.setItem('uid', response.signedJwt);
                 UserModel.show().then((response) => {
                     console.log(response)
-                    setUser(response.data);
+                    setUser(response.user);
                     props.history.push('/feed');
                 });
             });

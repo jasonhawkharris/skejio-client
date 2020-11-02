@@ -6,7 +6,7 @@ axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 const URL = "https://app.ticketmaster.com/discovery/v2/venues"
 const API_KEY = "apikey=5M5EkcsjMabTt7NcP2lF0exIIkdh3aA4"
 
-const searchVenues = async (venue) => {
+export const searchVenues = async (venue) => {
     if (venue.includes(' ')) {
         venue = venue.split(' ').join('%20');
     }
@@ -14,14 +14,15 @@ const searchVenues = async (venue) => {
     const urlCall = `${URL}.json?${API_KEY}&keyword=${venue}`;
 
     try {
-        const response = await axios.get(urlCall);
-        return response.data._embedded.venues;;
+        return axios.get(urlCall);
+        // console.log(response);
+        // return response.data._embedded.venues;
     } catch (error) {
         console.log(error);
     }
 }
 
-const findVenueById = async (venueId) => {
+export const findVenueById = async (venueId) => {
     const urlCall = `${URL}/${venueId}.json?${API_KEY}`;
 
     try {
@@ -38,4 +39,3 @@ const findVenueById = async (venueId) => {
     }
 }
 
-export default findVenueById;

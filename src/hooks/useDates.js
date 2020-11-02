@@ -6,13 +6,15 @@ const useTourDates = tourDateId => {
 
     const fetchTourDates = id => {
         if (id) {
-            TourDateModel.show(id).then(data => {
+            TourDateModel.show(id).then(response => {
                 // THIS MAY BE A PROBLEM. try different forms of date
-                setTourDates(data.tourDate)
+                setTourDates(response.data.tourDate)
+                console.log(response);
             });
         } else {
-            TourDateModel.all().then(data => {
-                setTourDates(data.tourDates);
+            TourDateModel.all().then(response => {
+                setTourDates(response.data.tourDates);
+                console.log(response);
             });
         }
     }

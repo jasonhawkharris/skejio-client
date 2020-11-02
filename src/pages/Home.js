@@ -8,10 +8,6 @@ import useTodos from '../hooks/useTodos';
 const Home = () => {
     const [todos, fetchTodos] = useTodos();
 
-    // useEffect(function () {
-    //     fetchTodos();
-    // }, [todos])
-
     return (
         <div className="main">
             <div>
@@ -23,7 +19,7 @@ const Home = () => {
             <div className="todos">
                 <h1>My Todo-List</h1>
                 {todos.length ?
-                    <Todos data={todos} /> :
+                    <Todos data={todos} fetch={fetchTodos} /> :
                     <p>loading...</p>
                 }
             </div>

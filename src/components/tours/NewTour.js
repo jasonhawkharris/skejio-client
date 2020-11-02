@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import TourModel from '../models/TourModel';
+import TourModel from '../../models/TourModel';
 
 const NewTour = props => {
     const [name, setName] = useState('');
