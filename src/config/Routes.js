@@ -5,6 +5,7 @@ import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Feed from '../components/feed/Feed';
 import Tours from '../components/tours/ToursPage';
+import NewTour from '../pages/NewTour';
 import TourDatesPage from '../components/dates/TourDatesPage';
 import Profile from '../components/profile/Profile';
 import Team from '../components/team/Team';
@@ -27,6 +28,7 @@ const Routes = props => {
                     <>
                         <Route path='/feed' component={Feed} />
                         <Route path='/tours' component={Tours} />
+                        <Route path='/new-tour' component={NewTour} />
                         <Route path='/tour-dates' component={TourDatesPage} />
                         <Route path='/profile' component={Profile} />
                         <Route path='/team' component={Team} />
