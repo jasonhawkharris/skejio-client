@@ -4,14 +4,14 @@ import TourModel from '../models/TourModel';
 const useTours = tourId => {
     const [tours, setTours] = useState([]);
 
-    const fetchTours = (id) => {
+    const fetchTours = id => {
         if (id) {
-            TourModel.show(id).then(data => {
-                setTours(data.tour);
+            TourModel.show(id).then(response => {
+                setTours(response.data.tour);
             });
         } else {
-            TourModel.all().then(data => {
-                setTours(data.tours);
+            TourModel.all().then(response => {
+                setTours(response.data.tours);
             });
         }
     }

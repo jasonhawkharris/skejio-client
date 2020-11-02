@@ -1,3 +1,4 @@
+import axios from 'axios';
 import jwt from 'jsonwebtoken';
 
 const URL = 'http://localhost:3001/api/v1/tours';
@@ -5,13 +6,11 @@ const URL = 'http://localhost:3001/api/v1/tours';
 class TourModel {
     static async all() {
         try {
-            const response = await fetch(URL, {
-                method: 'GET',
+            return await axios.get(URL, {
                 headers: {
                     authorization: `Bearer ${localStorage.uid}`,
                 }
             });
-            return await response.json();
         } catch (err) {
             console.log(err);
         }

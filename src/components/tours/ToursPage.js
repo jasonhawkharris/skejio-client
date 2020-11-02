@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import Tours from './Tours';
 import useTours from '../../hooks/useTours';
 
 const ToursPage = () => {
     const [tours, fetchTours] = useTours();
+
+    useEffect(function () {
+        fetchTours();
+    }, [])
 
     return (
         <div className="all-tours">
