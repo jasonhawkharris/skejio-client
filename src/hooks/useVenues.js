@@ -10,7 +10,7 @@ const useVenues = venueId => {
                 setVenues(data.tour);
             });
         } else {
-            VenueModel.all().then(data => {
+            VenueModel.search().then(data => {
                 setVenues(data.tour);
             });
         }

@@ -3,8 +3,8 @@ import axios from 'axios';
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
 
-const URL = "https://app.ticketmaster.com/discovery/v2/venues"
-const API_KEY = "apikey=5M5EkcsjMabTt7NcP2lF0exIIkdh3aA4"
+const URL = "https://app.ticketmaster.com/discovery/v2/venues";
+const API_KEY = "apikey=5M5EkcsjMabTt7NcP2lF0exIIkdh3aA4";
 
 class VenueModel {
     static async search(venue) {
@@ -13,7 +13,8 @@ class VenueModel {
         }
 
         try {
-            const response = await axios.get(`${URL}.json?${API_KEY}&keyword=${venue}`);
+            const response = await
+                axios.get(`${URL}.json?${API_KEY}&keyword=${venue}`);
             return response.data._embedded.venues;
         } catch (err) {
             console.log(err);
