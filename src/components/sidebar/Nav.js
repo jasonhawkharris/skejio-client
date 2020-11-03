@@ -33,7 +33,6 @@ const Nav = props => {
             <div className='ui secondary vertical pointing menu' id="side-nav">
                 {user ? (
                     <>
-                        <div>{user.username}</div>
                         <NavLink className="item" to={"/feed"}>Activity</NavLink>
                         <NavLink className="item" to={"/tours"}>Tours</NavLink>
                         <NavLink className="item" to={"/tour-dates"}>Dates</NavLink>

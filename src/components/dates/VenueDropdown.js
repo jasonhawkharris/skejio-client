@@ -31,6 +31,7 @@ const VenueDropdown = props => {
                     name={result.name}
                     city={result.city.name}
                     country={result.country.countryCode}
+                    id={result.id}
                 />
             })}
         </div>

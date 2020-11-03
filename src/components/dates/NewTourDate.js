@@ -14,10 +14,10 @@ const NewTourDate = props => {
 
     const handleSubmittedTourDate = event => {
         event.preventDefault();
-        console.log(tourDate);
-        TourDateModel.create(tourDate);
-        props.fetch();
+        console.log('tourDate:', tourDate);
+        // TourDateModel.create(tourDate);
     }
+
     return (
         <div>
             <h1>Create a new tour date</h1>

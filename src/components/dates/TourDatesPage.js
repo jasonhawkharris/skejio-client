@@ -5,7 +5,6 @@ import useDates from '../../hooks/useDates';
 
 const TourDatesPage = () => {
     const [tourDates, fetchTourDates] = useDates();
-    console.log('tourDates', tourDates);
 
     return (
         <div className="all-tour-dates">
