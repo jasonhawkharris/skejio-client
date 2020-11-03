@@ -1,3 +1,7 @@
 .venue-card {
     cursor: pointer;
 }
+
+.show-details {
+    text-align: left;
+}

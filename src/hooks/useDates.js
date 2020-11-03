@@ -4,7 +4,7 @@ import TourDateModel from '../models/TourDateModel';
 const useTourDates = tourDateId => {
     const [tourDates, setTourDates] = useState([]);
 
-    const fetchTourDates = id => {
+    const fetchTourDates = (id) => {
         if (id) {
             TourDateModel.show(id).then(response => {
                 setTourDates(response.data.tourDate)

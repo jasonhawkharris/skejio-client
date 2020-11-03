@@ -26,14 +26,11 @@ export const findVenueById = async (venueId) => {
     const urlCall = `${URL}/${venueId}.json?${API_KEY}`;
 
     try {
-        const response = await fetch(urlCall, {
-            method: 'GET',
+        return await axios.get(urlCall, {
             headers: {
                 'Content-Type': 'application/x-www-form-urlencoded',
-                'mode': 'no-cors',
             },
         });
-        return await response.json();
     } catch (error) {
         console.log(error);
     }

@@ -17,13 +17,11 @@ class TourDateModel {
 
     static async show(id) {
         try {
-            const response = await fetch(`${URL}/${id}`, {
-                method: 'GET',
+            return await axios.get(`${URL}/${id}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.uid}`,
                 }
             });
-            return await response.json();
         } catch (err) {
             console.log(err);
         }
