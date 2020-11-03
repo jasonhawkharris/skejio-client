@@ -1,24 +1,27 @@
 import React, { useState } from 'react';
-
 import { useRecoilValue } from 'recoil';
 
 import SingleComment from './SingleComment';
+import CommentModel from '../../models/CommentModel';
 import useComments from '../../hooks/useComments';
 import { userState } from '../../recoil/atoms';
 
-
-
 const Comments = props => {
-    const [comments, fetchComments] = useComments(props.thread);
+    // console.log('Comments props', props);
+    const comments = useComments(props.thread)[0];
+    console.log('comments', comments);
     const user = useRecoilValue(userState)._id;
+    // console.log('user id:', user)
     const thread = useState(props.thread)[0];
+    // console.log('thread id:', thread);
     const [content, setContent] = useState('');
     const commentData = { content, user, thread }
+    // console.log(commentData);
 
     const generateComments = () => {
         return comments.map(comment => {
             return (
-                <SingleComment comment={comment} fetch={fetchComments} />
+                <SingleComment comment={comment} />
             )
         });
     }

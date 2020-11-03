@@ -1,14 +1,15 @@
 import React, { useEffect, useState } from 'react';
+import { useRecoilValue } from 'recoil';
 
 import SingleThread from './SingleThread';
 import ThreadModel from '../../models/ThreadModel';
 import useThreads from '../../hooks/useThreads';
-import { useRecoilValue } from 'recoil';
 import { userState } from '../../recoil/atoms';
 
 const Threads = props => {
     console.log('Threads props', props);
     const threads = useThreads(props.tourDate)[0];
+    console.log(threads);
     const user = useRecoilValue(userState)._id;
     const tourDate = useState(props.tourDate)[0];
     const [content, setContent] = useState('');

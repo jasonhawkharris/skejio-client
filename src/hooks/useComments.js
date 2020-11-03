@@ -6,7 +6,7 @@ const useComments = threadId => {
 
     const fetchComments = (threadId) => {
         CommentModel.all(threadId).then(response => {
-            setComments(response.data.comment);
+            setComments(response.data.comments);
         });
     }
 
