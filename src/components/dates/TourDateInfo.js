@@ -24,7 +24,10 @@ const TourDateInfo = props => {
                 <li>{props.venue.country.name}</li>
             </ul>
             <div>
-                <Threads />
+                <div className="ui threaded comments">
+                    <h3 className="ui dividing header">Threads</h3>
+                    <Threads threads={props.tourDate.threads} tourDate={props.tourDate._id} />
+                </div>
             </div>
         </div>
     )

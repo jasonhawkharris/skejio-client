@@ -1,27 +1,55 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import SingleThread from './SingleThread';
+import ThreadModel from '../../models/ThreadModel';
+import useThreads from '../../hooks/useThreads';
+import { useRecoilValue } from 'recoil';
+import { userState } from '../../recoil/atoms';
 
 const Threads = props => {
+    console.log('Threads props', props);
+    const threads = useThreads(props.tourDate)[0];
+    const user = useRecoilValue(userState)._id;
+    const tourDate = useState(props.tourDate)[0];
+    const [content, setContent] = useState('');
+    const threadData = { content, user, tourDate }
+
+    const generateThreads = () => {
+        return threads.map(thread => {
+            return (
+                <SingleThread thread={thread} />
+            )
+        })
+    }
+
+    const handleSubmitThread = event => {
+        event.preventDefault();
+        console.log(threadData);
+        setContent('');
+    }
+
+    // useEffect(function () {
+
+    // }, [])
+
     return (
-        <div className="ui comments">
-            <h3 className="ui dividing header">Threads</h3>
-            <div className="comment">
-                <a className="avatar" href="/">
-                    <img src="/images/avatar/small/matt.jpg" alt="avatar" />
-                </a>
-                <div className="content">
-                    <a className="author" href="/">Matt</a>
-                    <div className="metadata">
-                        <span className="date">Today at 5:42PM</span>
-                    </div>
-                    <div className="text">
-                        How artistic!
-                    </div>
-                    <div className="actions">
-                        <a href="/" className="reply">Reply</a>
-                    </div>
+        <div>
+            {threads ?
+                generateThreads() :
+                <h1>loading...</h1>}
+            <form onSubmit={handleSubmitThread} class="ui reply form">
+                <div className="field">
+                    <textarea
+                        className="content-area"
+                        name="content"
+                        onChange={e => setContent(e.target.value)}
+                    ></textarea>
                 </div>
-            </div>
-        </div>
+                <input type="hidden" id="tourDate" name="tourDate" value={tourDate} />
+                <input type="hidden" id="user" name="user" value={user} />
+                <input type="submit" className="ui blue labeled submit icon button" />
+            </form>
+        </div >
     )
 }
 
