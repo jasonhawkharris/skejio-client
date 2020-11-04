@@ -1,20 +1,20 @@
 import React from 'react';
 
 const SingleComment = props => {
-    console.log('SingleComment props:', props);
+    // console.log('SingleComment props:', props);
     return (
         <div className="comments">
             <div className="comment">
                 <a className="avatar">
-                    <img src="/images/avatar/small/jenny.jpg" alt="avatar" />
+                    <img src="https://i.pravatar.cc/100" alt="avatar" />
                 </a>
                 <div className="content">
-                    <a className="author">hi</a>
+                    <a className="author">{props.comment.user}</a>
                     <div className="metadata">
-                        <span className="date">date</span>
+                        <span className="date">{props.comment.createdAt}</span>
                     </div>
                     <div className="text">
-                        {props.content}
+                        {props.comment.content}
                     </div>
                 </div>
             </div>

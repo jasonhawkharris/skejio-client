@@ -6,7 +6,7 @@ const SingleThread = props => {
     return (
         <div className="comment">
             <a className="avatar" href="/">
-                <img src="/images/avatar/small/matt.jpg" alt="avatar" />
+                <img src="https://i.pravatar.cc/100" alt="avatar" />
             </a>
             <div className="content">
                 <a className="author" href="/">UserID: {props.thread.user}</a>
@@ -16,15 +16,15 @@ const SingleThread = props => {
                 <div className="text">
                     {props.thread.content}
                 </div>
-
                 <div className="actions">
                     <a href="/" className="reply">Reply</a>
                 </div>
-
+                <br />
+                <br />
                 <div className="replies">
                     {props.thread.comments.length ?
                         <Comments comments={props.thread.comments} thread={props.thread._id} /> :
-                        <p>Be the first to reply on this post.</p>
+                        ''
                     }
                 </div>
             </div>

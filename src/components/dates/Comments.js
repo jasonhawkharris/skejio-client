@@ -9,7 +9,7 @@ import { userState } from '../../recoil/atoms';
 const Comments = props => {
     // console.log('Comments props', props);
     const comments = useComments(props.thread)[0];
-    console.log('comments', comments);
+    // console.log('comments', comments);
     const user = useRecoilValue(userState)._id;
     // console.log('user id:', user)
     const thread = useState(props.thread)[0];
@@ -28,7 +28,7 @@ const Comments = props => {
 
     const handleSubmitThread = event => {
         event.preventDefault();
-        console.log(commentData);
+        // console.log(commentData);
         setContent('');
     }
 
