@@ -1,16 +1,19 @@
 import { useState, useEffect } from 'react';
+
 import TourModel from '../models/TourModel';
 
-const useTours = tourId => {
+const useTours = userId => {
     const [tours, setTours] = useState([]);
 
-    const fetchTours = id => {
-        if (id) {
+    const fetchTours = (id, show = false) => {
+        if (show) {
             TourModel.show(id).then(response => {
+                if (response.data.message) return setTours([]);
                 setTours(response.data.tour);
             });
         } else {
-            TourModel.all().then(response => {
+            TourModel.all(id).then(response => {
+                if (response.data.message) return setTours([]);
                 setTours(response.data.tours);
             });
         }
@@ -18,9 +21,9 @@ const useTours = tourId => {
 
     useEffect(
         function () {
-            fetchTours(tourId)
+            fetchTours(userId)
         },
-        [tourId]
+        [userId]
     );
 
     return [tours, fetchTours];

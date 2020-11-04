@@ -4,9 +4,9 @@ import jwt from 'jsonwebtoken';
 const URL = 'http://localhost:3001/api/v1/tours';
 
 class TourModel {
-    static async all() {
+    static async all(userId) {
         try {
-            return await axios.get(URL, {
+            return await axios.get(`${URL}?artist=${userId}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.uid}`,
                 }

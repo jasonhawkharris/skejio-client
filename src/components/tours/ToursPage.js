@@ -1,19 +1,23 @@
 import React, { useEffect } from 'react';
+import { useRecoilValue } from 'recoil';
 
 import Tours from './Tours';
+import { userState } from '../../recoil/atoms';
 import useTours from '../../hooks/useTours';
 
+
 const ToursPage = () => {
+    const user = useRecoilValue(userState);
     const [tours, fetchTours] = useTours();
 
     useEffect(function () {
-        fetchTours();
+        fetchTours(user._id);
     }, [])
 
     return (
         <div className="all-tours">
             <h1>My Tours</h1>
-            {tours.length ?
+            {tours ?
                 <Tours data={tours} /> :
                 <p>No tours scheduled.</p>
             }
