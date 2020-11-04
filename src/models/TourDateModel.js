@@ -3,9 +3,10 @@ import axios from 'axios';
 const URL = 'http://localhost:3001/api/v1/dates';
 
 class TourDateModel {
-    static async all() {
+    static async all(userId) {
+        console.log(userId);
         try {
-            return await axios.get(URL, {
+            return await axios.get(`${URL}?artist=${userId}`, {
                 headers: {
                     authorization: `Bearer ${localStorage.uid}`,
                 }

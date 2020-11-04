@@ -26,7 +26,11 @@ const TourDateInfo = props => {
             <div className="planning">
                 <div className="ui threaded comments">
                     <h3 className="ui dividing header">Threads</h3>
-                    <Threads threads={props.tourDate.threads} tourDate={props.tourDate._id} />
+                    <Threads
+                        threads={props.tourDate.threads}
+                        tourDate={props.tourDate._id}
+                        fetch={props.fetch}
+                    />
                 </div>
             </div>
         </div>

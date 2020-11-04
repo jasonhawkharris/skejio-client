@@ -3,12 +3,12 @@ import { useRecoilValue } from 'recoil';
 
 import SingleThread from './SingleThread';
 import ThreadModel from '../../models/ThreadModel';
-import useThreads from '../../hooks/useThreads';
+// import useThreads from '../../hooks/useThreads';
 import { userState } from '../../recoil/atoms';
 
 const Threads = props => {
     // console.log('Threads props', props);
-    const threads = useThreads(props.tourDate)[0];
+    // const threads = useThreads(props.tourDate)[0];
     // console.log(threads);
     const user = useRecoilValue(userState)._id;
     const tourDate = useState(props.tourDate)[0];
@@ -16,21 +16,26 @@ const Threads = props => {
     const threadData = { content, user, tourDate }
 
     const generateThreads = () => {
-        return threads.map(thread => {
+        return props.threads.map(thread => {
             return (
-                <SingleThread thread={thread} />
+                <SingleThread
+                    key={thread._id}
+                    thread={thread}
+                    fetch={props.fetch}
+                />
+
             )
         })
     }
 
     const handleSubmitThread = event => {
         event.preventDefault();
-        ThreadModel.create(threadData);
+        ThreadModel.create(threadData).then(response => props.fetch());
     }
 
     return (
         <div>
-            {threads ?
+            {props.threads ?
                 generateThreads() :
                 <h1>loading...</h1>}
             <form onSubmit={handleSubmitThread} class="ui reply form">

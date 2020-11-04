@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import TourDates from './TourDates';
+import { useRecoilValue } from 'recoil';
+
 import useDates from '../../hooks/useDates';
+import { userState } from '../../recoil/atoms';
 
 const TourDatesPage = () => {
-    const [tourDates, fetchTourDates] = useDates();
+    const user = useRecoilValue(userState);
+    const [tourDates, fetchTourDates] = useDates(user._id);
 
     return (
         <div className="all-tour-dates">

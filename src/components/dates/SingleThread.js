@@ -29,8 +29,8 @@ const SingleThread = props => {
                     </div>
                     <br />
                     <div className="replies">
-                        {props.thread.comments.length ?
-                            <Comments comments={props.thread.comments} thread={props.thread._id} /> :
+                        {props.thread.comments ?
+                            <Comments fetch={props.fetch} comments={props.thread.comments} thread={props.thread._id} /> :
                             <button className="ui mini icon button">
                                 <i class="reply icon"></i>
                             </button>

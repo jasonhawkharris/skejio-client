@@ -5,7 +5,8 @@ import TourDateInfo from './TourDateInfo';
 import { findVenueById } from '../../utils/helpers';
 
 const TourDateShow = props => {
-    const tourDate = useTourDates(props.match.params.id)[0];
+    const [tourDate, fetchTourDates] = useTourDates(props.match.params.id, true);
+    console.log(tourDate);
     const [venue, setVenue] = useState(null);
 
     useEffect(function () {
@@ -17,7 +18,7 @@ const TourDateShow = props => {
         }
     }, [tourDate])
 
-    return venue ? <TourDateInfo venue={venue} tourDate={tourDate} /> : <h1>loading...</h1>;
+    return venue ? <TourDateInfo venue={venue} tourDate={tourDate} fetch={() => fetchTourDates(props.match.params.id, true)} /> : <h1>loading...</h1>;
 }
 
 export default TourDateShow;

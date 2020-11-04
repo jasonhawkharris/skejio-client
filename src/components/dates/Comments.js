@@ -7,7 +7,7 @@ import useComments from '../../hooks/useComments';
 import { userState } from '../../recoil/atoms';
 
 const Comments = props => {
-    const comments = useComments(props.thread)[0];
+    // const comments = useComments(props.thread)[0];
     const user = useRecoilValue(userState)._id;
     const thread = useState(props.thread)[0];
     const [content, setContent] = useState('');
@@ -15,7 +15,7 @@ const Comments = props => {
     const [replyBtn, setReplyBtn] = useState(false);
 
     const generateComments = () => {
-        return comments.map(comment => {
+        return props.comments.map(comment => {
             return (
                 <SingleComment comment={comment} />
             )
@@ -32,13 +32,13 @@ const Comments = props => {
 
     const handleSubmitThread = event => {
         event.preventDefault();
-        CommentModel.create(commentData);
+        CommentModel.create(commentData).then(response => props.fetch());
         toggleReplyBtn();
     }
 
     return (
         <div>
-            {comments ?
+            {props.comments ?
                 generateComments() :
                 <h3>loading...</h3>
             }
@@ -61,7 +61,7 @@ const Comments = props => {
                     </button>
                 </form> :
                 <button id="reply-btn" onClick={toggleReplyBtn} className="ui mini icon button">
-                    <i class="reply icon"></i>
+                    Reply
                 </button>
             }
         </div>
