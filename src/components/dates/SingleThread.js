@@ -1,17 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 
 import Comments from './Comments';
 
 const SingleThread = props => {
-    const [replyBtn, setReplyBtn] = useState('');
+    // const [replyBtn, setReplyBtn] = useState('');
 
-    const toggleReplyBtn = event => {
-        if (replyBtn) {
-            setReplyBtn(false);
-        } else {
-            setReplyBtn(true);
-        }
-    }
+    // const toggleReplyBtn = event => {
+    //     if (replyBtn) {
+    //         setReplyBtn(false);
+    //     } else {
+    //         setReplyBtn(true);
+    //     }
+    // }
 
     return (
         <div className="ui segment">
@@ -35,7 +35,6 @@ const SingleThread = props => {
                                 <i class="reply icon"></i>
                             </button>
                         }
-
                     </div>
                 </div>
             </div >

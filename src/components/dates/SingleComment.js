@@ -5,11 +5,11 @@ const SingleComment = props => {
     return (
         <div className="comments">
             <div className="comment">
-                <a className="avatar">
+                <a href="/" className="avatar">
                     <img src="https://i.pravatar.cc/100" alt="avatar" />
                 </a>
                 <div className="content">
-                    <a className="author">{props.comment.user}</a>
+                    <a href="/" className="author">{props.comment.user}</a>
                     <div className="metadata">
                         <span className="date">{props.comment.createdAt}</span>
                     </div>

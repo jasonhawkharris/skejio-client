@@ -14,13 +14,16 @@
   min-width: 525px;
   max-width: 525px;
   width: calc(55% - 211px);
-  margin: 0px 0px 0px 211px;
+  margin: 0px auto;
 }
 
 .todos {
     min-width: 250px;
     max-width: 250px;
-    height: 150vh;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
     /* border: 1px solid black; */
 }
 
