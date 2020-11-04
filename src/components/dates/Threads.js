@@ -25,13 +25,8 @@ const Threads = props => {
 
     const handleSubmitThread = event => {
         event.preventDefault();
-        console.log(threadData);
-        setContent('');
+        ThreadModel.create(threadData);
     }
-
-    // useEffect(function () {
-
-    // }, [])
 
     return (
         <div>
