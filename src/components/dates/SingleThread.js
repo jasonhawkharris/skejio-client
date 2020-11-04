@@ -8,10 +8,8 @@ const SingleThread = props => {
     const toggleReplyBtn = event => {
         if (replyBtn) {
             setReplyBtn(false);
-            event.target.innerText = 'Cancel';
         } else {
             setReplyBtn(true);
-            event.target.innerText = 'Reply';
         }
     }
 
