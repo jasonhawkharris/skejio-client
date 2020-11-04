@@ -32,12 +32,11 @@ class TourModel {
 
     static async create(tourData) {
         try {
-            const token = localStorage.uid;
-            const decoded = jwt.verify(token, 'super_secret_key');
-            const response = await fetch(`${URL}/create/${decoded._id}`, {
+            const response = await fetch(`${URL}/create`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
                 },
                 body: JSON.stringify(tourData)
             });

@@ -18,7 +18,12 @@ const TourDateShow = props => {
         }
     }, [tourDate])
 
-    return venue ? <TourDateInfo venue={venue} tourDate={tourDate} fetch={() => fetchTourDates(props.match.params.id, true)} /> : <h1>loading...</h1>;
+    return venue ? <TourDateInfo
+        venue={venue}
+        tourDate={tourDate}
+        fetch={() => fetchTourDates(props.match.params.id, true)}
+    /> :
+        <h1>loading...</h1>;
 }
 
 export default TourDateShow;

@@ -3,11 +3,9 @@ import { useRecoilValue } from 'recoil';
 
 import SingleComment from './SingleComment';
 import CommentModel from '../../models/CommentModel';
-import useComments from '../../hooks/useComments';
 import { userState } from '../../recoil/atoms';
 
 const Comments = props => {
-    // const comments = useComments(props.thread)[0];
     const user = useRecoilValue(userState)._id;
     const thread = useState(props.thread)[0];
     const [content, setContent] = useState('');

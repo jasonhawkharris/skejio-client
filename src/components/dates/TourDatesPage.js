@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import TourDates from './TourDates';
 import { useRecoilValue } from 'recoil';
