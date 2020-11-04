@@ -5,3 +5,11 @@
 .show-details {
     text-align: left;
 }
+
+.planning {
+    margin-top: 50px;
+}
+
+.ui.mini.blue.icon.button {
+    margin-top: 10px;
+}
