@@ -1,11 +1,21 @@
 import React from 'react';
 
 import Threads from './Threads';
+import TourDateModel from '../../models/TourDateModel';
 
 import './Dates.css';
 import { NavLink } from 'react-router-dom';
 
 const TourDateInfo = props => {
+    const tourDateId = props.tourDate._id;
+    console.log(props);
+
+    const deleteTourDate = event => {
+        TourDateModel.delete(tourDateId).then(response => {
+            window.location.replace('/tour-dates');
+        })
+    }
+
     return (
         <div className="show-details">
             <h1 page>Show Details</h1>
@@ -25,6 +35,7 @@ const TourDateInfo = props => {
                         tourDate: props.tourDate,
                     }
                 }} className="ui button">Edit</NavLink>
+                <button className="ui red delete button" onClick={deleteTourDate}>Delete this tour date</button>
             </div>
 
             <h3>Venue Info</h3>

@@ -59,23 +59,21 @@ class TourDateModel {
         } catch (error) {
             console.log(error);
         }
-        // const response = await fetch(`${URL}/${id}`, {
-        //     method: 'PUT',
-        //     headers: {
-        //         "Content-Type": "application/json",
-        //         // needs auth maybe?
-        //     },
-        //     body: JSON.stringify(tourDateData),
-        // });
-        // return await response.json();
     };
 
     static async delete(id) {
-        return fetch(`${URL}/${id}`, {
-            method: 'DELETE',
-        })
-            .then(response => response.json())
-            .catch(err => console.log(err));
+        try {
+            const response = await fetch(`${URL}/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`
+                }
+            });
+            return await response.json();
+        } catch (error) {
+            console.log(error);
+        }
     }
 }
 
