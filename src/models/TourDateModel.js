@@ -15,6 +15,8 @@ class TourDateModel {
         }
     }
 
+
+
     static async show(id) {
         try {
             return await axios.get(`${URL}/${id}`, {
@@ -26,6 +28,8 @@ class TourDateModel {
             console.log(err);
         }
     }
+
+
 
     static async create(tourDateData) {
         try {
@@ -42,6 +46,8 @@ class TourDateModel {
             console.log(error);
         }
     }
+
+
 
     static async edit(id, tourDateData) {
         try {
@@ -60,6 +66,8 @@ class TourDateModel {
             console.log(error);
         }
     };
+
+
 
     static async delete(id) {
         try {

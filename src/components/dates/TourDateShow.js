@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 
-import useTourDates from '../../hooks/useDates';
 import TourDateInfo from './TourDateInfo';
+import useTourDates from '../../hooks/useDates';
 import { findVenueById } from '../../utils/helpers';
+
+
 
 const TourDateShow = props => {
     const [tourDate, fetchTourDates] = useTourDates(props.match.params.id, true);

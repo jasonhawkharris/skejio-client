@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { searchVenues } from '../../utils/helpers';
 
 import VenueCard from './VenueCard';
+import { searchVenues } from '../../utils/helpers';
 
 const VenueDropdown = props => {
     const [inputValue, setInputValue] = useState('');
@@ -17,8 +17,8 @@ const VenueDropdown = props => {
                     country={result.country.countryCode}
                     id={result.id}
                 />
-            )
-        })
+            );
+        });
     }
 
     useEffect(function () {

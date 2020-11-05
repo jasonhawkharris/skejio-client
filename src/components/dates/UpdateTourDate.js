@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import TourDateModel from '../../models/TourDateModel';
 import './Dates.css';
 
+
 const UpdateTourDate = props => {
     const tourDate = props.location.infoProps.tourDate
     const [date, setDate] = useState(tourDate.date);
@@ -11,11 +12,13 @@ const UpdateTourDate = props => {
     const [promoterName, setPromoterName] = useState(tourDate.promoterName);
     const tourDateData = { date, deposit, promoterName, fee };
 
+
     const handleUpdateForm = event => {
         event.preventDefault()
         TourDateModel.edit(props.match.params.id, tourDateData).then(response => console.log(response));
         props.history.push(`/tour-date/${props.match.params.id}`);
     }
+
 
     return (
         <div className="update">

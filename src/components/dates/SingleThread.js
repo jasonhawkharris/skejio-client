@@ -2,17 +2,8 @@ import React from 'react';
 
 import Comments from './Comments';
 
+
 const SingleThread = props => {
-    // const [replyBtn, setReplyBtn] = useState('');
-
-    // const toggleReplyBtn = event => {
-    //     if (replyBtn) {
-    //         setReplyBtn(false);
-    //     } else {
-    //         setReplyBtn(true);
-    //     }
-    // }
-
     return (
         <div className="ui segment">
             <div className="comment">
@@ -30,7 +21,11 @@ const SingleThread = props => {
                     <br />
                     <div className="replies">
                         {props.thread.comments ?
-                            <Comments fetch={props.fetch} comments={props.thread.comments} thread={props.thread._id} /> :
+                            <Comments
+                                fetch={props.fetch}
+                                comments={props.thread.comments}
+                                thread={props.thread._id}
+                            /> :
                             <button className="ui mini icon button">
                                 <i class="reply icon"></i>
                             </button>

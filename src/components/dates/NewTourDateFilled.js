@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 
-import { userState } from '../../recoil/atoms';
 import TourDropdown from './TourDropdown';
+import { userState } from '../../recoil/atoms';
 import TourDateModel from '../../models/TourDateModel';
+
+
 
 const NewTourDateFilled = props => {
     const navProps = props.location.venueCardProps;
-
     const user = useRecoilValue(userState);
     const [tour, setTour] = useState('');
     const [date, setShowDate] = useState('');
@@ -16,11 +17,13 @@ const NewTourDateFilled = props => {
     const [venue] = useState(navProps.id);
     const tourDateData = { tour, date, venue, artist, fee };
 
+
     const handleSubmittedTourDate = event => {
         event.preventDefault();
         TourDateModel.create(tourDateData);
         props.history.push('/tour-dates');
     }
+
 
     return (
         <div className="other-details">

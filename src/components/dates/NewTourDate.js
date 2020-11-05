@@ -2,6 +2,7 @@ import React from 'react';
 
 import VenueDropdown from './VenueDropdown';
 
+
 const NewTourDate = props => {
     return (
         <div className="new-tour-date">

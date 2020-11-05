@@ -9,8 +9,10 @@ const Comments = props => {
     const user = useRecoilValue(userState)._id;
     const thread = useState(props.thread)[0];
     const [content, setContent] = useState('');
-    const commentData = { content, user, thread }
     const [replyBtn, setReplyBtn] = useState(false);
+    const commentData = { content, user, thread }
+
+
 
     const generateComments = () => {
         return props.comments.map(comment => {
@@ -20,6 +22,8 @@ const Comments = props => {
         });
     }
 
+
+
     const toggleReplyBtn = event => {
         if (replyBtn) {
             setReplyBtn(false);
@@ -28,11 +32,16 @@ const Comments = props => {
         }
     }
 
+
+
     const handleSubmitThread = event => {
         event.preventDefault();
-        CommentModel.create(commentData).then(response => props.fetch());
+        CommentModel.create(commentData)
+            .then(response => props.fetch());
         toggleReplyBtn();
     }
+
+
 
     return (
         <div>
@@ -51,14 +60,33 @@ const Comments = props => {
                             onChange={e => setContent(e.target.value)}
                         />
                     </div>
-                    <input type="hidden" id="tourDate" name="tourDate" value={thread} />
-                    <input type="hidden" id="user" name="user" value={user} />
-                    <input type="submit" className="ui mini blue icon button" />
-                    <button id="cancel-btn" onClick={toggleReplyBtn} className="ui mini icon button">
+                    <input
+                        type="hidden"
+                        id="tourDate"
+                        name="tourDate"
+                        value={thread}
+                    />
+                    <input
+                        type="hidden"
+                        id="user"
+                        name="user"
+                        value={user}
+                    />
+                    <input
+                        type="submit"
+                        className="ui mini blue icon button"
+                    />
+                    <button
+                        id="cancel-btn"
+                        onClick={toggleReplyBtn}
+                        className="ui mini icon button">
                         <i class="trash alternate outline icon"></i>
                     </button>
                 </form> :
-                <button id="reply-btn" onClick={toggleReplyBtn} className="ui mini icon button">
+                <button
+                    id="reply-btn"
+                    onClick={toggleReplyBtn}
+                    className="ui mini icon button">
                     Reply
                 </button>
             }

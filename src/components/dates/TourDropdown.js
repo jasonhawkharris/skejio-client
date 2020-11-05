@@ -4,16 +4,14 @@ import { useRecoilValue } from 'recoil';
 import useTours from '../../hooks/useTours';
 import { userState } from '../../recoil/atoms';
 
+
 const TourDropdown = props => {
     const user = useRecoilValue(userState);
     const [tours] = useTours(user._id);
 
     const optionList = tours ?
         tours.map(tour =>
-            <option
-                key={tour}
-                value={tour._id}
-            >
+            <option key={tour} value={tour._id}>
                 {tour.name}
             </option >
         ) :

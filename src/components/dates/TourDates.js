@@ -6,9 +6,11 @@ import TourDateCard from './TourDateCard';
 import TourDateModel from '../../models/TourDateModel';
 import './Dates.css';
 
+
 const TourDates = props => {
     const handleClick = event => {
-        TourDateModel.delete(event.target.id);
+        TourDateModel
+            .delete(event.target.id);
     }
 
     const generateTourDateCards = tourDates => {
@@ -17,9 +19,17 @@ const TourDates = props => {
                 return (
                     <div className="tourDateCard">
                         <NavLink to={`/tour-date/${tourDate._id}`}>
-                            <TourDateCard key={tourDate._id} tourDate={tourDate} />
+                            <TourDateCard
+                                key={tourDate._id}
+                                tourDate={tourDate}
+                            />
                         </NavLink >
-                        <button id={tourDate._id} className="ui mini button" onClick={handleClick}>Delete</button>
+                        <button
+                            id={tourDate._id}
+                            className="ui mini button"
+                            onClick={handleClick}
+                        >Delete
+                            </button>
                     </div>
                 )
             });

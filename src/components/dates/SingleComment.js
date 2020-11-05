@@ -1,12 +1,15 @@
 import React from 'react';
 
+
 const SingleComment = props => {
-    // console.log('SingleComment props:', props);
     return (
         <div className="comments">
             <div className="comment">
                 <a href="/" className="avatar">
-                    <img src="https://i.pravatar.cc/100" alt="avatar" />
+                    <img
+                        src="https://i.pravatar.cc/100"
+                        alt="avatar"
+                    />
                 </a>
                 <div className="content">
                     <a href="/" className="author">{props.comment.user}</a>
