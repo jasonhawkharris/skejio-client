@@ -20,12 +20,14 @@ const TourDropdown = props => {
         '';
 
     return (
-        <select onChange={e => props.setTour(e.target.value)}>
-            <option selected>Choose a tour</option>
-            {tours ?
-                optionList :
-                <option>Create a tour before proceeding.</option>}
-        </select>
+        <div className="ui fluid big input">
+            <select onChange={e => props.setTour(e.target.value)}>
+                <option selected>Choose a tour</option>
+                {tours ?
+                    optionList :
+                    <option>Create a tour before proceeding.</option>}
+            </select>
+        </div>
     )
 }
 

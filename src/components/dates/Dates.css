@@ -6,6 +6,14 @@
     text-align: left;
 }
 
+.venue-img {
+    max-width: 400px;
+}
+
+.other-details input {
+    margin-top: 30px !important;
+}
+
 .planning {
     margin-top: 50px;
 }

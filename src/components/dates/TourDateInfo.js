@@ -29,7 +29,7 @@ const TourDateInfo = props => {
 
             <h3>Venue Info</h3>
             {props.venue.images &&
-                <img src={props.venue.images[0].url} alt="venue"></img>
+                <img className="venue-img" src={props.venue.images[0].url} alt="venue"></img>
             }
 
 
