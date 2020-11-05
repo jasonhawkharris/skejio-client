@@ -27,6 +27,18 @@ class TourDateModel {
             console.log(err);
         }
     }
+
+    static async create() {
+        try {
+            return axios.post(`${URL}/create`, {
+                headers: {
+                    authorization: `Bearer ${localStorage.uid}`,
+                }
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 export default TourDateModel;

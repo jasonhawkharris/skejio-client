@@ -19,7 +19,10 @@ const Tours = props => {
     const generateTourCards = tours => {
         return tours.map(tour => {
             return (
-                <NavLink to={`/tour-dates/${tour._id}`}>
+                <NavLink to={{
+                    pathname: `/tour-dates/${tour._id}`,
+                    tourDates: tour.tourDates,
+                }}>
                     <TourCard
                         key={tour._id}
                         tour={tour}

@@ -9,12 +9,12 @@ const NewTourDate = props => {
     const [showDate, setShowDate] = useState('');
     const [venue, setVenue] = useState('');
 
-    const tourDate = { tour, showDate, venue };
+    const tourDateData = { tour, showDate, venue };
 
 
     const handleSubmittedTourDate = event => {
         event.preventDefault();
-        console.log('tourDate:', tourDate);
+        console.log('tourDate:', tourDateData);
         // TourDateModel.create(tourDate);
     }
 

@@ -7,6 +7,20 @@ const VenueDropdown = props => {
     const [inputValue, setInputValue] = useState('');
     const [results, setResults] = useState([]);
 
+    const generateVenues = results => {
+        return results.map(result => {
+            return (
+                <VenueCard
+                    venueId={result.id}
+                    name={result.name}
+                    city={result.city.name}
+                    country={result.country.countryCode}
+                    id={result.id}
+                />
+            )
+        })
+    }
+
     useEffect(function () {
         if (inputValue) {
             searchVenues(inputValue).then(response => {
@@ -25,15 +39,7 @@ const VenueDropdown = props => {
                 value={inputValue}
                 onChange={(e) => setInputValue(e.target.value)}
             />
-            {results.map(result => {
-                return <VenueCard
-                    venueId={result.id}
-                    name={result.name}
-                    city={result.city.name}
-                    country={result.country.countryCode}
-                    id={result.id}
-                />
-            })}
+            {generateVenues(results)}
         </div>
     )
 }

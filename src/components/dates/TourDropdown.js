@@ -1,26 +1,20 @@
-import React, { useEffect, useState } from 'react';
-import TourModel from '../../models/TourModel';
+import React from 'react';
+import { useRecoilValue } from 'recoil';
+
+import useTours from '../../hooks/useTours';
+import { userState } from '../../recoil/atoms';
 
 const TourDropdown = props => {
-    const [tours, setTours] = useState(null);
-
-    useEffect(function () {
-        fetchTours();
-    }, []);
-
-    const fetchTours = async () => {
-        const data = await TourModel.all();
-        console.log(data.data.tours);
-        setTours(data.data.tours);
-    }
+    const user = useRecoilValue(userState);
+    const [tours] = useTours(user._id);
 
     const optionList = tours ?
         tours.map(tour =>
             <option
-                key={tour._id}
-                value={tour._id}
+                key={tour}
+                value={tour}
             >
-                Tour name will go here: {tour.name}
+                {tour.name}
             </option >
         ) :
         '';
