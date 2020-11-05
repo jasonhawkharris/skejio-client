@@ -14,6 +14,8 @@ const TourDateShow = props => {
                 .then(response => {
                     setVenue(response.data);
                 }).catch(err => console.log(err));
+        } else {
+            console.log('there is no tourdate');
         }
     }, [tourDate])
 

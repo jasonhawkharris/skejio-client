@@ -44,14 +44,30 @@ class TourDateModel {
     }
 
     static async edit(id, tourDateData) {
-        const response = await fetch(`${URL}/${id}`, {
-            method: 'PUT',
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify(tourDateData),
-        });
-        return await response.json();
+        try {
+            const response = await fetch(`${URL}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
+                },
+                body: JSON.stringify(tourDateData)
+            });
+            console.log(JSON.stringify(tourDateData));
+            console.log('response:', response);
+            return await response.json();
+        } catch (error) {
+            console.log(error);
+        }
+        // const response = await fetch(`${URL}/${id}`, {
+        //     method: 'PUT',
+        //     headers: {
+        //         "Content-Type": "application/json",
+        //         // needs auth maybe?
+        //     },
+        //     body: JSON.stringify(tourDateData),
+        // });
+        // return await response.json();
     };
 
     static async delete(id) {

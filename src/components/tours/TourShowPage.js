@@ -28,7 +28,6 @@ const TourShowPage = props => {
     return (
         <div className="tourDates-list">
             {generateTourDates()}
-            <h1>We are at the tour show page for {props.id}</h1>
         </div>
     )
 }

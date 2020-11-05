@@ -78,7 +78,7 @@ const UpdateTourDate = props => {
                         onChange={e => setPromoterName(e.target.value)}
                         value={promoterName} />
                 </div>
-                <input className="ui button" type="submit" value="Edit" />
+                <input className="ui button" type="submit" value="Submit Edits" />
             </form>
         </div>
 
