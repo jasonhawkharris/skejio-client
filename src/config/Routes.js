@@ -1,5 +1,6 @@
 import React from 'react';
 import { Switch, Route } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 
 import Register from '../pages/Register';
 import Login from '../pages/Login';
@@ -16,12 +17,12 @@ import Profile from '../components/profile/Profile';
 import Team from '../components/team/Team';
 import Forms from '../components/forms/Forms';
 import Settings from '../components/settings/Settings';
-
-import { useRecoilValue } from 'recoil';
 import { loggedInState } from '../recoil/selectors';
+
 
 const Routes = props => {
     const loggedIn = useRecoilValue(loggedInState);
+
     return (
         <Switch>
             {!loggedIn ? (

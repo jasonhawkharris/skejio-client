@@ -15,6 +15,7 @@ class TourModel {
         }
     }
 
+
     static async show(id) {
         try {
             const response = await fetch(`${URL}/${id}`, {
@@ -28,6 +29,7 @@ class TourModel {
             console.log(err);
         }
     }
+
 
     static async create(tourData) {
         try {

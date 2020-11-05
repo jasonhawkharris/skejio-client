@@ -15,6 +15,7 @@ class CommentModel {
         }
     }
 
+
     static create = (commentData) => {
         return fetch(`${URL}/create`, {
             method: 'POST',

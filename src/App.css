@@ -10,7 +10,6 @@
 }
 
 .feed {
-  /* border: 1px solid black; */
   min-width: 525px;
   max-width: 525px;
   width: calc(55% - 211px);
@@ -24,7 +23,6 @@
     position: fixed;
     right: 0;
     top: 0;
-    /* border: 1px solid black; */
 }
 
 .App-logo {

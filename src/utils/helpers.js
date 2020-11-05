@@ -15,12 +15,11 @@ export const searchVenues = async (venue) => {
 
     try {
         return axios.get(urlCall);
-        // console.log(response);
-        // return response.data._embedded.venues;
     } catch (error) {
         console.log(error);
     }
 }
+
 
 export const findVenueById = async (venueId) => {
     const urlCall = `${URL}/${venueId}.json?${API_KEY}`;

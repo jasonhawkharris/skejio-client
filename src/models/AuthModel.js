@@ -11,6 +11,7 @@ class AuthModel {
         }).then((response) => response.json());
     };
 
+
     static login = (data) => {
         return fetch(`${URL}/login`, {
             method: 'POST',

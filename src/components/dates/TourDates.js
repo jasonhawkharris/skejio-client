@@ -3,16 +3,10 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 import TourDateCard from './TourDateCard';
-import TourDateModel from '../../models/TourDateModel';
 import './Dates.css';
 
 
 const TourDates = props => {
-    const handleClick = event => {
-        TourDateModel
-            .delete(event.target.id);
-    }
-
     const generateTourDateCards = tourDates => {
         try {
             return tourDates.map(tourDate => {
@@ -24,12 +18,6 @@ const TourDates = props => {
                                 tourDate={tourDate}
                             />
                         </NavLink >
-                        <button
-                            id={tourDate._id}
-                            className="ui mini button"
-                            onClick={handleClick}
-                        >Delete
-                            </button>
                     </div>
                 )
             });

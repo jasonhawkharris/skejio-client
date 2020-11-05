@@ -1,17 +1,18 @@
 import React, { useState } from 'react';
+import { NavLink } from 'react-router-dom';
+import { useSetRecoilState } from 'recoil';
+
 import AuthModel from '../models/AuthModel';
 import UserModel from '../models/UserModel';
-
-import { useSetRecoilState } from 'recoil';
 import { userState } from '../recoil/atoms';
-import { NavLink } from 'react-router-dom';
-
 import './Login.css';
+
 
 const Login = props => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const setUser = useSetRecoilState(userState);
+
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -26,6 +27,7 @@ const Login = props => {
                 });
             });
     }
+
 
     return (
         <div className="login">
@@ -50,7 +52,6 @@ const Login = props => {
                             placeholder="Password"
                         />
                     </div>
-
                     <button className="ui button" type="submit">
                         Log In
                     </button>

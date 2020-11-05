@@ -15,6 +15,7 @@ class ThreadModel {
         }
     }
 
+
     static create = (threadData) => {
         return fetch(`${URL}/create`, {
             method: 'POST',

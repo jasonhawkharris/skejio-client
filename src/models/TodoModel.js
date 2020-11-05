@@ -2,11 +2,13 @@ const URL = 'http://localhost:3001/api/v1/todos';
 
 class TodoModel {
     static all = () => {
-        return fetch(URL).then(response => response.json());
+        return fetch(URL)
+            .then(response => response.json());
     }
 
     static show = (todoId) => {
-        return fetch(`${URL}/${todoId}`).then(response => response.json());
+        return fetch(`${URL}/${todoId}`)
+            .then(response => response.json());
     }
 
     static create = (todoData) => {
