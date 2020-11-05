@@ -8,33 +8,38 @@ import { NavLink } from 'react-router-dom';
 const TourDateInfo = props => {
     return (
         <div className="show-details">
-            <h1>Show Details</h1>
-            <ul>
-                <li>Date: {props.tourDate.date}</li>
-                <li>Fee: {props.tourDate.fee}</li>
-                <li>Deposit: {props.tourDate.deposit}</li>
-                <li>Deposit Received: {props.tourDate.depositReceived.toString()}</li>
-                <li>Paid: {props.tourDate.paidInFull.toString()}</li>
-                <li>Promoter: {props.tourDate.promoterName}</li>
-                <li>Post Show Form Submitted: {props.tourDate.postShowFormSubmitted.toString()}</li>
-            </ul>
-            <NavLink to={{
-                pathname: `/update-tour-date/${props.tourDate._id}`,
-                infoProps: {
-                    tourDate: props.tourDate,
-                }
-            }} className="ui button">Update</NavLink>
+            <h1 page>Show Details</h1>
+            <div className="details">
+                <p>
+                    <strong>Date:</strong> {props.tourDate.date.split('T')[0]}<br />
+                    <strong>Fee:</strong> {props.tourDate.fee}<br />
+                    <strong>Deposit:</strong> {props.tourDate.deposit}<br />
+                    <strong>Deposit Received:</strong> {props.tourDate.depositReceived.toString()}<br />
+                    <strong>Paid:</strong> {props.tourDate.paidInFull.toString()}<br />
+                    <strong>Promoter:</strong> {props.tourDate.promoterName}<br />
+                    <strong>Post Show Form Submitted:</strong> {props.tourDate.postShowFormSubmitted.toString()}<br />
+                </p>
+                <NavLink to={{
+                    pathname: `/update-tour-date/${props.tourDate._id}`,
+                    infoProps: {
+                        tourDate: props.tourDate,
+                    }
+                }} className="ui button">Edit</NavLink>
+            </div>
+
             <h3>Venue Info</h3>
             {props.venue.images &&
                 <img src={props.venue.images[0].url} alt="venue"></img>
             }
 
-            <ul>
-                <li>{props.venue.name}</li>
-                <li>{props.venue.address.line1}</li>
-                <li>{props.venue.city.name}, {props.venue.state.stateCode}</li>
-                <li>{props.venue.country.name}</li>
-            </ul>
+
+            <p className="venue-info">
+                {props.venue.name}<br />
+                {props.venue.address.line1}<br />
+                {props.venue.city.name}, {props.venue.state.stateCode}<br />
+                {props.venue.country.name}
+            </p>
+
             <div className="planning">
                 <div className="ui threaded comments">
                     <h3 className="ui dividing header">Threads</h3>

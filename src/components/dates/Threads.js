@@ -34,7 +34,7 @@ const Threads = props => {
     }
 
     return (
-        <div>
+        <div className="threads">
             {props.threads ?
                 generateThreads() :
                 <h1>loading...</h1>}

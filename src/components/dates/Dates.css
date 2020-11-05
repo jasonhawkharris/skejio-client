@@ -33,3 +33,23 @@
 .update {
     margin-top: 100px;
 }
+
+.new-tour-date {
+    margin-top: 100px;
+}
+
+.other-details {
+    margin-top: 100px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.venue-info {
+    margin-top: 20px;
+}
+
+.threads {
+    margin-bottom: 300px;
+}

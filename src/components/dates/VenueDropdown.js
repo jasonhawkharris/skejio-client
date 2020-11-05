@@ -33,13 +33,18 @@ const VenueDropdown = props => {
 
     return (
         <div>
-            <input
-                type="text"
-                placeholder="search"
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
-            />
-            {generateVenues(results)}
+            <div className="ui fluid huge icon input">
+                <input
+                    type="text"
+                    placeholder="Search for a venue..."
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
+                />
+                <i class="search icon"></i>
+            </div>
+            {results &&
+                generateVenues(results)
+            }
         </div>
     )
 }

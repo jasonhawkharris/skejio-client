@@ -22,7 +22,8 @@ const NewTourDateFilled = props => {
     }
 
     return (
-        <div>
+        <div className="other-details">
+            <h1>Other Details</h1>
             <form className="ui form" onSubmit={handleSubmittedTourDate}>
                 <TourDropdown setTour={setTour} />
                 <input

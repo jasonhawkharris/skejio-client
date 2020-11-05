@@ -22,7 +22,7 @@ const Login = props => {
                 UserModel.show().then((response) => {
                     console.log(response)
                     setUser(response.user);
-                    props.history.push('/feed');
+                    props.history.push('/tours');
                 });
             });
     }
