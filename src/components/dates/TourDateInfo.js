@@ -2,10 +2,12 @@ import React from 'react';
 
 import Threads from './Threads';
 
+import './Dates.css';
+
 const TourDateInfo = props => {
     return (
         <div className="show-details">
-            <h3>Show Details</h3>
+            <h1>Show Details</h1>
             <ul>
                 <li>Date: {props.tourDate.date}</li>
                 <li>Fee: {props.tourDate.fee}</li>

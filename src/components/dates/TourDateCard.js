@@ -3,11 +3,16 @@ import React from 'react';
 import './Dates.css';
 
 const TourDateCard = props => {
-    const { date, venue } = props.tourDate;
+    const { date } = props.tourDate;
+
+    // const getDateOnly = dateToFormat => {
+    //     let oldDate = dateToFormat.split('T')[0].split('-');
+    //     return `${oldDate[1]}-${oldDate[2]}-${oldDate[0]}`
+    // }
 
     return (
-        <div>
-            <p>{date} : {venue}</p>
+        <div className="ui segment">
+            <p>{date}</p>
         </div>
     )
 }

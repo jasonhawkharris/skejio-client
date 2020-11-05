@@ -6,6 +6,8 @@ import { useRecoilValue } from 'recoil';
 import useDates from '../../hooks/useDates';
 import { userState } from '../../recoil/atoms';
 
+import './Dates.css';
+
 const TourDatesPage = props => {
     const user = useRecoilValue(userState);
     const [tourDates] = useDates(user._id);

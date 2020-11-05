@@ -5,6 +5,8 @@ import Tours from './Tours';
 import { userState } from '../../recoil/atoms';
 import useTours from '../../hooks/useTours';
 
+import './Tours.css';
+
 
 const ToursPage = () => {
     const user = useRecoilValue(userState);

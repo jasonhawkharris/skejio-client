@@ -3,11 +3,11 @@ import React from 'react';
 import './Tours.css';
 
 const TourCard = props => {
-    const { name, complete } = props.tour;
+    const { name } = props.tour;
 
     return (
-        <div>
-            <p>{name} : {complete}</p>
+        <div className="ui segment">
+            <p>{name}</p>
         </div>
     );
 }
