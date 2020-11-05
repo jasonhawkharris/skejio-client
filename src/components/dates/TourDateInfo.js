@@ -16,7 +16,10 @@ const TourDateInfo = props => {
                 <li>Post Show Form Submitted: {props.tourDate.postShowFormSubmitted.toString()}</li>
             </ul>
             <h3>Venue Info</h3>
-            <img src={props.venue.images[0].url} alt="venue"></img>
+            {props.venue.images &&
+                <img src={props.venue.images[0].url} alt="venue"></img>
+            }
+
             <ul>
                 <li>{props.venue.name}</li>
                 <li>{props.venue.address.line1}</li>

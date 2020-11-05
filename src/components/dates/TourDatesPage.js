@@ -6,18 +6,22 @@ import { useRecoilValue } from 'recoil';
 import useDates from '../../hooks/useDates';
 import { userState } from '../../recoil/atoms';
 
-const TourDatesPage = () => {
+const TourDatesPage = props => {
     const user = useRecoilValue(userState);
-    const [tourDates, fetchTourDates] = useDates(user._id);
+    const [tourDates] = useDates(user._id);
+
+    const handleAddBtnClick = event => {
+        props.history.push('/new-tour-date');
+    }
 
     return (
         <div className="all-tour-dates">
             <h1>My Tour Dates</h1>
-            <button className="ui button" onClick={fetchTourDates}>Refresh</button>
             {tourDates.length ?
                 <TourDates data={tourDates} /> :
                 <p>No tour dates</p>
             }
+            <button className="ui button" onClick={handleAddBtnClick}>Add a Date</button>
         </div>
     )
 }
