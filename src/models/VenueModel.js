@@ -1,7 +1,7 @@
-import React from 'react';
+// import React from 'react';
 
-class VenueModel {
+// class VenueModel {
 
-}
+// }
 
-export default VenueModel;
+// export default VenueModel;

@@ -3,6 +3,7 @@ import React from 'react';
 import Threads from './Threads';
 
 import './Dates.css';
+import { NavLink } from 'react-router-dom';
 
 const TourDateInfo = props => {
     return (
@@ -17,6 +18,12 @@ const TourDateInfo = props => {
                 <li>Promoter: {props.tourDate.promoterName}</li>
                 <li>Post Show Form Submitted: {props.tourDate.postShowFormSubmitted.toString()}</li>
             </ul>
+            <NavLink to={{
+                pathname: `/update-tour-date/${props.tourDate._id}`,
+                infoProps: {
+                    tourDate: props.tourDate,
+                }
+            }} className="ui button">Update</NavLink>
             <h3>Venue Info</h3>
             {props.venue.images &&
                 <img src={props.venue.images[0].url} alt="venue"></img>
