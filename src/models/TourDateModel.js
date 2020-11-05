@@ -28,13 +28,17 @@ class TourDateModel {
         }
     }
 
-    static async create() {
+    static async create(tourDateData) {
         try {
-            return axios.post(`${URL}/create`, {
+            const response = await fetch(`${URL}/create`, {
+                method: 'POST',
                 headers: {
+                    'Content-Type': 'application/json',
                     authorization: `Bearer ${localStorage.uid}`,
-                }
+                },
+                body: JSON.stringify(tourDateData)
             });
+            return await response.json();
         } catch (error) {
             console.log(error);
         }

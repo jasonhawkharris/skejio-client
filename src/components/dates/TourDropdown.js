@@ -12,7 +12,7 @@ const TourDropdown = props => {
         tours.map(tour =>
             <option
                 key={tour}
-                value={tour}
+                value={tour._id}
             >
                 {tour.name}
             </option >
@@ -21,8 +21,10 @@ const TourDropdown = props => {
 
     return (
         <select onChange={e => props.setTour(e.target.value)}>
-            {tours &&
-                optionList}
+            <option selected>Choose a tour</option>
+            {tours ?
+                optionList :
+                <option>Create a tour before proceeding.</option>}
         </select>
     )
 }

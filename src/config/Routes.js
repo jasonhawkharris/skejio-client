@@ -10,6 +10,7 @@ import TourShowPage from '../components/tours/TourShowPage';
 import TourDatesPage from '../components/dates/TourDatesPage';
 import TourDateShow from '../components/dates/TourDateShow';
 import NewTourDate from '../components/dates/NewTourDate';
+import NewTourDateFilled from '../components/dates/NewTourDateFilled';
 import Profile from '../components/profile/Profile';
 import Team from '../components/team/Team';
 import Forms from '../components/forms/Forms';
@@ -34,7 +35,8 @@ const Routes = props => {
                         <Route path='/new-tour' component={NewTour} />
                         <Route path='/tour-dates/:id' component={TourShowPage} />
                         <Route path='/tour-dates' component={TourDatesPage} />
-                        <Route path='/new-tour-date' component={NewTourDate} />
+                        <Route exact path='/new-tour-date' component={NewTourDate} />
+                        <Route path='/new-tour-date/filled' component={NewTourDateFilled} />
                         <Route path='/tour-date/:id' component={TourDateShow} />
                         <Route path='/profile' component={Profile} />
                         <Route path='/team' component={Team} />

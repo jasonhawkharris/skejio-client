@@ -1,5 +1,4 @@
 import axios from 'axios';
-import jwt from 'jsonwebtoken';
 
 const URL = 'http://localhost:3001/api/v1/tours';
 
