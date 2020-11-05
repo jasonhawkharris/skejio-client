@@ -53,3 +53,16 @@ ul {
 .threads {
     margin-bottom: 300px;
 }
+
+.TourDates {
+    padding-top: 20px;
+}
+
+.tourDateCard button {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.all-tour-dates button {
+    margin-top: 20px !important;
+}

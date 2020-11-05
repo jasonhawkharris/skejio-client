@@ -15,7 +15,6 @@ function App(props) {
 	useEffect(function () {
 		if (localStorage.uid) {
 			UserModel.show().then(response => {
-				console.log(response);
 				setUser(response.user);
 			})
 		}

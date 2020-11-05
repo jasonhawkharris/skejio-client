@@ -15,11 +15,11 @@ const TourDates = props => {
         try {
             return tourDates.map(tourDate => {
                 return (
-                    <div>
+                    <div className="tourDateCard">
                         <NavLink to={`/tour-date/${tourDate._id}`}>
                             <TourDateCard key={tourDate._id} tourDate={tourDate} />
                         </NavLink >
-                        <button id={tourDate._id} className="ui mini button" onClick={handleClick}>Delete</button>
+                        {/* <button id={tourDate._id} className="ui mini button" onClick={handleClick}>Delete</button> */}
                     </div>
 
                 )

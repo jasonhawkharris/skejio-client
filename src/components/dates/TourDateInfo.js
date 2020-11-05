@@ -12,8 +12,8 @@ const TourDateInfo = props => {
             <div className="details">
                 <p>
                     <strong>Date:</strong> {props.tourDate.date.split('T')[0]}<br />
-                    <strong>Fee:</strong> {props.tourDate.fee}<br />
-                    <strong>Deposit:</strong> {props.tourDate.deposit}<br />
+                    <strong>Fee:</strong> ${props.tourDate.fee}<br />
+                    <strong>Deposit:</strong> ${props.tourDate.deposit}<br />
                     <strong>Deposit Received:</strong> {props.tourDate.depositReceived.toString()}<br />
                     <strong>Paid:</strong> {props.tourDate.paidInFull.toString()}<br />
                     <strong>Promoter:</strong> {props.tourDate.promoterName}<br />

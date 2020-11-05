@@ -55,14 +55,16 @@ const Tours = props => {
             {!addBtnClicked ?
                 <button className="ui blue submit button" onClick={toggleAddBtn}>Add A Tour</button> :
                 <form className="ui form">
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Enter a name for this tour"
-                        onChange={e => setName(e.target.value)}
-                    />
+                    <div className="ui fluid big input">
+                        <input
+                            type="text"
+                            name="name"
+                            placeholder="Enter a name for this tour"
+                            onChange={e => setName(e.target.value)}
+                        />
+                    </div>
                     <input type="hidden" name="artist" value={artist} />
-                    <input type="submit" value="Add" onClick={handleSubmitTour} />
+                    <input className="ui blue submit button" type="submit" value="Add This Tour" onClick={handleSubmitTour} />
                 </form>
             }
         </div>

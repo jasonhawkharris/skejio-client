@@ -19,11 +19,11 @@ const TourDatesPage = props => {
     return (
         <div className="all-tour-dates">
             <h1>My Tour Dates</h1>
-            {tourDates.length ?
+            {tourDates ?
                 <TourDates data={tourDates} props={props} /> :
-                <p>No tour dates</p>
+                <p>You have no tour dates on your schedule</p>
             }
-            <button className="ui button" onClick={handleAddBtnClick}>Add a Date</button>
+            <button className="ui blue submit button" onClick={handleAddBtnClick}>Add a Date</button>
         </div>
     )
 }

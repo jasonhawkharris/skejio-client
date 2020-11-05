@@ -12,7 +12,7 @@ const TourDateCard = props => {
 
     return (
         <div className="ui segment">
-            <p>{date}</p>
+            <p>{date.split('T')[0]}</p>
         </div>
     )
 }

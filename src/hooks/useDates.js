@@ -13,7 +13,6 @@ const useTourDates = (tourDateId, show = false) => {
             });
         } else {
             TourDateModel.all(id).then(response => {
-                console.log('response', response);
                 if (response.data.message) return setTourDates([]);
                 setTourDates(response.data.tourDates);
             });

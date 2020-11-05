@@ -2,11 +2,11 @@ import React from 'react';
 
 import Routes from '../config/Routes';
 import Nav from '../components/sidebar/Nav';
-import Todos from '../components/todos/Todos';
-import useTodos from '../hooks/useTodos';
+// import Todos from '../components/todos/Todos';
+// import useTodos from '../hooks/useTodos';
 
 const Home = () => {
-    const [todos, fetchTodos] = useTodos();
+    // const [todos, fetchTodos] = useTodos();
 
     return (
         <div className="main">
@@ -16,13 +16,13 @@ const Home = () => {
             <div className="feed">
                 <Routes />
             </div>
-            <div className="todos">
+            {/* <div className="todos">
                 <h1>My Todo-List</h1>
                 {todos.length ?
                     <Todos data={todos} fetch={fetchTodos} /> :
                     <p>loading...</p>
                 }
-            </div>
+            </div> */}
         </div>
     );
 }
