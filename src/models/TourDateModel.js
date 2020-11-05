@@ -43,6 +43,25 @@ class TourDateModel {
             console.log(error);
         }
     }
+
+    static async edit(id, tourDateData) {
+        const response = await fetch(`${URL}/${id}`, {
+            method: 'PUT',
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(tourDateData),
+        });
+        return await response.json();
+    };
+
+    static async delete(id) {
+        return fetch(`${URL}/${id}`, {
+            method: 'DELETE',
+        })
+            .then(response => response.json())
+            .catch(err => console.log(err));
+    }
 }
 
 export default TourDateModel;

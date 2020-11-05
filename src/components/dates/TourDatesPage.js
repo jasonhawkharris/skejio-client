@@ -20,7 +20,7 @@ const TourDatesPage = props => {
         <div className="all-tour-dates">
             <h1>My Tour Dates</h1>
             {tourDates.length ?
-                <TourDates data={tourDates} /> :
+                <TourDates data={tourDates} props={props} /> :
                 <p>No tour dates</p>
             }
             <button className="ui button" onClick={handleAddBtnClick}>Add a Date</button>

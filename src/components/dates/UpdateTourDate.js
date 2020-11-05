@@ -1,19 +1,20 @@
 import React, { useState } from 'react';
 
+import TourDateModel from '../../models/TourDateModel';
 import './Dates.css';
 
 const UpdateTourDate = props => {
-    // console.log(props.location.infoProps);
     const tourDate = props.location.infoProps.tourDate
     const [date, setDate] = useState(tourDate.date);
     const [fee, setFee] = useState(tourDate.fee);
     const [deposit, setDeposit] = useState(tourDate.deposit);
-    const [promoterName, setPromoterName] = useState(tourDate.promomterName);
+    const [promoterName, setPromoterName] = useState(tourDate.promoterName);
     const tourDateData = { date, deposit, promoterName, fee };
 
     const handleUpdateForm = event => {
         event.preventDefault()
-        console.log(tourDateData);
+        TourDateModel.edit(props.match.params.id, tourDateData).then(response => console.log(response));
+        props.history.push(`/tour-date/${props.match.params.id}`);
     }
 
     return (
@@ -67,7 +68,7 @@ const UpdateTourDate = props => {
                     <label>Deposit Amount</label>
                     <input
                         type="text"
-                        name="depositAmout"
+                        name="deposit"
                         onChange={e => setDeposit(e.target.value)}
                         value={deposit} />
                     <label>Promoter Name</label>
