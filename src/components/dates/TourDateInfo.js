@@ -1,8 +1,10 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Humanize from 'humanize-plus';
 
 import Threads from './Threads';
 import TourDateModel from '../../models/TourDateModel';
+import { formatDate, getYN } from '../../utils/helpers';
 import './Dates.css';
 
 
@@ -21,13 +23,13 @@ const TourDateInfo = props => {
             <h1 page>Show Details</h1>
             <div className="details">
                 <p>
-                    <strong>Date:</strong> {info.date.split('T')[0]}<br />
-                    <strong>Fee:</strong> ${info.fee}<br />
-                    <strong>Deposit:</strong> ${info.deposit}<br />
-                    <strong>Deposit Received:</strong> {info.depositReceived.toString()}<br />
-                    <strong>Paid:</strong> {info.paidInFull.toString()}<br />
+                    <strong>Date:</strong> {formatDate(info.date, true, true)}<br />
+                    <strong>Fee:</strong> ${Humanize.formatNumber(info.fee, 2)}<br />
+                    <strong>Deposit:</strong> ${Humanize.formatNumber(info.deposit, 2)}<br />
+                    <strong>Deposit Received:</strong> {getYN(info.depositReceived)}<br />
+                    <strong>Paid:</strong> {getYN(info.paidInFull)}<br />
                     <strong>Promoter:</strong> {info.promoterName}<br />
-                    <strong>Post Show Form Submitted:</strong> {info.postShowFormSubmitted.toString()}<br />
+                    <strong>Post Show Form Submitted:</strong> {getYN(info.postShowFormSubmitted)}<br />
                 </p>
                 <NavLink to={{
                     pathname: `/update-tour-date/${props.tourDate._id}`,

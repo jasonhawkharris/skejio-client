@@ -35,3 +35,30 @@ export const findVenueById = async (venueId) => {
     }
 }
 
+export const formatDate = (theDate, human = true, hasYear = false) => {
+    let date = theDate.split('T')[0].split('-');
+    let year = date[0];
+    let month = date[1];
+    let day = date[2];
+
+    if (!human) return `${month}-${day}-${year}`;
+
+    return !hasYear ?
+        `${getMonth(parseInt(month))} ${day}` :
+        `${getMonth(parseInt(month))} ${day} ${year}`
+}
+
+
+const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+
+const getMonth = month => {
+    return months[month - 1];
+}
+
+
+export const getYN = bool => {
+    return bool ? 'yes' : 'no';
+}
+

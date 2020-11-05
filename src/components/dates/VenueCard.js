@@ -20,7 +20,6 @@ const VenueCard = props => {
                 </div>
             </div>
         </NavLink>
-
     )
 }
 
