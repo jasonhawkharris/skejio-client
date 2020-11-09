@@ -29,7 +29,9 @@ const TourShowPage = props => {
         <div>
             <h1>Tour Dates for {props.location.tourName}</h1>
             <div className="tourDates-list">
-                {generateTourDates()}
+                {props.location.tourDates ?
+                    generateTourDates() :
+                    <p>There are no tour dates scheduled for this tour yet.</p>}
             </div>
         </div>
 

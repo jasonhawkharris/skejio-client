@@ -17,7 +17,7 @@ const TourDatesPage = props => {
 
     return (
         <div className="all-tour-dates">
-            <h1>My Tour Dates</h1>
+            <h1>All Scheduled Tour Dates</h1>
             {tourDates ?
                 <TourDates
                     data={tourDates}

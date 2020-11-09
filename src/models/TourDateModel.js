@@ -59,8 +59,6 @@ class TourDateModel {
                 },
                 body: JSON.stringify(tourDateData)
             });
-            console.log(JSON.stringify(tourDateData));
-            console.log('response:', response);
             return await response.json();
         } catch (error) {
             console.log(error);
