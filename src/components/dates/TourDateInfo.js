@@ -15,7 +15,7 @@ const TourDateInfo = props => {
     const deleteTourDate = event => {
         TourDateModel.delete(tourDateId).then(response => {
             window.location.replace('/tour-dates');
-        })
+        });
     }
 
     return (

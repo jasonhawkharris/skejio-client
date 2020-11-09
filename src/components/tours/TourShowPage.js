@@ -7,7 +7,6 @@ import './Tours.css';
 
 // only do this after you manage to link the Tour here.
 const TourShowPage = props => {
-    console.log(props.location.tourDates);
     const generateTourDates = () => {
         try {
             return props.location.tourDates.map(tourDate => {
@@ -25,10 +24,15 @@ const TourShowPage = props => {
         }
     }
 
+    console.log(props);
     return (
-        <div className="tourDates-list">
-            {generateTourDates()}
+        <div>
+            <h1>Tour Dates for {props.location.tourName}</h1>
+            <div className="tourDates-list">
+                {generateTourDates()}
+            </div>
         </div>
+
     )
 }
 

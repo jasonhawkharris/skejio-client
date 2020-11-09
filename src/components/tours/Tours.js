@@ -22,6 +22,7 @@ const Tours = props => {
                 <NavLink to={{
                     pathname: `/tour-dates/${tour._id}`,
                     tourDates: tour.tourDates,
+                    tourName: tour.name,
                 }}>
                     <TourCard
                         key={tour._id}

@@ -1,11 +1,12 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import { useState, useEffect } from 'react';
 
 import TourModel from '../models/TourModel';
 
-const useTours = userId => {
+const useTours = (tourId, show = false) => {
     const [tours, setTours] = useState([]);
 
-    const fetchTours = (id, show = false) => {
+    const fetchTours = (id, show) => {
         if (show) {
             TourModel.show(id).then(response => {
                 if (response.data.message) return setTours([]);
@@ -21,9 +22,9 @@ const useTours = userId => {
 
     useEffect(
         function () {
-            fetchTours(userId)
+            fetchTours(tourId, show)
         },
-        [userId]
+        [tourId]
     );
 
     return [tours, fetchTours];

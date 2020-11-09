@@ -37,7 +37,7 @@ const Routes = props => {
                         <Route path='/new-tour' component={NewTour} />
                         <Route path='/update-tour-date/:id' component={UpdateTourDate} />
                         <Route path='/tour-dates/:id' component={TourShowPage} />
-                        <Route path='/tour-dates' component={TourDatesPage} />
+                        <Route exact path='/tour-dates' component={TourDatesPage} />
                         <Route exact path='/new-tour-date' component={NewTourDate} />
                         <Route path='/new-tour-date/filled' component={NewTourDateFilled} />
                         <Route path='/tour-date/:id' component={TourDateShow} />
