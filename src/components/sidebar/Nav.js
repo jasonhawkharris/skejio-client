@@ -36,9 +36,9 @@ const Nav = props => {
                         {/* <NavLink className="item" to={"/feed"}>Activity</NavLink> */}
                         <NavLink className="item" to={"/tours"}>Tours</NavLink>
                         <NavLink className="item" to={"/tour-dates"}>Dates</NavLink>
-                        {/* <NavLink className="item" to={"/profile"}>My Profile</NavLink>
+                        {/* <NavLink className="item" to={"/profile"}>My Profile</NavLink>*/}
                         <NavLink className="item" to={"/team"}>My Team</NavLink>
-                        <NavLink className="item" to={"/forms"}>My Forms</NavLink>
+                        {/*<NavLink className="item" to={"/forms"}>My Forms</NavLink>
                         <NavLink className="item" to={"/settings"}>Settings</NavLink> */}
                         <div className="item" onClick={logout}>
                             Log Out

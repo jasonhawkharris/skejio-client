@@ -1,13 +1,28 @@
 import React from 'react';
+import { useRecoilValue } from 'recoil';
+
+import { userState } from '../../recoil/atoms'
 
 import './Team.css';
 
-const Feed = props => {
+const Team = props => {
+    const user = useRecoilValue(userState);
+
     return (
         <div>
-            <h1>I am the Team page</h1>
+            <ul>
+                <li>
+                    Manager: {user.manager ? (
+                        <span>{user.manager}</span>
+                    ) : (
+                            <button
+                                className="ui mini button"
+                            >Add a manager</button>
+                        )}
+                </li>
+            </ul>
         </div>
     )
 }
 
-export default Feed;
+export default Team;
