@@ -1,9 +1,12 @@
 import React from 'react';
 
+import { formatCreatedDate } from '../../utils/helpers';
 import Comments from './Comments';
 
 
+
 const SingleThread = props => {
+    const user = props.thread.user;
     return (
         <div className="ui segment">
             <div className="comment">
@@ -11,9 +14,9 @@ const SingleThread = props => {
                     <img src="https://i.pravatar.cc/100" alt="avatar" />
                 </a>
                 <div className="content">
-                    <a className="author" href="/">UserID: {props.thread.user}</a>
+                    <a className="author" href="/">{user.firstName} {user.lastName}</a>
                     <div className="metadata">
-                        <span className="date">{props.thread.createdAt}</span>
+                        <span className="date">{formatCreatedDate(props.thread.createdAt)}</span>
                     </div>
                     <div className="text">
                         {props.thread.content}

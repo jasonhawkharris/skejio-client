@@ -1,7 +1,10 @@
 import React from 'react';
 
+import { formatCreatedDate } from '../../utils/helpers';
+
 
 const SingleComment = props => {
+    const user = props.comment.user;
     return (
         <div className="comments">
             <div className="comment">
@@ -12,9 +15,9 @@ const SingleComment = props => {
                     />
                 </a>
                 <div className="content">
-                    <a href="/" className="author">{props.comment.user}</a>
+                    <a href="/" className="author">{user.firstName} {user.lastName}</a>
                     <div className="metadata">
-                        <span className="date">{props.comment.createdAt}</span>
+                        <span className="date">{formatCreatedDate(props.comment.createdAt)}</span>
                     </div>
                     <div className="text">
                         {props.comment.content}

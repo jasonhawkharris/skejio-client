@@ -48,6 +48,21 @@ export const formatDate = (theDate, human = true, hasYear = false) => {
         `${getMonth(parseInt(month))} ${day} ${year}`
 }
 
+export const formatCreatedDate = (theDate) => {
+    let arr = theDate.split('T');
+    let date = arr[0].split('-');
+    let time = arr[1].split(':');
+    let month = date[1];
+    let day = date[2];
+    let year = date[0];
+    let hour = time[0];
+    let minute = time[1];
+    let newDate = `${getMonth(parseInt(month))} ${day}, ${year}`
+    let newTime = `${hour}:${minute}`
+
+    return newDate + ' at ' + newTime;
+}
+
 
 const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
     'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
