@@ -7,6 +7,8 @@ import Home from './pages/Home';
 import UserModel from './models/UserModel';
 import './App.css';
 
+import 'semantic-ui-css/semantic.min.css'
+
 
 const App = props => {
 	const setUser = useSetRecoilState(userState);

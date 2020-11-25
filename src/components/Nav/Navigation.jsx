@@ -2,10 +2,11 @@ import React from 'react';
 
 
 import './Nav.css';
+import 'semantic-ui-css/semantic.min.css'
 
 const Navigation = props => {
     return (
-        <div className="ui inverted vertical pointing menu">
+        <div className="ui inverted fixed vertical pointing menu">
             <a href="/dashboard" className="item">
                 Dashboard
             </a>

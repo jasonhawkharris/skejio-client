@@ -6,24 +6,19 @@
 .dashboard {
     display: flex;
     flex-flow: row nowrap;
-    justify-content: space-between;
 }
 
 .navigation {
     /* border: 1px solid black; */
+    margin-top: 30px;
     min-width: 250px;
     max-width: 250px;
     height: 100vh;
 }
 
 .main {
-    border: 1px solid black;
+    /* border: 1px solid black; */
+    margin-top: 40px;
     min-width: 700px;
-    max-width: 700px;
-}
-
-.todo-list {
-    border: 1px solid black;
-    min-width: 250px;
-    max-width: 250px;
+    max-width: 850px;
 }

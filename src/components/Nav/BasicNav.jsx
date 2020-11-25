@@ -1,20 +1,20 @@
 import React from 'react';
+import './Nav.css';
 
 const BasicNav = props => {
-
     const logout = () => {
         localStorage.clear();
         window.location.replace('/login');
     }
 
     return (
-        <div className="ui secondary menu">
+        <div className="ui inverted secondary fixed menu">
             <div className="item">
-                <h3>Skej.io</h3>
+                <h3 className="logo">skej.<span id="io">io</span></h3>
             </div>
             <div className="right menu">
                 <div className="ui item">
-                    <button className="ui black button" onClick={logout}>
+                    <button className="ui inverted button" onClick={logout}>
                         Logout
                     </button>
                 </div>

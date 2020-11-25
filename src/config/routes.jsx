@@ -31,9 +31,6 @@ const Routes = props => {
                                 <Route path='/dashboard' component={Dashboard} />
                                 <Route path='/tours' component={TourIndex} />
                             </div>
-                            <div className="todo-list">
-                                This is where the Todo List will go
-                            </div>
                         </div>
                     </>
 

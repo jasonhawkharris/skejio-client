@@ -1,3 +1,23 @@
 .ui.inverted.vertical.menu {
-    margin: 0 auto;
+    top: 80px;
+    height: 100vh;
+}
+
+.ui.inverted.secondary.menu {
+    background-color: black !important;
+    height: 80px;
+}
+
+.logo {
+    font-family: 'Flamenco', cursive;
+    font-size: 40px;
+    transition: .2s;
+}
+
+.logo:hover {
+    transform: scale(1.05);
+}
+
+#io {
+    color: rgb(255, 101, 191);
 }
