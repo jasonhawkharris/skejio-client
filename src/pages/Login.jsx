@@ -19,7 +19,7 @@ const Login = props => {
             UserModel.show().then(response => {
                 console.log('Response from UserModel.show():', response);
                 setUser(response.user);
-                window.location.replace('/');
+                props.history.push('/dashboard');
             });
         });
     }
