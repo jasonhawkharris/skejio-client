@@ -9,13 +9,17 @@ import './App.css';
 
 
 const App = props => {
-	const setUserState = useSetRecoilState(userState);
+	const setUser = useSetRecoilState(userState);
 
 	useEffect(() => {
 		if (localStorage.uid) {
-			UserModel.show()
+			UserModel.show().then(response => {
+				console.log(response);
+				setUser(response.user);
+			});
 		}
-	})
+	}, []);
+
 	return (
 		<Home />
 	)
