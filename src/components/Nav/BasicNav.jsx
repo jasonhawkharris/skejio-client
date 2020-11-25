@@ -14,7 +14,7 @@ const BasicNav = props => {
             </div>
             <div className="right menu">
                 <div className="ui item">
-                    <button className="ui button" onClick={logout}>
+                    <button className="ui black button" onClick={logout}>
                         Logout
                     </button>
                 </div>

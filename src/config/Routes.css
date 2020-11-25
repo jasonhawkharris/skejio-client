@@ -1,7 +1,6 @@
 .basic-nav {
     width: 100%;
     border: 1px solid black;
-    
 }
 
 .dashboard {
@@ -11,7 +10,7 @@
 }
 
 .navigation {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     min-width: 250px;
     max-width: 250px;
     height: 100vh;
