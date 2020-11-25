@@ -2,10 +2,11 @@
 import React from 'react';
 
 import './App.css';
+import Home from './pages/Home';
 
-function App(props) {
+const App = props => {
 	return (
-		<h1>This is the main app.</h1>
+		<Home />
 	)
 }
 
