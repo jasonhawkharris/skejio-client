@@ -1,0 +1,17 @@
+h1 {
+    margin-bottom: 60px;
+}
+
+.teammate-card {
+    display: flex;
+    flex-flow: row nowrap;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    border-radius: 75px;
+    width: 100px;
+    margin-right: 35px;
+}
