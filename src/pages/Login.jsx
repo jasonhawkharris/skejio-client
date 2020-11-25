@@ -1,15 +1,27 @@
 import React, { useState } from 'react';
+import { useSetRecoilState } from 'recoil';
+
 import AuthModel from '../models/AuthModel';
 import UserModel from '../models/UserModel';
+import { userState } from '../recoil/atoms';
 
 const Login = props => {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const setUser = useSetRecoilState(userState);
     const userData = { email, password };
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(userData);
+        AuthModel.login(userData).then(response => {
+            console.log('Response from AuthModel.login():', response);
+            localStorage.setItem('uid', response.signedJwt);
+            UserModel.show().then(response => {
+                console.log('Response from UserModel.show():', response);
+                setUser(response.user);
+                window.location.replace('/');
+            });
+        });
     }
 
     return (

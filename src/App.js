@@ -27,9 +27,9 @@ const App = props => {
 		<>
 			{
 				!loggedIn ? (
-					<Home />
+					<Login />
 				) : (
-						<Login />
+						<Home />
 					)}
 		</>
 	)
