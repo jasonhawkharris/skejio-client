@@ -8,6 +8,8 @@ import { loggedInState } from '../recoil/selectors';
 
 import './Routes.css';
 import BasicNav from '../components/Nav/BasicNav';
+import Navigation from '../components/Nav/Navigation';
+import TourIndex from '../components/Tours/TourIndex';
 
 const Routes = props => {
     const loggedIn = useRecoilValue(loggedInState);
@@ -23,10 +25,11 @@ const Routes = props => {
                         <BasicNav />
                         <div className="dashboard">
                             <div className="navigation">
-                                This is where the Nav Bar will go
+                                <Navigation />
                             </div>
                             <div className="main">
                                 <Route path='/dashboard' component={Dashboard} />
+                                <Route path='/tours' component={TourIndex} />
                             </div>
                             <div className="todo-list">
                                 This is where the Todo List will go
