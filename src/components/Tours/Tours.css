@@ -23,3 +23,9 @@
 .remove {
     cursor: pointer;
 }
+
+.update-tour-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}

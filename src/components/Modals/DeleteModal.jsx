@@ -32,7 +32,7 @@ const DeleteModal = props => {
             </Header>
             <Modal.Content>
                 <p>
-                    Are you sure you want to permanently delete this tour?
+                    Are you sure you want to permanently delete this {props.model}?
                 </p>
             </Modal.Content>
             <Modal.Actions>

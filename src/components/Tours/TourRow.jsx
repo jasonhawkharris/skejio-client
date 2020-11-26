@@ -5,6 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 
 import './Tours.css';
+import UpdateTourModal from '../Modals/UpdateTourModal';
 
 const TourRow = props => {
     return (
@@ -29,15 +30,20 @@ const TourRow = props => {
                 ${formatNumber(props.tour.gross, 2)}
             </td>
             <td className="right aligned">
-                <button class="ui icon mini button">
-                    <i class="edit icon"></i>
-                </button>
+                <UpdateTourModal
+                    trigger={
+                        <Button className="ui icon mini button">
+                            <i class="edit icon"></i>
+                        </Button>}
+                    tour={props.tour}
+                />
                 <DeleteModal
                     trigger={
                         <Button className="ui icon mini button">
                             <i class="trash icon"></i>
                         </Button>}
                     tourId={props.tour._id}
+                    model="tour"
                 />
             </td>
 
