@@ -38,10 +38,7 @@ const BasicNav = props => {
                             </div>
                             <div className="right menu">
                                 <div className="ui item">
-                                    <p>Already registered?</p>
-                                </div>
-                                <div className="ui item">
-                                    <button className="ui inverted pink button" onClick={() => window.location.replace('/login')}>
+                                    <button className="ui pink button" onClick={() => window.location.replace('/login')}>
                                         Login
                                     </button>
                                 </div>

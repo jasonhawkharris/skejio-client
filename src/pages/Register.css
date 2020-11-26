@@ -1,0 +1,26 @@
+.register-form-container {
+    background-color: white;
+}
+
+.register-form {
+    min-width: 400px;
+    max-width: 400px;
+    margin: 0 auto;
+    padding-top: 80px;
+}
+
+.register-form h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#match {
+    font-size: 12px;
+    color: green;
+}
+
+#no-match {
+    font-size: 12px;
+    color: red;
+}
+
