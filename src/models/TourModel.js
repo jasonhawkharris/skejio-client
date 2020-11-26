@@ -18,11 +18,19 @@ class TourModel {
         }
     }
 
-    static destroy = async (data) => {
+    static destroy = async (id) => {
         try {
-            const response = await fetch()
+            const response = await fetch(`${URL}/${id}`, {
+                method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
+                },
+            });
+            return await response.json();
         } catch (error) {
-
+            console.log('An error occurred while deleting this tour:');
+            console.log(error);
         }
     }
 }
