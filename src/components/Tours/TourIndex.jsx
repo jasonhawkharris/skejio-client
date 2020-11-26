@@ -1,12 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { Icon } from 'semantic-ui-react';
+import TourModel from '../../models/TourModel';
 import { userState } from '../../recoil/atoms';
 import TourRow from './TourRow';
 
 
 const TourIndex = props => {
     const user = useRecoilValue(userState);
+    const [name, setName] = useState('');
+    const tourData = { name }
+    const [createBtnClicked, setCreateBtnClicked] = useState(false);
 
     const generateTours = () => {
         return user.tours.map(tour => {
@@ -16,6 +20,24 @@ const TourIndex = props => {
                 </tr>
             );
         });
+    }
+
+    const handleCreateBtnClicked = e => {
+        if (createBtnClicked) {
+            setCreateBtnClicked(false);
+        } else {
+            setCreateBtnClicked(true);
+        }
+    }
+
+    const handleSubmitTour = e => {
+        e.preventDefault();
+        tourData.artist = user._id
+        TourModel.create(tourData).then(response => {
+            console.log(response);
+            window.location.reload();
+        });
+        setCreateBtnClicked(false);
     }
 
     return (
@@ -39,7 +61,31 @@ const TourIndex = props => {
                             {generateTours()}
                         </tbody>
                     </table>
-                    <button className="ui pink button">Create a New Tour</button>
+                    {!createBtnClicked ? (
+                        <>
+                            <button
+                                className="ui pink button"
+                                onClick={handleCreateBtnClicked}
+                            >
+                                Create a New Tour
+                                </button>
+                        </>
+                    ) : (
+                            <div className="ui raised segment">
+                                <h3>Create A New Tour</h3>
+                                <form className="ui form" onSubmit={handleSubmitTour}>
+                                    <input
+                                        type="text"
+                                        name="name"
+                                        placeholder="Name of this tour"
+                                        onChange={e => setName(e.target.value)}
+                                        value={name}
+                                    /><br /><br />
+                                    <input className="ui pink submit button" type="submit" value="Submit" />
+                                </form>
+                            </div>
+                        )}
+
                 </div>
             ) : (
                     <div className="ui segment">
