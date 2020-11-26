@@ -17,6 +17,14 @@ class TourModel {
             console.log(error);
         }
     }
+
+    static destroy = async (data) => {
+        try {
+            const response = await fetch()
+        } catch (error) {
+
+        }
+    }
 }
 
 export default TourModel;

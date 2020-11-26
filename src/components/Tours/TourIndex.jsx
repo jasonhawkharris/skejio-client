@@ -35,6 +35,7 @@ const TourIndex = props => {
         tourData.artist = user._id
         TourModel.create(tourData).then(response => {
             console.log(response);
+            // FIXME need to fetch here.
             window.location.reload();
         });
         setCreateBtnClicked(false);
