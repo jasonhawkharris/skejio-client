@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRecoilValue } from 'recoil';
+import { Icon } from 'semantic-ui-react';
 import { userState } from '../../recoil/atoms';
 import TourRow from './TourRow';
 
@@ -21,20 +22,25 @@ const TourIndex = props => {
         <div>
             <h1>All Tours</h1>
             {user.tours.length ? (
-                <table className="ui selectable inverted table">
-                    <thead>
-                        <tr>
-                            <th>Tour</th>
-                            <th>Artist</th>
-                            <th># of Dates</th>
-                            <th>Gross</th>
-                        </tr>
-                    </thead>
+                <div>
+                    <table className="ui selectable inverted table">
+                        <thead>
+                            <tr>
+                                <th><Icon name="checkmark" /></th>
+                                <th>Tour</th>
+                                <th>Artist</th>
+                                <th># of Dates</th>
+                                <th>Gro$$</th>
+                                <th className="right aligned">Manage</th>
+                            </tr>
+                        </thead>
 
-                    <tbody>
-                        {generateTours()}
-                    </tbody>
-                </table>
+                        <tbody>
+                            {generateTours()}
+                        </tbody>
+                    </table>
+                    <button className="ui pink button">Create a New Tour</button>
+                </div>
             ) : (
                     <div className="ui segment">
                         <p></p>
