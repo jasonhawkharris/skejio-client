@@ -13,3 +13,13 @@
 .artist-link:hover {
     color: white;
 }
+
+.create-tour-header {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+}
+
+.remove {
+    cursor: pointer;
+}

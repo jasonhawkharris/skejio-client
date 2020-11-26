@@ -37,6 +37,7 @@ const TourRow = props => {
                         <Button className="ui icon mini button">
                             <i class="trash icon"></i>
                         </Button>}
+                    tourId={props.tour._id}
                 />
             </td>
 

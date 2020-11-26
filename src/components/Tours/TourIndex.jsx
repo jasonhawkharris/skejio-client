@@ -73,7 +73,16 @@ const TourIndex = props => {
                         </>
                     ) : (
                             <div className="ui raised segment">
-                                <h3>Create A New Tour</h3>
+                                <div className="create-tour-header">
+                                    <h3>Create A New Tour</h3>
+                                    <div>
+                                        <Icon
+                                            className="remove"
+                                            name="remove"
+                                            onClick={e => setCreateBtnClicked(false)}
+                                        />
+                                    </div>
+                                </div>
                                 <form className="ui form" onSubmit={handleSubmitTour}>
                                     <input
                                         type="text"

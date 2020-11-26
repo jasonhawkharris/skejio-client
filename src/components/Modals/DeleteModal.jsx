@@ -1,16 +1,20 @@
 import React from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
+import TourModel from '../../models/TourModel';
 
 const DeleteModal = props => {
     const [open, setOpen] = React.useState(false);
+    console.log('delete props', props);
 
     const handleConfirm = event => {
+        TourModel.destroy(props.tourId)
+            .then(response => console.log(response));
         console.log('Confirmed!')
         setOpen(false);
+        window.location.reload();
     }
 
     const handleCancel = event => {
-        console.log('Cancelled!')
         setOpen(false);
     }
 
