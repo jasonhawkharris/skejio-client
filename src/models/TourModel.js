@@ -18,6 +18,23 @@ class TourModel {
         }
     }
 
+    static update = async (id, tourData) => {
+        try {
+            const response = await fetch(`${URL}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
+                },
+                body: JSON.stringify(tourData)
+            });
+            return await response.json();
+        } catch (error) {
+            console.log('An error occurred while updating this tour:');
+            console.log(error);
+        }
+    }
+
     static destroy = async (id) => {
         try {
             const response = await fetch(`${URL}/${id}`, {
