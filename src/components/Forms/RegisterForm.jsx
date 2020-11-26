@@ -121,8 +121,16 @@ const RegisterForm = props => {
                 </div>
                 {passwordMatch ? (
                     <>
-                        <Icon color="green" name="checkmark" />
-                        <span id="match">Passwords Match</span><br /><br />
+                        {password === '' ? (
+                            <></>
+                        ) : (
+                                <>
+                                    <Icon color="green" name="checkmark" />
+                                    <span id="match">Passwords Match</span><br /><br />
+                                </>
+                            )
+                        }
+
                     </>
                 ) : (
                         <>
