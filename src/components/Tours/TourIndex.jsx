@@ -18,7 +18,12 @@ const TourIndex = props => {
         return tours.map(tour => {
             return (
                 <tr>
-                    <TourRow key={tour._id} tour={tour} user={user} />
+                    <TourRow
+                        fetch={() => fetchTours()}
+                        key={tour._id}
+                        tour={tour}
+                        user={user}
+                    />
                 </tr>
             );
         });
@@ -36,11 +41,10 @@ const TourIndex = props => {
         e.preventDefault();
         tourData.artist = user._id
         TourModel.create(tourData).then(response => {
-            console.log(response);
             fetchTours();
             setCreateBtnClicked(false);
         });
-
+        setName('');
     }
 
     return (
@@ -81,7 +85,10 @@ const TourIndex = props => {
                                         <Icon
                                             className="remove"
                                             name="remove"
-                                            onClick={e => setCreateBtnClicked(false)}
+                                            onClick={e => {
+                                                setCreateBtnClicked(false);
+                                                setName('');
+                                            }}
                                         />
                                     </div>
                                 </div>

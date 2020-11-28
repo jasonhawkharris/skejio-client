@@ -8,12 +8,12 @@ const DeleteModal = props => {
     const handleConfirm = event => {
         TourModel.destroy(props.tourId)
             .then(response => {
+                props.fetch()
                 setOpen(false);
-                window.location.reload();
             });
     }
 
-    const handleCancel = event => {
+    const handleCancel = () => {
         setOpen(false);
     }
 

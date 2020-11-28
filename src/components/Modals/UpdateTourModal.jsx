@@ -9,13 +9,12 @@ const UpdateTourModal = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(tourData);
         TourModel.update(props.tour._id, tourData)
             .then(response => {
-                console.log(response);
-                // FIXME need to fetch here.
-                window.location.reload();
+                props.fetch()
+                setOpen(false);
             });
+
     }
 
     return (

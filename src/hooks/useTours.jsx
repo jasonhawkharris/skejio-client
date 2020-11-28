@@ -9,13 +9,13 @@ const useTours = () => {
     const fetchTours = (id) => {
         if (id) {
             TourModel.show(id).then(response => {
-                console.log('show', response);
+                // console.log('show', response);
                 if (response.data.message) setTours([]);
                 setTours(response.data.tour);
             });
         } else {
             TourModel.all().then(response => {
-                console.log('all()', response);
+                // console.log('all()', response);
                 if (response.msg) return setTours([]);
                 setTours(response.foundTours);
             });
@@ -25,8 +25,7 @@ const useTours = () => {
     useEffect(
         function () {
             fetchTours()
-        },
-        []
+        }, []
     )
 
     return [tours, fetchTours];

@@ -44,6 +44,8 @@ const TourRow = props => {
                             <i class="edit icon"></i>
                         </Button>}
                     tour={props.tour}
+                    user={props.user}
+                    fetch={props.fetch}
                 />
                 <DeleteModal
                     trigger={
@@ -52,6 +54,8 @@ const TourRow = props => {
                         </Button>}
                     tourId={props.tour._id}
                     model="tour"
+                    user={props.user}
+                    fetch={props.fetch}
                 />
             </td>
         </>
