@@ -5,7 +5,6 @@ import './Nav.css';
 
 const BasicNav = props => {
     const user = useRecoilValue(userState);
-    console.log(user);
 
     const logout = () => {
         localStorage.clear();

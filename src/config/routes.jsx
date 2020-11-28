@@ -8,12 +8,13 @@ import BasicNav from '../components/Nav/BasicNav';
 import Navigation from '../components/Nav/Navigation';
 import Dashboard from '../pages/Dashboard';
 import TourIndex from '../components/Tours/TourIndex';
-import TourShow from '../components/Tours/TourShow';
+import TourdateIndex from '../components/Tourdates/TourdateIndex';
 import Team from '../components/Team/Team';
 
 import { loggedInState } from '../recoil/selectors';
 
 import './Routes.css';
+import Profile from '../components/Profile/Profile';
 
 
 
@@ -37,8 +38,9 @@ const Routes = props => {
                             <div className="main">
                                 <Route path='/dashboard' component={Dashboard} />
                                 <Route exact path='/tours' component={TourIndex} />
-                                <Route path='/tours/:id' component={TourShow} />
+                                <Route path='/tours/:id' component={TourdateIndex} />
                                 <Route path='/team' component={Team} />
+                                <Route path='/profile' component={Profile} />
                             </div>
                         </div>
                     </>

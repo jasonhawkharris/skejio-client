@@ -10,6 +10,9 @@ const Navigation = props => {
             <a href="/dashboard" className="item">
                 Dashboard
             </a>
+            <a href="/profile" className="item">
+                Profile
+            </a>
             <a href="/tours" className="item">
                 Tours
             </a>

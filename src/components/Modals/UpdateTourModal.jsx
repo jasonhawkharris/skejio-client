@@ -14,7 +14,6 @@ const UpdateTourModal = props => {
                 props.fetch()
                 setOpen(false);
             });
-
     }
 
     return (

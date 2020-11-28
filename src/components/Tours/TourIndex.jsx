@@ -11,8 +11,9 @@ const TourIndex = props => {
     const user = useRecoilValue(userState);
     const [tours, fetchTours] = useTours(user.tours)
     const [name, setName] = useState('');
-    const tourData = { name }
     const [createBtnClicked, setCreateBtnClicked] = useState(false);
+    const tourData = { name }
+
 
     const generateTours = () => {
         return tours.map(tour => {
