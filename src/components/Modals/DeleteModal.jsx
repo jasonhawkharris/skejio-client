@@ -4,12 +4,10 @@ import TourModel from '../../models/TourModel';
 
 const DeleteModal = props => {
     const [open, setOpen] = React.useState(false);
-    console.log('delete props', props);
 
     const handleConfirm = event => {
         TourModel.destroy(props.tourId)
             .then(response => {
-                console.log(response);
                 setOpen(false);
                 window.location.reload();
             });

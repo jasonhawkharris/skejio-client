@@ -38,7 +38,7 @@ const BasicNav = props => {
                             </div>
                             <div className="right menu">
                                 <div className="ui item">
-                                    <button className="ui pink button" onClick={() => window.location.replace('/login')}>
+                                    <button className="ui pink button" onClick={() => window.location.replace('/')}>
                                         Login
                                     </button>
                                 </div>

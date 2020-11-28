@@ -8,12 +8,12 @@ import BasicNav from '../components/Nav/BasicNav';
 import Navigation from '../components/Nav/Navigation';
 import Dashboard from '../pages/Dashboard';
 import TourIndex from '../components/Tours/TourIndex';
+import TourShow from '../components/Tours/TourShow';
 import Team from '../components/Team/Team';
 
 import { loggedInState } from '../recoil/selectors';
 
 import './Routes.css';
-
 
 
 
@@ -24,7 +24,7 @@ const Routes = props => {
         <Switch>
             {!loggedIn ? (
                 <>
-                    <Route path='/login' component={Login} />
+                    <Route exact path='/' component={Login} />
                     <Route path='/register' component={Register} />
                 </>
             ) : (
@@ -36,12 +36,12 @@ const Routes = props => {
                             </div>
                             <div className="main">
                                 <Route path='/dashboard' component={Dashboard} />
-                                <Route path='/tours' component={TourIndex} />
+                                <Route exact path='/tours' component={TourIndex} />
+                                <Route path='/tours/:id' component={TourShow} />
                                 <Route path='/team' component={Team} />
                             </div>
                         </div>
                     </>
-
                 )}
         </Switch>
     )

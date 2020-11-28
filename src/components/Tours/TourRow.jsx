@@ -1,7 +1,7 @@
 import React from 'react';
 import DeleteModal from '../Modals/DeleteModal';
 import { formatNumber } from 'humanize-plus';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 
 import './Tours.css';
@@ -14,9 +14,17 @@ const TourRow = props => {
                 <input type="checkbox" />
             </td>
             <td>
-                <NavLink className="tour-link" to={`tours/${props.tour._id}`}>
+                <Link
+                    className="tour-link"
+                    to={{
+                        pathname: `tours/${props.tour._id}`,
+                        showProps: {
+                            tour: props.tour,
+                        }
+                    }}
+                >
                     {props.tour.name}
-                </NavLink>
+                </Link>
             </td>
             <td>
                 <NavLink className="artist-link" to='/profile'>
@@ -46,7 +54,6 @@ const TourRow = props => {
                     model="tour"
                 />
             </td>
-
         </>
     )
 }

@@ -32,10 +32,8 @@ const RegisterForm = props => {
         } else {
             AuthModel.register(userData)
                 .then(response => {
-                    console.log(response);
                     UserModel.show()
                         .then(response => {
-                            console.log(response);
                             window.location.replace('/login');
                         });
                 });
@@ -145,7 +143,6 @@ const RegisterForm = props => {
                         value="Register"
                     />
                 </div>
-
             </form>
         </>
     )

@@ -1,6 +1,22 @@
 const URL = 'http://localhost:3001/api/v1/tours';
 
 class TourModel {
+    static show = async (id) => {
+        try {
+            const response = await fetch(`${URL}/${id}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
+                },
+            });
+            return await response.json();
+        } catch (error) {
+            console.log('An error occurred while retrieving this tour:')
+            console.log(error);
+        }
+    }
+
     static create = async (data) => {
         try {
             const response = await fetch(URL, {
