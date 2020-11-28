@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil';
 import { Icon } from 'semantic-ui-react';
+import useTours from '../../hooks/useTours';
 import TourModel from '../../models/TourModel';
 import { userState } from '../../recoil/atoms';
 import TourRow from './TourRow';
@@ -8,12 +9,13 @@ import TourRow from './TourRow';
 
 const TourIndex = props => {
     const user = useRecoilValue(userState);
+    const [tours, fetchTours] = useTours(user.tours)
     const [name, setName] = useState('');
     const tourData = { name }
     const [createBtnClicked, setCreateBtnClicked] = useState(false);
 
     const generateTours = () => {
-        return user.tours.map(tour => {
+        return tours.map(tour => {
             return (
                 <tr>
                     <TourRow key={tour._id} tour={tour} user={user} />
@@ -35,16 +37,16 @@ const TourIndex = props => {
         tourData.artist = user._id
         TourModel.create(tourData).then(response => {
             console.log(response);
-            // FIXME need to fetch here.
-            window.location.reload();
+            fetchTours();
+            setCreateBtnClicked(false);
         });
-        setCreateBtnClicked(false);
+
     }
 
     return (
         <div>
             <h1>All Tours</h1>
-            {user.tours.length ? (
+            {tours ? (
                 <div>
                     <table className="ui selectable inverted table">
                         <thead>
