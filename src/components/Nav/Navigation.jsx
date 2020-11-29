@@ -16,6 +16,9 @@ const Navigation = props => {
             <a href="/tours" className="item">
                 Tours
             </a>
+            <a href="/alltourdates" className="item">
+                Tourdates
+            </a>
             <a href="/team" className="item">
                 Team
             </a>

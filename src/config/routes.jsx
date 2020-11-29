@@ -38,7 +38,7 @@ const Routes = props => {
                             <div className="main">
                                 <Route path='/dashboard' component={Dashboard} />
                                 <Route exact path='/tours' component={TourIndex} />
-                                <Route path='/tours/:id' component={TourdateIndex} />
+                                <Route path='/alltourdates' component={TourdateIndex} />
                                 <Route path='/team' component={Team} />
                                 <Route path='/profile' component={Profile} />
                             </div>

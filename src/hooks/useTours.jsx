@@ -10,8 +10,8 @@ const useTours = () => {
         if (id) {
             TourModel.show(id).then(response => {
                 // console.log('show', response);
-                if (response.data.message) setTours([]);
-                setTours(response.data.tour);
+                if (response.msg) setTours([]);
+                setTours(response.foundTour);
             });
         } else {
             TourModel.all().then(response => {
@@ -26,7 +26,7 @@ const useTours = () => {
         function () {
             fetchTours()
         }, []
-    )
+    );
 
     return [tours, fetchTours];
 }
