@@ -6,6 +6,7 @@ import { Button } from 'semantic-ui-react';
 
 import './Tours.css';
 import UpdateTourModal from '../Modals/UpdateTourModal';
+import TourModel from '../../models/TourModel';
 
 const TourRow = props => {
     return (
@@ -41,7 +42,7 @@ const TourRow = props => {
                 <UpdateTourModal
                     trigger={
                         <Button className="ui icon mini button">
-                            <i class="edit icon"></i>
+                            <i className="edit icon"></i>
                         </Button>}
                     tour={props.tour}
                     user={props.user}
@@ -52,8 +53,9 @@ const TourRow = props => {
                         <Button className="ui icon mini button">
                             <i class="trash icon"></i>
                         </Button>}
-                    tourId={props.tour._id}
+                    id={props.tour._id}
                     model="tour"
+                    modelType={TourModel}
                     user={props.user}
                     fetch={props.fetch}
                 />

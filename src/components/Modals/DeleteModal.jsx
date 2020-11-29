@@ -1,12 +1,11 @@
 import React from 'react';
 import { Button, Header, Icon, Modal } from 'semantic-ui-react';
-import TourModel from '../../models/TourModel';
 
 const DeleteModal = props => {
     const [open, setOpen] = React.useState(false);
 
-    const handleConfirm = event => {
-        TourModel.destroy(props.tourId)
+    const handleConfirm = (event) => {
+        props.modelType.destroy(props.id)
             .then(response => {
                 props.fetch()
                 setOpen(false);
