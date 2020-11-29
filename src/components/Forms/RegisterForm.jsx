@@ -34,7 +34,7 @@ const RegisterForm = props => {
                 .then(response => {
                     UserModel.show()
                         .then(response => {
-                            window.location.replace('/login');
+                            window.location.replace('/');
                         });
                 });
         }

@@ -8,7 +8,7 @@ const BasicNav = props => {
 
     const logout = () => {
         localStorage.clear();
-        window.location.replace('/login');
+        window.location.replace('/');
     }
 
     return (
