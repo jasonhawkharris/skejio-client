@@ -19,7 +19,6 @@ const Profile = props => {
                 <li><strong>Username:</strong> @{user.username}</li>
             </ul>
             <h3>Management</h3>
-            <button className="ui mini pink button">Add/Invite Your Manager</button>
             {user.manager ? (
                 <ul>
                     <li><strong>Company:</strong> {user.manager.company.name}</li>
@@ -27,16 +26,12 @@ const Profile = props => {
                     <li><strong>Email:</strong> {user.manager.email}</li>
                 </ul>
             ) : (
-                    <ul>
-                        <li><strong>Company:</strong> None</li>
-                        <li><strong>Manager:</strong> None</li>
-                        <li><strong>Email:</strong> None</li>
-                    </ul>
+                    <>
+                        <button className="ui mini pink button">Add/Invite Your Manager</button>
+                    </>
                 )}
 
             <h3>Booking</h3>
-            <button className="ui mini pink button">Add/Invite An Agent</button>
-
             {user.agent ? (
                 <ul>
                     <li><strong>Agency:</strong> {user.agent.agency.name}</li>
@@ -44,11 +39,9 @@ const Profile = props => {
                     <li><strong>Email:</strong> {user.agent.email}</li>
                 </ul>
             ) : (
-                    <ul>
-                        <li><strong>Agency:</strong> None</li>
-                        <li><strong>Agent:</strong> None</li>
-                        <li><strong>Email:</strong> None</li>
-                    </ul>
+                    <>
+                        <button className="ui mini pink button">Add/Invite An Agent</button>
+                    </>
                 )}
         </div>
     )
