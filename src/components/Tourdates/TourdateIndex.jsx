@@ -1,17 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useRecoilValue } from 'recoil';
-import { Icon } from 'semantic-ui-react';
+import { Button } from 'semantic-ui-react';
 
 import useTourdates from '../../hooks/useTourdates';
 import { userState } from '../../recoil/atoms';
 import TourdateRow from './TourdateRow';
-import NewTourdateForm from '../Forms/NewTourdateForm';
 
 
 const TourdateIndex = props => {
     const user = useRecoilValue(userState);
     const [tourdates, fetchTourdates] = useTourdates(null);
-    const [createBtnClicked, setCreateBtnClicked] = useState(false);
 
     const generateTourdates = () => {
         return tourdates.map(tourdate => {
@@ -25,18 +23,6 @@ const TourdateIndex = props => {
             )
         })
     }
-
-    const handleCreateBtnClicked = e => {
-        if (createBtnClicked) {
-            setCreateBtnClicked(false);
-            console.log(createBtnClicked);
-        } else {
-            setCreateBtnClicked(true);
-            console.log(createBtnClicked);
-        }
-    }
-
-
 
     return (
         <div>
@@ -60,32 +46,9 @@ const TourdateIndex = props => {
                             {generateTourdates()}
                         </tbody>
                     </table>
-                    {!createBtnClicked ? (
-                        <button
-                            className="ui pink button"
-                            onClick={handleCreateBtnClicked}
-                        >
-                            Add a Tourdate
-                        </button>
-                    ) : (
-                            <div className="ui raised segment">
-                                <div className="create-tour-header">
-                                    <h3>Create A New Tour</h3>
-                                    <div>
-                                        <Icon
-                                            className="remove"
-                                            name="remove"
-                                            onClick={e => {
-                                                setCreateBtnClicked(false);
-                                            }}
-                                        />
-                                    </div>
-                                </div>
-                                <NewTourdateForm />
-
-                            </div>
-                        )}
-
+                    <Button className="ui pink button">
+                        New Tourdate
+                    </Button>
                 </div>
 
             ) : (

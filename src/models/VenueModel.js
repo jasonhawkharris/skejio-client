@@ -9,11 +9,10 @@ const API_KEY = "apikey=5M5EkcsjMabTt7NcP2lF0exIIkdh3aA4"
 
 class VenueModel {
     static searchVenues = async (venue) => {
-        if (venue.includes(' ')) {
-            venue = venue.split(' ').join('%20');
-        }
-
         try {
+            if (venue.includes(' ')) {
+                venue = venue.split(' ').join('%20');
+            }
             return axios.get(`${URL}.json?${API_KEY}&keyword=${venue}`);
         } catch (error) {
             console.log(error);

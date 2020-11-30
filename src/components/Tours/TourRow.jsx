@@ -42,8 +42,9 @@ const TourRow = props => {
                 <UpdateTourModal
                     trigger={
                         <Button className="ui icon mini button">
-                            <i className="edit icon"></i>
-                        </Button>}
+                            <i class="edit icon"></i>
+                        </Button>
+                    }
                     tour={props.tour}
                     user={props.user}
                     fetch={props.fetch}

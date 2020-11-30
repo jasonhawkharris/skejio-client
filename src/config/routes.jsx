@@ -9,6 +9,8 @@ import Navigation from '../components/Nav/Navigation';
 import Dashboard from '../pages/Dashboard';
 import TourIndex from '../components/Tours/TourIndex';
 import TourdateIndex from '../components/Tourdates/TourdateIndex';
+import VenueSearch from '../components/Forms/VenueSearch';
+import NewTourDate from '../components/Forms/NewTourdate';
 import Team from '../components/Team/Team';
 
 import { loggedInState } from '../recoil/selectors';
@@ -39,6 +41,8 @@ const Routes = props => {
                                 <Route path='/dashboard' component={Dashboard} />
                                 <Route exact path='/tours' component={TourIndex} />
                                 <Route path='/alltourdates' component={TourdateIndex} />
+                                <Route path='/select-venue' component={VenueSearch} />
+                                <Route path='/create/:id' component={NewTourDate} />
                                 <Route path='/team' component={Team} />
                                 <Route path='/profile' component={Profile} />
                             </div>
