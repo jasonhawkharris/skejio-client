@@ -1,75 +1,54 @@
-import React, { useState } from 'react';
-import _ from 'lodash';
-import { Button, Dropdown, Grid, Header } from 'semantic-ui-react';
-
-import useVenues from '../../hooks/useVenues';
+import React, { useEffect, useState } from 'react';
+import VenueModel from '../../models/VenueModel';
+import Venue from './Venue';
 
 const VenueSearch = props => {
-    const [isFetching, setIsFetching] = useState(false)
-    const [query, setQuery] = useState('');
-    const [venues, fetchVenues] = useVenues(query, true);
-    const [value, setValue] = useState('');
-    const [options, setOptions] = useState(value);
+    const [inputValue, setInputValue] = useState('');
+    const [results, setResults] = useState([]);
 
-    // console.log('query', query);
-    // console.log('venues', venues);
-    console.log('current value', value);
-    // console.log('options', options);
-
-
-
-    const handleChange = e => {
-        setValue(e.target.id);
-        // setValue(e.target.attributes.id.nodeValue)
-    };
-
-    const handleSearchChange = e => {
-        setQuery(e.target.value);
-    };
-
-    const formatVenues = () => {
-        return venues.map(venue => {
-            venue.innerHTML = venue.name
-            return {
-                id: venue.id,
-                text: venue.name,
-            }
+    const generateVenues = () => {
+        return results.map(result => {
+            return (
+                <Venue
+                    name={result.name}
+                    city={result.city}
+                    country={result.country.countryCode}
+                    id={result.id}
+                    key={result.id}
+                    result={result}
+                />
+            );
         })
     }
 
-    const fetchOptions = () => {
-        setIsFetching(true);
-        fetchVenues(query, true);
-
-        setTimeout(() => {
-            setOptions(formatVenues());
-            setIsFetching(false);
-        }, 2000)
-    }
+    useEffect(function () {
+        if (inputValue) {
+            VenueModel.searchVenues(inputValue).then(response => {
+                if (response.data._embedded) {
+                    setResults(response.data._embedded.venues);
+                }
+            });
+        }
+    }, [inputValue]);
 
     return (
-        <Grid>
-            <Grid.Column width={8}>
-                <Dropdown
-                    fluid
-                    selection
-                    multiple={false}
-                    search={true}
-                    options={options}
-                    value={value}
-                    placeholder="Search venue by name, or city"
-                    onChange={handleChange}
-                    onSearchChange={handleSearchChange}
-                    disabled={isFetching}
-                    loading={isFetching}
+        <div>
+            <h1>Search For A Venue</h1>
+            <div className="ui fluid huge icon input">
+                <input
+                    type="text"
+                    placeholder="Search for a venue..."
+                    value={inputValue}
+                    onChange={(e) => setInputValue(e.target.value)}
                 />
-            </Grid.Column>
-            <Grid.Column>
-                <Button onClick={fetchOptions}>
-                    Search
-                </Button>
-            </Grid.Column>
-        </Grid>
+                <i class="search icon"></i>
+            </div>
+            <div className="ui raised segment">
+                {results &&
+                    generateVenues()
+                }
+            </div>
+        </div>
     )
 }
 

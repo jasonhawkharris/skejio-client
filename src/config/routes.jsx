@@ -42,7 +42,7 @@ const Routes = props => {
                                 <Route exact path='/tours' component={TourIndex} />
                                 <Route path='/alltourdates' component={TourdateIndex} />
                                 <Route path='/select-venue' component={VenueSearch} />
-                                <Route path='/create/:id' component={NewTourDate} />
+                                <Route path='/create-tourdate' component={NewTourDate} />
                                 <Route path='/team' component={Team} />
                                 <Route path='/profile' component={Profile} />
                             </div>

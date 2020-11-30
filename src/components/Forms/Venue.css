@@ -1,0 +1,14 @@
+.venue-result {
+    padding: 7px 0px 10px 10px;
+    transition: .1s;
+}
+
+.venue-result:hover {
+    color: rgb(92, 92, 92);
+    background-color: pink;
+    cursor: pointer;
+}
+
+.venue-link {
+    color: rgb(92, 92, 92);
+}
