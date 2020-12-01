@@ -18,6 +18,7 @@ const VenueSearch = props => {
         })
     }
 
+    // FIXME this is still wonky. Ask reggie.
     useEffect(function () {
         if (inputValue.length > 3) {
             const searchAPIDebounced = AwesomeDebouncePromise(function () {

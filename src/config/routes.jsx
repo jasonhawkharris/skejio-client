@@ -8,6 +8,7 @@ import BasicNav from '../components/Nav/BasicNav';
 import Navigation from '../components/Nav/Navigation';
 import Dashboard from '../pages/Dashboard';
 import TourIndex from '../components/Tours/TourIndex';
+import TourShow from '../components/Tours/TourShow';
 import TourdateIndex from '../components/Tourdates/TourdateIndex';
 import VenueSearch from '../components/Forms/VenueSearch';
 import NewTourDate from '../components/Forms/NewTourdate';
@@ -39,6 +40,7 @@ const Routes = props => {
                             <div className="main">
                                 <Route path='/dashboard' component={Dashboard} />
                                 <Route exact path='/tours' component={TourIndex} />
+                                <Route path='/tours/:id' component={TourShow} />
                                 <Route path='/alltourdates' component={TourdateIndex} />
                                 <Route path='/select-venue' component={VenueSearch} />
                                 <Route path='/create-tourdate' component={NewTourDate} />
