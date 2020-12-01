@@ -13,10 +13,13 @@ import TourdateIndex from '../components/Tourdates/TourdateIndex';
 import VenueSearch from '../components/Forms/VenueSearch';
 import NewTourDate from '../components/Forms/NewTourdate';
 import Team from '../components/Team/Team';
+import Profile from '../components/Profile/Profile';
+// import UpdateTourdate from '../components/Forms/UpdateTourdate';
+import TourdateShow from '../components/Tourdates/TourdateShow';
 import { loggedInState } from '../recoil/selectors';
 
 import './Routes.css';
-import Profile from '../components/Profile/Profile';
+
 
 
 
@@ -42,6 +45,7 @@ const Routes = props => {
                                 <Route exact path='/tours' component={TourIndex} />
                                 <Route path='/tours/:id' component={TourShow} />
                                 <Route path='/alltourdates' component={TourdateIndex} />
+                                <Route path='/tourdate/:id' component={TourdateShow} />
                                 <Route path='/select-venue' component={VenueSearch} />
                                 <Route path='/create-tourdate' component={NewTourDate} />
                                 <Route path='/team' component={Team} />

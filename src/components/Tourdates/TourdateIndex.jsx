@@ -13,6 +13,7 @@ const TourdateIndex = props => {
             return (
                 <TourdateRow
                     fetch={() => fetchTourdates()}
+                    indexProps={props}
                     key={tourdate._id}
                     info={tourdate}
                 />

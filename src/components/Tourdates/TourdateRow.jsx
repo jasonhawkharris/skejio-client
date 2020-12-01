@@ -1,11 +1,15 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import DeleteModal from '../Modals/DeleteModal';
 import { Button, Icon } from 'semantic-ui-react';
 import { formatDate } from '../../utils/helpers';
 import TourdateModel from '../../models/TourdateModel';
 
 
+
 const TourdateRow = props => {
+    console.log(props.indexProps);
     const tdate = props.info;
 
     return (
@@ -24,6 +28,19 @@ const TourdateRow = props => {
                         <td>{props.info.fee ? props.info.fee : 'TBA'}</td>
                         <td>{props.info.paidInFull ? 'Yes' : 'No'}</td>
                         <td className="right aligned">
+                            <Link
+                                to={{
+                                    pathname: `/tourdate/${tdate._id}`,
+                                    dateProps: {
+                                        info: props.info,
+                                    }
+                                }}
+                            >
+                                <button className="ui icon mini button">
+                                    <i className="info icon"></i>
+                                </button>
+                            </Link>
+
                             <button className="ui icon mini button">
                                 <i className="edit icon"></i>
                             </button>
@@ -41,7 +58,8 @@ const TourdateRow = props => {
                             />
                         </td>
                     </tr>
-                )}
+                )
+            }
         </>
     )
 }

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 import TourdateModel from '../models/TourdateModel';
 
-const useTourdates = () => {
+const useTourdates = (id) => {
     const [tourdates, setTourdates] = useState(null);
 
     const fetchTourdates = (id) => {
@@ -21,7 +21,7 @@ const useTourdates = () => {
 
     useEffect(
         function () {
-            fetchTourdates()
+            fetchTourdates(id)
         }, []
     );
 
