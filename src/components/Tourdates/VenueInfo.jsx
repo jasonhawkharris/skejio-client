@@ -1,14 +1,19 @@
 import React from 'react';
 
+import './Tourdates.css';
+
 const VenueInfo = props => {
     const tourdate = props.tourdate;
 
     return (
         <div className="eight wide column" id="venue-info">
-            <div className="ui inverted raised segment venue-info">
-                <div className="ui inverted list">
-                    <h3 className="ui inverted header">Venue Info</h3>
-                    <div className="ui inverted divider"></div>
+            <div className="section-heading">
+                <h2 className="heading">Venue Info</h2>
+                <i className="edit icon"></i>
+            </div>
+            <div className="ui divider"></div>
+            <div className="ui segment">
+                <div className="ui list">
                     <div className="item">
                         <div className="header">Venue</div>
                         {tourdate.name}

@@ -5,10 +5,13 @@ const Details = props => {
 
     return (
         <div className="eight wide column" id="show-details">
-            <div className="ui inverted raised segment">
-                <div className="ui inverted list">
-                    <h3 className="ui inverted header">Show Details</h3>
-                    <div className="ui inverted divider"></div>
+            <div className="section-heading">
+                <h2 className="heading">Show Details</h2>
+                <i className="edit icon"></i>
+            </div>
+            <div className="ui divider"></div>
+            <div className="ui segment">
+                <div className="ui list">
                     <div className="item">
                         <div className="header">Load In</div>
                         {tourdate.loadIn ? tourdate.loadIn : 'TBA'}

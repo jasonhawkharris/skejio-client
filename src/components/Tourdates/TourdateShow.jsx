@@ -11,13 +11,24 @@ const TourdateShow = props => {
 
     return (
         <div>
-            <h1 className="ui header">Tourdate</h1>
-            <div className="ui divider"></div>
-            <div className="ui grid" id="show-details">
-                <VenueInfo tourdate={tourdate} />
-                <Details tourdate={tourdate} />
-                <Financials tourdate={tourdate} />
-                <PromoterInfo tourdate={tourdate} />
+            <div className="ui grid">
+                <div className="eight wide column" id="show-info">
+                    <div className="show-components">
+                        <VenueInfo tourdate={tourdate} />
+                    </div>
+                    <div className="show-components">
+                        <Details tourdate={tourdate} />
+                    </div>
+                    <div className="show-components">
+                        <Financials tourdate={tourdate} />
+                    </div>
+                    <div className="show-components">
+                        <PromoterInfo tourdate={tourdate} />
+                    </div>
+                </div>
+                <div className="eight wide column" id="chat">
+                    <div className="ui segment"></div>
+                </div>
             </div>
         </div>
 

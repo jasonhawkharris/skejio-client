@@ -5,11 +5,14 @@ const Financials = props => {
     const tourdate = props.tourdate;
 
     return (
-        <div className="eight wide column" id="show-details">
-            <div className="ui inverted segment financials">
-                <div className="ui inverted list">
-                    <h3 className="ui inverted header">Financial Info</h3>
-                    <div className="ui inverted divider"></div>
+        <div className="eight wide column" id="financials">
+            <div className="section-heading">
+                <h2 className="heading">Financial Info</h2>
+                <i className="edit icon"></i>
+            </div>
+            <div className="ui divider"></div>
+            <div className="ui segment">
+                <div className="ui list">
                     <div className="item">
                         <strong>Fee: </strong> ${formatNumber(tourdate.fee, 2)}
                     </div>
