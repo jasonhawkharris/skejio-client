@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-// import _ from 'lodash';
+import AwesomeDebouncePromise from 'awesome-debounce-promise'
 import VenueModel from '../../models/VenueModel';
 import Venue from './Venue';
 
@@ -18,14 +18,17 @@ const VenueSearch = props => {
         })
     }
 
-    // debounce and throttle here.
     useEffect(function () {
         if (inputValue.length > 3) {
-            VenueModel.searchVenues(inputValue).then(response => {
-                if (response.data._embedded) {
-                    setResults(response.data._embedded.venues);
-                }
-            });
+            const searchAPIDebounced = AwesomeDebouncePromise(function () {
+                VenueModel.searchVenues(inputValue).then(response => {
+                    if (response.data._embedded) {
+                        setResults(response.data._embedded.venues);
+                    }
+                });
+            }, 1300);
+
+            searchAPIDebounced();
         }
     }, [inputValue]);
 
