@@ -1,32 +1,24 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import DeleteModal from '../Modals/DeleteModal';
 import { Button, Icon } from 'semantic-ui-react';
 import { formatDate } from '../../utils/helpers';
 import TourdateModel from '../../models/TourdateModel';
-import useVenues from '../../hooks/useVenues';
 
 
 const TourdateRow = props => {
-    const [venue, fetchVenue] = useVenues(props.venue);
-    console.log('venue', venue);
-
-    useEffect(function () {
-        if (!venue) {
-            fetchVenue(props.venue);
-        }
-    });
+    const tdate = props.info;
 
     return (
         <>
-            {!venue ? (
+            {!tdate ? (
                 <tr>
                     <td>loading...</td>
                 </tr>
             ) : (
                     <tr>
                         <td>{formatDate(props.info.date)}</td>
-                        <td>{venue.city.name}, {venue.state.stateCode}</td>
-                        <td>{venue.name}</td>
+                        <td>{tdate.city}, {tdate.state && tdate.state}</td>
+                        <td>{tdate.name}</td>
                         <td>{props.info.doors ? props.info.doors : 'TBA'}</td>
                         <td>{props.info.showStart ? props.info.showStart : 'TBA'}</td>
                         <td>{props.info.fee ? props.info.fee : 'TBA'}</td>

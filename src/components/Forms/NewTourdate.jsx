@@ -9,6 +9,7 @@ const NewTourDate = props => {
     const user = useRecoilValue(userState);
     const venueId = info.id;
     const artist = user._id;
+    const name = info.name;
     const city = info.city;
     const state = info.state;
     const country = info.country;
@@ -20,7 +21,7 @@ const NewTourDate = props => {
     const zip = info.zip;
     const [date, setDate] = useState(null);
     const [tour, setTour] = useState(null);
-    const data = { venueId, artist, date, tour, city, state, country, timezone, _tmLink, venueLink, address, address2, zip };
+    const data = { venueId, artist, name, date, tour, city, state, country, timezone, _tmLink, venueLink, address, address2, zip };
 
     const generateTours = () => {
         return user.tours.map(tour => {

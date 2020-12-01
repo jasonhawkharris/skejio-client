@@ -1,14 +1,11 @@
 import React, { useEffect } from 'react';
-import { useRecoilValue } from 'recoil';
 import { Button } from 'semantic-ui-react';
 
 import useTourdates from '../../hooks/useTourdates';
-import { userState } from '../../recoil/atoms';
 import TourdateRow from './TourdateRow';
 
 
 const TourdateIndex = props => {
-    const user = useRecoilValue(userState);
     const [tourdates, fetchTourdates] = useTourdates(null);
 
     const generateTourdates = () => {
@@ -18,12 +15,16 @@ const TourdateIndex = props => {
                     fetch={() => fetchTourdates()}
                     key={tourdate._id}
                     info={tourdate}
-                    user={user}
-                    venue={tourdate.venue}
                 />
             )
         })
     }
+
+    useEffect(function () {
+        if (!tourdates) {
+            fetchTourdates();
+        }
+    })
 
     return (
         <div>
@@ -54,7 +55,7 @@ const TourdateIndex = props => {
                     className="ui pink button"
                     onClick={() => props.history.push('/select-venue')}>
                     Add a Date
-                    </Button>
+                </Button>
             </div>
         </div>
     )
