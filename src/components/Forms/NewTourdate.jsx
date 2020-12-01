@@ -6,7 +6,7 @@ import { userState } from '../../recoil/atoms';
 
 const NewTourDate = props => {
     const user = useRecoilValue(userState);
-    const venue = props.location.dateProps.id;
+    const venue = props.location.venueProps.result.id;
     const artist = user._id;
     const [date, setDate] = useState(null);
     const [tour, setTour] = useState(null);
@@ -22,14 +22,13 @@ const NewTourDate = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        console.log(data);
-        // TourdateModel.create(data).then(response => {
-        //     console.log(response);
-        // }).catch(err => {
-        //     console.log(err);
-        // })
+        TourdateModel.create(data).then(response => {
+            console.log(response);
+        }).catch(err => {
+            console.log(err);
+        })
 
-        // props.history.push('/alltourdates');
+        props.history.push('/alltourdates');
     }
 
     return (

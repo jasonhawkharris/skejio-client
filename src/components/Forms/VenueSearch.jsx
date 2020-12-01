@@ -10,12 +10,13 @@ const VenueSearch = props => {
         return results.map(result => {
             return (
                 <Venue
-                    name={result.name}
-                    city={result.city}
-                    country={result.country.countryCode}
-                    id={result.id}
                     key={result.id}
+                    venueId={result.id}
+                    name={result.name}
+                    city={result.city.name}
+                    country={result.country.countryCode}
                     result={result}
+                    id={result.id}
                 />
             );
         })
