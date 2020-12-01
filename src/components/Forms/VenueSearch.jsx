@@ -41,7 +41,7 @@ const VenueSearch = props => {
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
                 />
-                <i class="search icon"></i>
+                <i className="search icon"></i>
             </div>
             <div className="ui raised segment">
                 {results &&

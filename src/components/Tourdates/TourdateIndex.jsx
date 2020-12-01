@@ -19,6 +19,7 @@ const TourdateIndex = props => {
                     key={tourdate._id}
                     info={tourdate}
                     user={user}
+                    venue={tourdate.venue}
                 />
             )
         })
@@ -46,7 +47,9 @@ const TourdateIndex = props => {
                             {generateTourdates()}
                         </tbody>
                     </table>
-                    <Button className="ui pink button">
+                    <Button
+                        className="ui pink button"
+                        onClick={() => props.history.push('/select-venue')}>
                         New Tourdate
                     </Button>
                 </div>

@@ -22,9 +22,14 @@ const NewTourDate = props => {
 
     const handleSubmit = event => {
         event.preventDefault();
-        TourdateModel.create(data).then(response => {
-            props.history.push('/alltourdates');
-        });
+        console.log(data);
+        // TourdateModel.create(data).then(response => {
+        //     console.log(response);
+        // }).catch(err => {
+        //     console.log(err);
+        // })
+
+        // props.history.push('/alltourdates');
     }
 
     return (
