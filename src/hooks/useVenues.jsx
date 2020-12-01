@@ -11,12 +11,12 @@ const useVenues = (term, search = false) => {
             VenueModel.searchVenues(term)
                 .then(response => {
                     if (!response) return setVenues([]);
-                    setVenues(response.data._embedded.venues);
+                    setVenues(response.data);
                 })
         } else {
             VenueModel.findVenueById(term)
                 .then(response => {
-                    if (!response) return setVenues([]);
+                    if (!response) return setVenues();
                     setVenues(response.data);
                 });
         }

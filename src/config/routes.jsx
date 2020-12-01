@@ -12,7 +12,6 @@ import TourdateIndex from '../components/Tourdates/TourdateIndex';
 import VenueSearch from '../components/Forms/VenueSearch';
 import NewTourDate from '../components/Forms/NewTourdate';
 import Team from '../components/Team/Team';
-
 import { loggedInState } from '../recoil/selectors';
 
 import './Routes.css';

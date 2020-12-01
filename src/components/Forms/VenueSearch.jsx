@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+// import _ from 'lodash';
 import VenueModel from '../../models/VenueModel';
 import Venue from './Venue';
 
@@ -11,19 +12,15 @@ const VenueSearch = props => {
             return (
                 <Venue
                     key={result.id}
-                    venueId={result.id}
-                    name={result.name}
-                    city={result.city.name}
-                    country={result.country.countryCode}
-                    result={result}
-                    id={result.id}
+                    venue={result}
                 />
             );
         })
     }
 
+    // debounce and throttle here.
     useEffect(function () {
-        if (inputValue) {
+        if (inputValue.length > 3) {
             VenueModel.searchVenues(inputValue).then(response => {
                 if (response.data._embedded) {
                     setResults(response.data._embedded.venues);

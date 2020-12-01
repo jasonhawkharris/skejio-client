@@ -1,8 +1,5 @@
 import axios from 'axios';
 
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
-axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
-
 const URL = "https://app.ticketmaster.com/discovery/v2/venues"
 const API_KEY = "apikey=5M5EkcsjMabTt7NcP2lF0exIIkdh3aA4"
 
@@ -13,7 +10,10 @@ class VenueModel {
             if (venue.includes(' ')) {
                 venue = venue.split(' ').join('%20');
             }
-            return axios.get(`${URL}.json?${API_KEY}&keyword=${venue}`);
+            return await axios.get(`${URL}.json?${API_KEY}&keyword=${venue}`, {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': '*',
+            });
         } catch (error) {
             console.log(error);
         }
@@ -25,7 +25,8 @@ class VenueModel {
         try {
             return await axios.get(urlCall, {
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
+                    'Access-Control-Allow-Origin': '*',
                 },
             });
         } catch (error) {

@@ -1,4 +1,5 @@
 import axios from 'axios';
+// import _ from 'lodash';
 
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
@@ -76,4 +77,6 @@ const getMonth = month => {
 export const getYN = bool => {
     return bool ? 'yes' : 'no';
 }
+
+
 

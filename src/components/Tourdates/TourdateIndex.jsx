@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useRecoilValue } from 'recoil';
 import { Button } from 'semantic-ui-react';
 
@@ -28,8 +28,8 @@ const TourdateIndex = props => {
     return (
         <div>
             <h1>All Tourdates</h1>
-            {tourdates ? (
-                <div>
+            <div>
+                {tourdates ? (
                     <table className="ui selectable inverted table">
                         <thead>
                             <tr>
@@ -47,21 +47,15 @@ const TourdateIndex = props => {
                             {generateTourdates()}
                         </tbody>
                     </table>
-                    <Button
-                        className="ui pink button"
-                        onClick={() => props.history.push('/select-venue')}>
-                        New Tourdate
+                ) : (
+                        <div className="ui inverted segment">No tour dates scheduled</div>
+                    )}
+                <Button
+                    className="ui pink button"
+                    onClick={() => props.history.push('/select-venue')}>
+                    Add a Date
                     </Button>
-                </div>
-
-            ) : (
-                    <div className="ui segment">
-                        <p></p>
-                        <div className="ui active dimmer">
-                            <div className="ui loader"></div>
-                        </div>
-                    </div>
-                )}
+            </div>
         </div>
     )
 }

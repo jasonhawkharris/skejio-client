@@ -11,7 +11,6 @@ const TourdateRow = props => {
     console.log('venue', venue);
 
     useEffect(function () {
-        console.log(venue);
         if (!venue) {
             fetchVenue(props.venue);
         }
