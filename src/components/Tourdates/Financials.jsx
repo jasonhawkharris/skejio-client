@@ -8,7 +8,8 @@ const Financials = props => {
         <div className="eight wide column" id="show-details">
             <div className="ui inverted segment financials">
                 <div className="ui inverted list">
-                    <h2 className="ui inverted header">Financial Info</h2>
+                    <h3 className="ui inverted header">Financial Info</h3>
+                    <div className="ui inverted divider"></div>
                     <div className="item">
                         <strong>Fee: </strong> ${formatNumber(tourdate.fee, 2)}
                     </div>

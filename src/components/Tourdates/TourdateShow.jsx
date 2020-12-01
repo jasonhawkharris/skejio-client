@@ -15,8 +15,8 @@ const TourdateShow = props => {
             <div className="ui divider"></div>
             <div className="ui grid" id="show-details">
                 <VenueInfo tourdate={tourdate} />
-                <Financials tourdate={tourdate} />
                 <Details tourdate={tourdate} />
+                <Financials tourdate={tourdate} />
                 <PromoterInfo tourdate={tourdate} />
             </div>
         </div>
