@@ -3,7 +3,8 @@ import React from 'react';
 import './Tourdates.css';
 
 const VenueInfo = props => {
-    const tourdate = props.tourdate;
+    console.log('venue info props:', props);
+    const tourdate = props.tdate;
 
     return (
         <div className="eight wide column" id="venue-info">

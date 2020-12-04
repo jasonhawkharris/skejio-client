@@ -2,7 +2,7 @@ import React from 'react';
 import { formatNumber } from 'humanize-plus';
 
 const Financials = props => {
-    const tourdate = props.tourdate;
+    const tourdate = props.tdate;
 
     return (
         <div className="eight wide column" id="financials">

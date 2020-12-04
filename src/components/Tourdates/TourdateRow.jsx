@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import DeleteModal from '../Modals/DeleteModal';
 import { Button, Icon } from 'semantic-ui-react';
@@ -9,8 +9,8 @@ import TourdateModel from '../../models/TourdateModel';
 
 
 const TourdateRow = props => {
-    console.log(props.indexProps);
     const tdate = props.info;
+    console.log('tdate', tdate);
 
     return (
         <>
@@ -28,18 +28,18 @@ const TourdateRow = props => {
                         <td>{props.info.fee ? props.info.fee : 'TBA'}</td>
                         <td>{props.info.paidInFull ? 'Yes' : 'No'}</td>
                         <td className="right aligned">
-                            <Link
+                            <NavLink
                                 to={{
                                     pathname: `/tourdate/${tdate._id}`,
                                     dateProps: {
-                                        info: props.info,
+                                        info: tdate,
                                     }
                                 }}
                             >
                                 <button className="ui icon mini button">
                                     <i className="info icon"></i>
                                 </button>
-                            </Link>
+                            </NavLink>
 
                             <button className="ui icon mini button">
                                 <i className="edit icon"></i>

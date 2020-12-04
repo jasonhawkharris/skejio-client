@@ -1,12 +1,22 @@
 import React from 'react';
 
+import PromoterInfoEdit from '../Forms/EditTourdate/PromoterInfoEdit';
+
 const PromoterInfo = props => {
-    const tourdate = props.tourdate;
+    const tourdate = props.tdate;
+    console.log(props);
+
     return (
         <div className="eight wide column" id="promoter-info">
             <div className="section-heading">
                 <h2 className="heading">Promoter Info</h2>
-                <i className="edit icon"></i>
+                <PromoterInfoEdit
+                    trigger={
+                        <i className="edit icon"></i>
+                    }
+                    tourdate={tourdate}
+                    fetch={props.fetch}
+                />
             </div>
             <div className="ui divider"></div>
             <div className="ui segment">

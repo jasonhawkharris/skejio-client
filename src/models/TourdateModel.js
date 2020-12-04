@@ -47,6 +47,22 @@ class TourdateModel {
         }
     }
 
+    static update = async (id, data) => {
+        try {
+            const response = await fetch(`${URL}/${id}`, {
+                method: 'PUT',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
+                },
+                body: JSON.stringify(data),
+            });
+            return await response.json();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     static destroy = async (id) => {
         try {
             const response = await fetch(`${URL}/${id}`, {
