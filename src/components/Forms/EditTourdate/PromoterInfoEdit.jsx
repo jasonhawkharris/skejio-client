@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Icon, Modal } from 'semantic-ui-react';
+import { AsYouType } from 'libphonenumber-js/max';
 import TourdateModel from '../../../models/TourdateModel';
 
 import './EditTourdate.css';
@@ -14,11 +15,12 @@ const PromoterInfoEdit = props => {
     const handleSubmit = e => {
         e.preventDefault();
         console.log(data);
-        // TourdateModel.update(props.tourdate._id, data)
-        //     .then(response => {
-        //         props.fetch();
-        //         setOpen(false);
-        //     });
+        TourdateModel.update(props.tourdate._id, data)
+            .then(response => {
+                console.log(response);
+                props.fetch();
+                setOpen(false);
+            });
     }
 
     return (
@@ -63,7 +65,7 @@ const PromoterInfoEdit = props => {
                             type="text"
                             name="promoterPhone"
                             onChange={e => setPromoterPhone(e.target.value)}
-                            value={promoterPhone}
+                            value={new AsYouType('US').input(promoterPhone)}
                             placeholder="Phone"
                         />
                     </div>

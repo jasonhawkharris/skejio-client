@@ -4,7 +4,6 @@ import PromoterInfoEdit from '../Forms/EditTourdate/PromoterInfoEdit';
 
 const PromoterInfo = props => {
     const tourdate = props.tdate;
-    console.log(props);
 
     return (
         <div className="eight wide column" id="promoter-info">

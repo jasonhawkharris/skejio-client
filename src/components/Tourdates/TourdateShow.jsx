@@ -5,10 +5,10 @@ import VenueInfo from './VenueInfo';
 import Financials from './Financials';
 import Details from './Details';
 import PromoterInfo from './PromoterInfo';
+
 import './Tourdates.css';
 
 const TourdateShow = props => {
-    console.log('showProps:', props.location);
     const [tourdate, fetchTourdate] = useTourdates(props.location.dateProps.info._id);
 
     useEffect(() => {
