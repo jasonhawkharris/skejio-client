@@ -78,5 +78,20 @@ export const getYN = bool => {
     return bool ? 'yes' : 'no';
 }
 
+export const getTime = str => {
+    let time = str.split('T')[1];
+    let div = time.split(':');
+    let ampm;
+    let hour = div[0];
+    let minute = div[1];
+    if (hour > 12) {
+        hour = hour - 12;
+        ampm = 'PM';
+    } else {
+        ampm = 'AM';
+    }
+    return `${hour}:${minute} ${ampm}`
+}
+
 
 
