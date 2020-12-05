@@ -9,6 +9,14 @@ import UpdateTourModal from '../Modals/UpdateTourModal';
 import TourModel from '../../models/TourModel';
 
 const TourRow = props => {
+    const calculateGross = () => {
+        const fees = props.tour.tourdates.map(tourdate => {
+            return tourdate.fee;
+        });
+        if (!fees.length) return 0;
+        return fees.reduce((a, b) => a + b);
+    }
+
     return (
         <>
             <td>
@@ -36,7 +44,7 @@ const TourRow = props => {
                 {props.tour.tourdates.length}
             </td>
             <td>
-                ${formatNumber(props.tour.gross, 2)}
+                ${formatNumber(calculateGross(props.tour.gross), 2)}
             </td>
             <td className="right aligned">
                 <UpdateTourModal
