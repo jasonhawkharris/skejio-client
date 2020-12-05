@@ -4,9 +4,9 @@ import { formatNumber } from 'humanize-plus';
 import { Link, NavLink } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 
-import './Tours.css';
 import UpdateTourModal from '../Modals/UpdateTourModal';
 import TourModel from '../../models/TourModel';
+import './Tours.css';
 
 const TourRow = props => {
     const calculateGross = () => {

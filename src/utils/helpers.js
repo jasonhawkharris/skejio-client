@@ -92,6 +92,3 @@ export const getTime = str => {
     }
     return `${hour}:${minute} ${ampm}`
 }
-
-
-

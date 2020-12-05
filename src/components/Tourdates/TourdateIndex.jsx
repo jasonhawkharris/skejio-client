@@ -7,7 +7,6 @@ import TourdateRow from './TourdateRow';
 
 const TourdateIndex = props => {
     const [tourdates, fetchTourdates] = useTourdates(null);
-    console.log('indexProps', props);
 
     const generateTourdates = () => {
         return tourdates.map(tourdate => {

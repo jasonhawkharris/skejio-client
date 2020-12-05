@@ -9,10 +9,8 @@ import TourdateModel from '../../models/TourdateModel';
 import { getTime } from '../../utils/helpers';
 
 
-
 const TourdateRow = props => {
     const tdate = props.info;
-    console.log('tdate', tdate);
 
     return (
         <>

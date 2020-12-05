@@ -16,8 +16,8 @@ const TourShow = props => {
                     key={tourdate._id}
                     info={tourdate}
                 />
-            )
-        })
+            );
+        });
     }
 
     return (
@@ -31,6 +31,7 @@ const TourShow = props => {
                                 <th>Date</th>
                                 <th>Location</th>
                                 <th>Venue</th>
+                                <th>Load In</th>
                                 <th>Doors</th>
                                 <th>Showtime</th>
                                 <th>Fee</th>
