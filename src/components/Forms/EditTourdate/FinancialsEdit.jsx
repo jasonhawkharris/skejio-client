@@ -1,3 +1,4 @@
+import axios from 'axios';
 import React, { useState } from 'react';
 import { Icon, Modal } from 'semantic-ui-react';
 
@@ -88,17 +89,15 @@ const FinancialsEdit = props => {
                     {/** FIXME this should be a pdf upload */}
                     {/* <div className="field">
                         <label for="contract">
-                            Has a contract been offered for this tourdate?
+                            Upload Contract
                         </label>
-                        <select
+                        <input
                             name="contract"
-                            onChange={e => setContract(e.target.value)}
+                            type="file"
+                            onChange={fileSelectedHandler}
                             value={contract}
-                        >
-                            <option value="">--Select an Option--</option>
-                            <option value="y">Yes</option>
-                            <option value="n">No</option>
-                        </select>
+                        />
+                        <button onClick={fileUploadHandler}>Upload</button>
                     </div> */}
                     <div className="field">
                         <label for="contractSigned">

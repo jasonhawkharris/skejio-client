@@ -61,13 +61,24 @@ const PromoterInfoEdit = props => {
                         />
                     </div>
                     <div className="field">
-                        <input
-                            type="text"
-                            name="promoterPhone"
-                            onChange={e => setPromoterPhone(e.target.value)}
-                            value={new AsYouType('US').input(promoterPhone)}
-                            placeholder="Phone"
-                        />
+                        {promoterPhone ? (
+                            <input
+                                type="text"
+                                name="promoterPhone"
+                                onChange={e => setPromoterPhone(e.target.value)}
+                                value={new AsYouType('US').input(promoterPhone)}
+                                placeholder="Phone"
+                            />
+                        ) : (
+                                <input
+                                    type="text"
+                                    name="promoterPhone"
+                                    onChange={e => setPromoterPhone(e.target.value)}
+                                    value={promoterPhone}
+                                    placeholder="Phone"
+                                />
+                            )}
+
                     </div>
                     <div className="field">
                         <input
@@ -82,3 +93,6 @@ const PromoterInfoEdit = props => {
 }
 
 export default PromoterInfoEdit;
+
+
+//

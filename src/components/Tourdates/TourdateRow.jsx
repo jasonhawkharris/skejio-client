@@ -1,10 +1,12 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { formatNumber } from 'humanize-plus';
 
 import DeleteModal from '../Modals/DeleteModal';
 import { Button, Icon } from 'semantic-ui-react';
 import { formatDate } from '../../utils/helpers';
 import TourdateModel from '../../models/TourdateModel';
+import { getTime } from '../../utils/helpers';
 
 
 
@@ -23,9 +25,10 @@ const TourdateRow = props => {
                         <td>{formatDate(props.info.date)}</td>
                         <td>{tdate.city}, {tdate.state && tdate.state}</td>
                         <td>{tdate.name}</td>
-                        <td>{props.info.doors ? props.info.doors : 'TBA'}</td>
-                        <td>{props.info.showStart ? props.info.showStart : 'TBA'}</td>
-                        <td>{props.info.fee ? props.info.fee : 'TBA'}</td>
+                        <td>{props.info.loadIn ? getTime(props.info.loadIn) : 'TBA'}</td>
+                        <td>{props.info.doors ? getTime(props.info.doors) : 'TBA'}</td>
+                        <td>{props.info.showStart ? getTime(props.info.showStart) : 'TBA'}</td>
+                        <td>{props.info.fee ? `$${formatNumber(props.info.fee, 2)}` : 'TBA'}</td>
                         <td>{props.info.paidInFull ? 'Yes' : 'No'}</td>
                         <td className="right aligned">
                             <NavLink

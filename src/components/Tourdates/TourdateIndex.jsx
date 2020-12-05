@@ -39,6 +39,7 @@ const TourdateIndex = props => {
                                 <th>Date</th>
                                 <th>Location</th>
                                 <th>Venue</th>
+                                <th>Load In</th>
                                 <th>Doors</th>
                                 <th>Showtime</th>
                                 <th>Fee</th>
