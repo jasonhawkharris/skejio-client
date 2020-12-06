@@ -8,6 +8,7 @@
     "@testing-library/user-event": "^12.1.10",
     "awesome-debounce-promise": "^2.1.0",
     "axios": "^0.21.0",
+    "cloudinary-react": "^1.6.8",
     "dotenv": "^8.2.0",
     "humanize-plus": "^1.8.2",
     "jsonwebtoken": "^8.5.1",

@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useState } from 'react';
 import { Icon, Modal } from 'semantic-ui-react';
 
@@ -9,11 +8,9 @@ const FinancialsEdit = props => {
     const [fee, setFee] = useState(props.tourdate.fee)
     const [deposit, setDeposit] = useState(props.tourdate.setDeposit);
     const [depositReceived, setDepositReceived] = useState('');
-    // eslint-disable-next-line no-unused-vars
-    const [contract, setContract] = useState(null);
     const [contractSigned, setContractSigned] = useState('');
     const [paidInFull, setPaidInFull] = useState('');
-    const data = { fee, deposit, depositReceived, contract, contractSigned, paidInFull };
+    const data = { fee, deposit, depositReceived, contractSigned, paidInFull };
 
     const getBool = key => {
         if (key === '') return null;
@@ -86,19 +83,6 @@ const FinancialsEdit = props => {
                             <option value="n">No</option>
                         </select>
                     </div>
-                    {/** FIXME this should be a pdf upload */}
-                    {/* <div className="field">
-                        <label for="contract">
-                            Upload Contract
-                        </label>
-                        <input
-                            name="contract"
-                            type="file"
-                            onChange={fileSelectedHandler}
-                            value={contract}
-                        />
-                        <button onClick={fileUploadHandler}>Upload</button>
-                    </div> */}
                     <div className="field">
                         <label for="contractSigned">
                             Has a contract been signed by the artist for this tourdate?
@@ -132,6 +116,7 @@ const FinancialsEdit = props => {
                         <input className="ui pink submit button" type="submit" value="Submit Edits" />
                     </div>
                 </form>
+
             </Modal.Content>
         </Modal >
     )

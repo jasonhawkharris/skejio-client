@@ -2,6 +2,8 @@ import React from 'react';
 import { formatNumber } from 'humanize-plus';
 
 import FinancialsEdit from '../Forms/EditTourdate/FinancialsEdit';
+import UploadContract from '../Forms/EditTourdate/UploadContract';
+import ViewContract from './ViewContract';
 
 const Financials = props => {
     const tourdate = props.tdate;
@@ -32,6 +34,39 @@ const Financials = props => {
                     </div>
                     <div className="item">
                         <strong>Contract Offered?</strong> {tourdate.contract ? 'Yes' : 'No'}
+                    </div>
+                    <div className="item">
+                        <strong>Contract: </strong>
+                        {tourdate.contract ? (
+                            <>
+                                <ViewContract
+                                    trigger={
+                                        <span>View&nbsp;&nbsp;</span>
+                                    }
+                                    tourdate={tourdate}
+                                />
+                                <UploadContract
+                                    trigger={
+                                        <div style={{ display: 'inline-block' }}>
+                                            <i className="upload icon"></i>
+                                        </div>
+                                    }
+                                    tourdate={tourdate}
+                                    fetch={props.fetch}
+                                />
+                            </>
+                        ) : (
+                                <UploadContract
+                                    trigger={
+                                        <div>
+                                            <span>Upload</span>
+                                            <i className="upload icon"></i>
+                                        </div>
+                                    }
+                                    tourdate={tourdate}
+                                    fetch={props.fetch}
+                                />
+                            )}
                     </div>
                     <div className="item">
                         <strong>Contract Signed?</strong> {tourdate.contractSigned ? 'Yes' : 'No'}

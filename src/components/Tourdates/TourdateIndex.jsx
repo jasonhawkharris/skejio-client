@@ -25,7 +25,7 @@ const TourdateIndex = props => {
         if (!tourdates) {
             fetchTourdates();
         }
-    })
+    }, [])
 
     return (
         <div>
