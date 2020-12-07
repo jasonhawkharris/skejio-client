@@ -8,7 +8,6 @@
 
 .ui.inverted.secondary.menu {
     background-color: black !important;
-    /* border: 1px solid black; */
     min-height: 80px;
     max-height: 80px;
     width: 100%;

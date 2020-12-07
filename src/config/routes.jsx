@@ -44,7 +44,7 @@ const Routes = props => {
                                 <Route path='/dashboard' component={Dashboard} />
                                 <Route exact path='/tours' component={TourIndex} />
                                 <Route path='/tours/:id' component={TourShow} />
-                                <Route path='/alltourdates' component={TourdateIndex} />
+                                <Route path='/tourdates' component={TourdateIndex} />
                                 <Route path='/tourdate/:id' component={TourdateShow} />
                                 <Route path='/select-venue' component={VenueSearch} />
                                 <Route path='/create-tourdate' component={NewTourDate} />
