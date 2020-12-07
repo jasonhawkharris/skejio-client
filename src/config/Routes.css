@@ -1,7 +1,7 @@
 .dashboard {
     margin-left: 210px;
     margin-right: 275px;
-    margin-top: 80px;
+    padding-top: 80px;
     min-width: calc(100% - 485px);
     max-width: calc(100% - 485px);
     min-height: calc(100% - 80px);

@@ -16,7 +16,7 @@ const Navigation = props => {
 
     return (
         <Menu
-            className="ui inverted fixed vertical pointing">
+            className="ui inverted fixed vertical">
             <Menu.Item
                 name='dashboard'
                 active={activeItem === 'dashboard'}
