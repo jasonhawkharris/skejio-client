@@ -7,10 +7,8 @@
     min-height: calc(100% - 80px);
     max-height: calc(100% - 80px);
     overflow-y: auto;
-    /* border: 1px solid black; */
 }
 
 .main {
-    border: 1px solid black;
-    margin: 10px 10px 10px 10px;
+    margin: 25px 25px 25px 25px;
 }

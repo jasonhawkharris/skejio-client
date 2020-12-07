@@ -9,7 +9,6 @@ import TourModel from '../../models/TourModel';
 import './Tours.css';
 
 const TourRow = props => {
-    console.log(props.tour._id);
     const calculateGross = () => {
         const fees = props.tour.tourdates.map(tourdate => {
             return tourdate.fee;
