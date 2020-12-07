@@ -1,11 +1,17 @@
 .ui.inverted.vertical.menu {
     top: 80px;
-    height: 100vh;
+    min-height: calc(100% - 80px);
+    max-height: calc(100% - 80px);
+    min-width: 210px;
+    max-width: 210px;
 }
 
 .ui.inverted.secondary.menu {
     background-color: black !important;
-    height: 80px;
+    /* border: 1px solid black; */
+    min-height: 80px;
+    max-height: 80px;
+    width: 100%;
 }
 
 .logo {

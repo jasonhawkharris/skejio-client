@@ -14,8 +14,8 @@ import VenueSearch from '../components/Forms/VenueSearch';
 import NewTourDate from '../components/Forms/NewTourdate';
 import Team from '../components/Team/Team';
 import Profile from '../components/Profile/Profile';
-// import UpdateTourdate from '../components/Forms/UpdateTourdate';
 import TourdateShow from '../components/Tourdates/TourdateShow';
+import TodoList from '../components/TodoList/TodoListIndex';
 import { loggedInState } from '../recoil/selectors';
 
 import './Routes.css';
@@ -36,10 +36,10 @@ const Routes = props => {
             ) : (
                     <>
                         <BasicNav />
+                        <div className="navigation">
+                            <Navigation />
+                        </div>
                         <div className="dashboard">
-                            <div className="navigation">
-                                <Navigation />
-                            </div>
                             <div className="main">
                                 <Route path='/dashboard' component={Dashboard} />
                                 <Route exact path='/tours' component={TourIndex} />
@@ -51,6 +51,9 @@ const Routes = props => {
                                 <Route path='/team' component={Team} />
                                 <Route path='/profile' component={Profile} />
                             </div>
+                        </div>
+                        <div>
+                            <TodoList />
                         </div>
                     </>
                 )}

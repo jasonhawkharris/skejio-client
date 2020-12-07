@@ -21,9 +21,6 @@ const TourRow = props => {
     return (
         <>
             <td>
-                <input type="checkbox" />
-            </td>
-            <td>
                 <NavLink
                     to={`/tours/${props.tour._id}`}
                     className="artist-link"

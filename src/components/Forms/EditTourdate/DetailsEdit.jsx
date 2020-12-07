@@ -6,20 +6,18 @@ import TourdateModel from '../../../models/TourdateModel';
 
 const DetailsEdit = props => {
     const [open, setOpen] = useState(false);
-    const [loadIn, setLoadIn] = useState(null);
-    const [doors, setDoors] = useState(null);
-    const [showStart, setShowStart] = useState(null);
-    const [showEnd, setShowEnd] = useState(null);
+    const [loadIn, setLoadIn] = useState(props.tourdate.loadIn);
+    const [doors, setDoors] = useState(props.tourdate.doors);
+    const [showStart, setShowStart] = useState(props.tourdate.showStart);
+    const [showEnd, setShowEnd] = useState(props.tourdate.showEnd);
     const dateOfShow = props.tourdate.date.split('T')[0];
     const data = { loadIn, doors, showStart, showEnd };
 
     const handleSubmit = e => {
         e.preventDefault();
-        console.log('data:', data);
 
         TourdateModel.update(props.tourdate._id, data)
             .then(response => {
-                console.log('response:', response);
                 props.fetch();
                 setOpen(false);
             })
@@ -52,6 +50,7 @@ const DetailsEdit = props => {
                             onChange={e => {
                                 setLoadIn(`${dateOfShow}T${e.target.value}:00.000Z`)
                             }}
+                            value={loadIn && loadIn.split('T')[1].split('.')[0]}
                         />
                     </div>
                     <div className="field">
@@ -62,6 +61,7 @@ const DetailsEdit = props => {
                             onChange={e => {
                                 setDoors(`${dateOfShow}T${e.target.value}:00.000Z`)
                             }}
+                            value={doors && doors.split('T')[1].split('.')[0]}
                         />
                     </div>
                     <div className="field">
@@ -72,6 +72,7 @@ const DetailsEdit = props => {
                             onChange={e => {
                                 setShowStart(`${dateOfShow}T${e.target.value}:00.000Z`)
                             }}
+                            value={showStart && showStart.split('T')[1].split('.')[0]}
                         />
                     </div>
                     <div className="field">
@@ -82,6 +83,7 @@ const DetailsEdit = props => {
                             onChange={e => {
                                 setShowEnd(`${dateOfShow}T${e.target.value}:00.000Z`)
                             }}
+                            value={showEnd && showEnd.split('T')[1].split('.')[0]}
                         />
                     </div>
                     <div className="field">

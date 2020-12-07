@@ -57,7 +57,7 @@ const TourIndex = props => {
                     <table className="ui selectable inverted table">
                         <thead>
                             <tr>
-                                <th><Icon name="checkmark" /></th>
+
                                 <th>Tour</th>
                                 <th>Artist</th>
                                 <th># of Dates</th>

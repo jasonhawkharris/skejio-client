@@ -1,0 +1,10 @@
+.ui.segment.todo-list-index {
+    border-radius: 0px;
+    min-width: 275px;
+    position: fixed;
+    overflow-y: auto;
+    top: 80px;
+    right: 0px;
+    min-height: calc(100% - 80px);
+    max-height: calc(100% - 80px);
+}
