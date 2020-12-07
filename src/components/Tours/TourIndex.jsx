@@ -9,7 +9,8 @@ import TourRow from './TourRow';
 
 const TourIndex = props => {
     const user = useRecoilValue(userState);
-    const [tours, fetchTours] = useTours(user.tours)
+    const [tours, fetchTours] = useTours()
+    console.log(tours);
     const [name, setName] = useState('');
     const [createBtnClicked, setCreateBtnClicked] = useState(false);
     const tourData = { name }

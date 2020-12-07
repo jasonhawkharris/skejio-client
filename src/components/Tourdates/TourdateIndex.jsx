@@ -25,6 +25,7 @@ const TourdateIndex = props => {
         if (!tourdates) {
             fetchTourdates();
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (

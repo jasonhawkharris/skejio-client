@@ -41,10 +41,6 @@ const TourdateRow = props => {
                                     <i className="info icon"></i>
                                 </button>
                             </NavLink>
-
-                            <button className="ui icon mini button">
-                                <i className="edit icon"></i>
-                            </button>
                             <DeleteModal
                                 trigger={
                                     <Button className="ui icon mini button">

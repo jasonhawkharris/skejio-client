@@ -1,4 +1,8 @@
 /* eslint-disable no-unused-vars */
+/**
+ * NOTE:  in order to deliver pdfs to cloudinary's api, it requires a monthly $99 charge. You cannot do it from a free account.
+ */
+
 import React, { useState } from 'react';
 import { Modal, Icon } from 'semantic-ui-react';
 
@@ -41,8 +45,9 @@ const UploadContract = props => {
     const handleSubmit = e => {
         e.preventDefault();
         if (!previewSource) return;
-        uploadImage(previewSource);
-        props.fetch();
+        uploadImage(previewSource).then(response => {
+            props.fetch()
+        });
         setOpen(false);
     }
 

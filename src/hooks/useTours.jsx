@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 
 import TourModel from '../models/TourModel';
 
-const useTours = () => {
+const useTours = (id) => {
     const [tours, setTours] = useState(null);
 
     const fetchTours = (id) => {
@@ -24,7 +24,7 @@ const useTours = () => {
 
     useEffect(
         function () {
-            fetchTours()
+            fetchTours(id)
         }, []
     );
 

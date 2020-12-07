@@ -1,7 +1,7 @@
 import React from 'react';
 import DeleteModal from '../Modals/DeleteModal';
 import { formatNumber } from 'humanize-plus';
-import { Link, NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { Button } from 'semantic-ui-react';
 
 import UpdateTourModal from '../Modals/UpdateTourModal';
@@ -9,6 +9,7 @@ import TourModel from '../../models/TourModel';
 import './Tours.css';
 
 const TourRow = props => {
+    console.log(props.tour._id);
     const calculateGross = () => {
         const fees = props.tour.tourdates.map(tourdate => {
             return tourdate.fee;
@@ -23,17 +24,12 @@ const TourRow = props => {
                 <input type="checkbox" />
             </td>
             <td>
-                <Link
-                    className="tour-link"
-                    to={{
-                        pathname: `tours/${props.tour._id}`,
-                        showProps: {
-                            tour: props.tour,
-                        }
-                    }}
+                <NavLink
+                    to={`/tours/${props.tour._id}`}
+                    className="artist-link"
                 >
                     {props.tour.name}
-                </Link>
+                </NavLink>
             </td>
             <td>
                 <NavLink className="artist-link" to='/profile'>

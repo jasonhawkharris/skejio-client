@@ -22,6 +22,7 @@ const useTourdates = (id) => {
     useEffect(
         function () {
             fetchTourdates(id)
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []
     );
 

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react';
-
+import React from 'react';
 import useTourdates from '../../hooks/useTourdates';
 import VenueInfo from './VenueInfo';
 import Financials from './Financials';
@@ -9,13 +8,7 @@ import PromoterInfo from './PromoterInfo';
 import './Tourdates.css';
 
 const TourdateShow = props => {
-    const [tourdate, fetchTourdate] = useTourdates(props.location.dateProps.info._id);
-
-    useEffect(() => {
-        if (!tourdate) {
-            fetchTourdate(props.location.dateProps.info._id);
-        }
-    })
+    const [tourdate, fetchTourdate] = useTourdates(props.match.params.id);
 
     return (
         <div>

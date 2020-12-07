@@ -6,7 +6,7 @@ import TourdateModel from '../../../models/TourdateModel';
 const FinancialsEdit = props => {
     const [open, setOpen] = React.useState(false);
     const [fee, setFee] = useState(props.tourdate.fee)
-    const [deposit, setDeposit] = useState(props.tourdate.setDeposit);
+    const [deposit, setDeposit] = useState(props.tourdate.deposit);
     const [depositReceived, setDepositReceived] = useState('');
     const [contractSigned, setContractSigned] = useState('');
     const [paidInFull, setPaidInFull] = useState('');
