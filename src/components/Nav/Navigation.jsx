@@ -8,7 +8,6 @@ import { useHistory } from 'react-router-dom';
 const Navigation = props => {
     const history = useHistory();
     const [activeItem, setActiveItem] = useState('dashboard');
-    const [endpoint, setEndPoint] = useState('/dashboard');
 
     const handleItemClick = async (e, { name }) => {
         setActiveItem(name);
@@ -16,7 +15,8 @@ const Navigation = props => {
     }
 
     return (
-        <Menu inverted pointing vertical>
+        <Menu
+            className="ui inverted fixed vertical pointing">
             <Menu.Item
                 name='dashboard'
                 active={activeItem === 'dashboard'}
