@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { Button } from 'semantic-ui-react';
 
 import useTours from '../../hooks/useTours';
@@ -9,6 +9,7 @@ import TourdateRow from '../Tourdates/TourdateRow';
 
 const TourShow = props => {
     const [tour, fetchTour] = useTours(props.match.params.id);
+    const [loading, setLoading] = useState(true);
 
     const generateTourdates = () => {
         return tour.tourdates.map(tourdate => {
@@ -21,7 +22,17 @@ const TourShow = props => {
         });
     }
 
+    useEffect(function () {
+        if (!tour) {
+            fetchTour(props.match.params.id)
+            setTimeout(() => {
+                setLoading(false);
+            }, 1000);
+        }
+    }, [])
+
     return (
+
         <div>
             {tour ? (
                 <>
