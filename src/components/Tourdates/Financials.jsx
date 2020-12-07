@@ -21,7 +21,7 @@ const Financials = props => {
                 />
             </div>
             <div className="ui divider"></div>
-            <div className="ui segment">
+            <div>
                 <div className="ui list">
                     <div className="item">
                         <strong>Fee: </strong> ${formatNumber(tourdate.fee, 2)}

@@ -13,33 +13,35 @@ const TourdateShow = props => {
     return (
         <div>
             {tourdate ? (
-                <div className="ui grid">
-                    <div className="eight wide column" id="show-info">
-                        <div className="show-components">
-                            <VenueInfo
-                                fetch={() => fetchTourdate(tourdate._id)}
-                                tdate={tourdate} />
+                <>
+                    <div className="ui grid">
+                        <div className="eight wide column" id="show-info">
+                            <div className="show-components">
+                                <VenueInfo
+                                    fetch={() => fetchTourdate(tourdate._id)}
+                                    tdate={tourdate} />
+                            </div>
+                            <div className="show-components">
+                                <Details tourdate={tourdate}
+                                    fetch={() => fetchTourdate(tourdate._id)}
+                                    tdate={tourdate} />
+                            </div>
+                            <div className="show-components">
+                                <Financials
+                                    fetch={() => fetchTourdate(tourdate._id)}
+                                    tdate={tourdate} />
+                            </div>
+                            <div className="show-components">
+                                <PromoterInfo
+                                    fetch={() => fetchTourdate(tourdate._id)}
+                                    tdate={tourdate} />
+                            </div>
                         </div>
-                        <div className="show-components">
-                            <Details tourdate={tourdate}
-                                fetch={() => fetchTourdate(tourdate._id)}
-                                tdate={tourdate} />
-                        </div>
-                        <div className="show-components">
-                            <Financials
-                                fetch={() => fetchTourdate(tourdate._id)}
-                                tdate={tourdate} />
-                        </div>
-                        <div className="show-components">
-                            <PromoterInfo
-                                fetch={() => fetchTourdate(tourdate._id)}
-                                tdate={tourdate} />
+                        <div className="eight wide column" id="chat">
+                            <div className="ui segment"></div>
                         </div>
                     </div>
-                    <div className="eight wide column" id="chat">
-                        <div className="ui segment"></div>
-                    </div>
-                </div>
+                </>
             ) : (
                     <div>Loading...</div>
                 )}

@@ -34,7 +34,7 @@ const TourShow = props => {
     return (
 
         <div>
-            {tour ? (
+            {!loading ? (
                 <>
                     <h1>{tour.name}</h1>
                     <div>
@@ -60,15 +60,25 @@ const TourShow = props => {
                         ) : (
                                 <div className="ui inverted segment">No tour dates scheduled</div>
                             )}
-                        <Button
-                            className="ui pink button"
-                            onClick={() => props.history.push('/select-venue')}>
-                            Add a Date
-                </Button>
+                        <div className="tour-show-options">
+                            <Button
+                                className="ui pink button"
+                                onClick={() => props.history.push('/select-venue')}
+                            >
+                                Add a Date
+                            </Button>
+                            <a href="/tours">Back to Tours</a>
+                        </div>
+
                     </div>
                 </>
             ) : (
-                    <h1>loading...</h1>
+                    <div class="ui segment" style={{ height: "200px" }}>
+                        <p></p>
+                        <div class="ui active dimmer">
+                            <div class="ui loader"></div>
+                        </div>
+                    </div>
                 )}
 
         </div>

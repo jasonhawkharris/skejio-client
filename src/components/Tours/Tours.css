@@ -29,3 +29,10 @@
     flex-flow: row nowrap;
     justify-content: space-between;
 }
+
+.tour-show-options {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    text-decoration: underline;
+}

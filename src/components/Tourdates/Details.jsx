@@ -19,7 +19,7 @@ const Details = props => {
                 />
             </div>
             <div className="ui divider"></div>
-            <div className="ui segment">
+            <div>
                 <div className="ui list">
                     <div className="item">
                         <div className="header">Load In</div>
