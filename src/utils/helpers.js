@@ -46,7 +46,7 @@ export const formatDate = (theDate, human = true, hasYear = false) => {
 
     return !hasYear ?
         `${getMonth(parseInt(month))} ${day}` :
-        `${getMonth(parseInt(month))} ${day} ${year}`
+        `${getMonth(parseInt(month))} ${day}, ${year}`
 }
 
 export const formatCreatedDate = (theDate) => {
