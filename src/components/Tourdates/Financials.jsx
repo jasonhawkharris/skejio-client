@@ -33,9 +33,6 @@ const Financials = props => {
                         <strong>Deposit Received?</strong> {tourdate.depositReceived ? 'Yes' : 'No'}
                     </div>
                     <div className="item">
-                        <strong>Contract Offered?</strong> {tourdate.contract ? 'Yes' : 'No'}
-                    </div>
-                    <div className="item">
                         <strong>Contract: </strong>
                         {tourdate.contract ? (
                             <>
@@ -48,7 +45,7 @@ const Financials = props => {
                                 <UploadContract
                                     trigger={
                                         <div style={{ display: 'inline-block' }}>
-                                            <i className="upload icon"></i>
+                                            <i className="edit icon"></i>
                                         </div>
                                     }
                                     tourdate={tourdate}
@@ -56,16 +53,20 @@ const Financials = props => {
                                 />
                             </>
                         ) : (
-                                <UploadContract
-                                    trigger={
-                                        <div>
-                                            <span>Upload</span>
-                                            <i className="upload icon"></i>
-                                        </div>
-                                    }
-                                    tourdate={tourdate}
-                                    fetch={props.fetch}
-                                />
+                                <div
+                                    style={{ display: "inline-block" }}
+                                >
+                                    <UploadContract
+                                        trigger={
+                                            <div className="upload-trigger">
+                                                <span>Upload</span>&nbsp;&nbsp;
+                                                <i className="upload icon"></i>
+                                            </div>
+                                        }
+                                        tourdate={tourdate}
+                                        fetch={props.fetch}
+                                    />
+                                </div>
                             )}
                     </div>
                     <div className="item">

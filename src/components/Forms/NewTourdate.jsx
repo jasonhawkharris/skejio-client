@@ -35,6 +35,7 @@ const NewTourDate = props => {
         event.preventDefault();
         TourdateModel.create(data).then(response => {
             console.log(response);
+            props.fetch();
         }).catch(err => {
             console.log(err);
         })
