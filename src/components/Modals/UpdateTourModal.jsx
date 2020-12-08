@@ -31,7 +31,6 @@ const UpdateTourModal = props => {
             </Modal.Header>
             <Modal.Content>
                 <form className="ui form" onSubmit={handleSubmit}>
-
                     <input
                         type="text"
                         name="name"

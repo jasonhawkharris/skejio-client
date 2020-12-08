@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import TodoModel from '../../models/TodoModel';
 
 import { formatDate } from '../../utils/helpers';
+import DeleteModal from '../Modals/DeleteModal';
+import UpdateTodo from '../Modals/UpdateTodo';
 import Checkbox from './Checkbox';
 import './TodoList.css';
 
@@ -32,12 +35,26 @@ const Todo = props => {
                         <strong>Completed:</strong><Checkbox todo={todo} fetch={props.fetch} />
                     </div>
                     <div className="ui inverted mini basic icon buttons" style={{ marginTop: '20px' }}>
-                        <button className="ui button">
-                            <i className="edit icon"></i>
-                        </button>
-                        <button className="ui button">
-                            <i className="trash icon"></i>
-                        </button>
+                        <UpdateTodo
+                            trigger={
+                                <button className="ui button">
+                                    <i className="edit icon"></i>
+                                </button>
+                            }
+                            todo={todo}
+                            fetch={props.fetch}
+                        />
+                        <DeleteModal
+                            trigger={
+                                <button className="ui button">
+                                    <i className="trash icon"></i>
+                                </button>
+                            }
+                            id={todo._id}
+                            model={"todo"}
+                            modelType={TodoModel}
+                            fetch={props.fetch}
+                        />
                     </div>
                 </>
             ) : (
