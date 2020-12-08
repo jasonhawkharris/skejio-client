@@ -9,6 +9,7 @@ const Checkbox = props => {
         <Formik
             initialValues={{
                 completed: props.todo.completed ? true : false,
+                createdBy: props.todo.createdBy,
             }}
             onSubmit={async (values) => {
                 TodoModel.update(props.todo._id, values)
@@ -27,8 +28,7 @@ const Checkbox = props => {
                             style={{
                                 marginLeft: '10px',
                                 marginRight: '10px'
-                            }}
-                        />
+                            }} />
                     </label>
                     <button className="ui mini compact icon pink button" type="submit">
                         <i className="send icon"></i>
