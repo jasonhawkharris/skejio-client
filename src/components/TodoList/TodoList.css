@@ -10,14 +10,7 @@
     max-height: calc(100% - 80px);
 }
 
-.checkbox {
-    height: 20px;
-    width: 20px;
-}
-
-.checkmark.mini.icon {
-    position: relative;
-    left: 0px;
-
-
+.check {
+    display: flex;
+    flex-flow: row nowrap;
 }
