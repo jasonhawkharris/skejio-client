@@ -3,7 +3,7 @@ const URL = 'http://localhost:3001/api/v1/threads';
 class ThreadModel {
     static all = async (query) => {
         try {
-            const response = await fetch(`${URL}/${query}`, {
+            const response = await fetch(`${URL}?tourdate=${query}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',

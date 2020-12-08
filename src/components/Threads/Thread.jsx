@@ -1,0 +1,45 @@
+import React from 'react';
+
+import DeleteModal from '../Modals/DeleteModal';
+import { formatDate, getTime } from '../../utils/helpers';
+import ThreadModel from '../../models/ThreadModel';
+
+const Thread = props => {
+    const author = `${props.thread.author.firstName} ${props.thread.author.lastName}`;
+    const date = props.thread.createdAt;
+    const content = props.thread.content;
+
+    return (
+        <div className="comment">
+            <div className="avatar">
+                <img src="https://i.pravatar.cc/300" alt="avatar" />
+            </div>
+            <div className="content">
+                <div className="author">{author}</div>
+                <div className="metadata">
+                    <span className="date">{formatDate(date, true, true)} at {getTime(date)} </span>
+                </div>
+                <div className="text">
+                    {content}
+                </div>
+                <div className="actions">
+                    <button className="ui mini pink button">Reply</button>
+                    <DeleteModal
+                        trigger={
+                            <button className="ui mini pink icon button">
+                                <i className="trash icon"></i>
+                            </button>
+                        }
+                        id={props.thread._id}
+                        model={"thread"}
+                        modelType={ThreadModel}
+                        fetch={props.fetch}
+                    />
+                </div>
+            </div>
+            {/** Comment index goes here. */}
+        </div>
+    )
+}
+
+export default Thread;

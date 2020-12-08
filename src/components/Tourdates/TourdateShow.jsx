@@ -6,6 +6,7 @@ import Details from './Details';
 import PromoterInfo from './PromoterInfo';
 
 import './Tourdates.css';
+import ThreadIndex from '../Threads/ThreadIndex';
 
 const TourdateShow = props => {
     const [tourdate, fetchTourdate] = useTourdates(props.match.params.id);
@@ -38,7 +39,11 @@ const TourdateShow = props => {
                             </div>
                         </div>
                         <div className="eight wide column" id="chat">
-                            <div className="ui segment"></div>
+                            <div className="ui segment">
+                                <ThreadIndex
+                                    tourdate={tourdate}
+                                />
+                            </div>
                         </div>
                     </div>
                 </>

@@ -2,17 +2,19 @@ import { useState, useEffect } from 'react';
 
 import ThreadModel from '../models/ThreadModel';
 
-const useThreads = (id, query = false) => {
+const useThreads = (id, tourdate = false) => {
     const [threads, setThreads] = useState(null);
 
     const fetchThreads = (id) => {
-        if (!query) {
+        if (!tourdate) {
             ThreadModel.show(id).then(response => {
+                console.log(response);
                 if (response.msg) setThreads([]);
                 setThreads(response.foundThread);
             });
         } else {
             ThreadModel.all(id).then(response => {
+                console.log(response);
                 if (response.msg) setThreads([]);
                 setThreads(response.foundThreads);
             });
@@ -22,7 +24,6 @@ const useThreads = (id, query = false) => {
     useEffect(
         function () {
             fetchThreads(id)
-            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []
     )
 
