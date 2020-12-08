@@ -40,7 +40,7 @@ const NewTourDate = props => {
             console.log(err);
         })
 
-        props.history.push('/alltourdates');
+        props.history.push('/tourdates');
     }
 
     return (

@@ -29,6 +29,7 @@ const TourShow = props => {
                 setLoading(false);
             }, 1000);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [])
 
     return (
@@ -67,7 +68,7 @@ const TourShow = props => {
                             >
                                 Add a Date
                             </Button>
-                            <a href="/tours">Back to Tours</a>
+                            <a className="back-to-tours" href="/tours">Back to Tours</a>
                         </div>
 
                     </div>

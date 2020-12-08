@@ -22,7 +22,7 @@ const useTodos = (id) => {
     useEffect(
         function () {
             fetchTodos(id)
-        }, []
+        }, [id]
     );
 
     return [todos, fetchTodos];

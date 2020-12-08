@@ -34,5 +34,8 @@
     display: flex;
     flex-flow: row nowrap;
     justify-content: space-between;
+}
+
+.back-to-tours {
     text-decoration: underline;
 }
