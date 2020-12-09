@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 
 import DeleteModal from '../Modals/DeleteModal';
 import UpdateThread from '../Modals/UpdateThread';
@@ -7,10 +7,8 @@ import ThreadModel from '../../models/ThreadModel';
 import CommentIndex from '../Comments/CommentIndex';
 import './Threads.css';
 import NewComment from '../Comments/NewComment';
-import useComments from '../../hooks/useComments';
 
 const Thread = props => {
-    const [comments, fetchComments] = useComments(props.thread._id, true);
     const authorName = `${props.thread.author.firstName} ${props.thread.author.lastName}`;
     const date = props.thread.createdAt;
     const currentContent = props.thread.content;
@@ -48,12 +46,12 @@ const Thread = props => {
                     <br />
                     <CommentIndex
                         thread={props.thread}
-                        fetch={() => fetchComments(props.thread._id)}
+                        fetch={props.fetch}
                     />
                     <div className="actions">
                         <NewComment
                             thread={props.thread}
-                            fetch={() => fetchComments(props.thread._id)}
+                            fetch={props.fetch}
                         />
                     </div>
                 </div>

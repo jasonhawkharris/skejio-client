@@ -3,6 +3,7 @@
     cursor: pointer;
     transition: .2s !important;
     color: rgb(85, 85, 85);
+    margin-left: 10px;
 }
 
 .edit-thread:hover,

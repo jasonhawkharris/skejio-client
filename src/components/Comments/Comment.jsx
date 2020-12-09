@@ -1,27 +1,58 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
+import useComments from '../../hooks/useComments';
+import DeleteModal from '../Modals/DeleteModal';
 import { formatDate, getTime } from '../../utils/helpers';
+import CommentModel from '../../models/CommentModel';
 
 const Comment = props => {
-    const author = props.comment.author;
-    const name = `${author.firstName} ${author.lastName}`;
+    const [comment] = useComments(props.comment._id);
+    const [loading, setLoading] = useState(true);
     const date = formatDate(props.comment.createdAt, true, true);
     const time = getTime(props.comment.createdAt);
 
+    useEffect(function () {
+        setTimeout(() => {
+            setLoading(false);
+        }, 500);
+    }, []);
+
     return (
+
         <div className="comment">
-            <div className="avatar">
-                <img src="https://i.pravatar.cc/300" alt="avatar" />
-            </div>
-            <div className="content">
-                <div className="author">{name}</div>
-                <div className="metadata">
-                    <span className="date">{date} at {time}</span>
+            {loading ? (
+                <div className="ui segment">
+                    <p></p>
+                    <div className="ui active inverted dimmer">
+                        <div className="ui loader"></div>
+                    </div>
                 </div>
-                <div className="text">
-                    {props.comment.content}
-                </div>
-            </div>
+            ) : (
+                    <>
+                        <div className="avatar">
+                            <img src="https://i.pravatar.cc/300" alt="avatar" />
+                        </div>
+                        <div className="content">
+                            <div className="author">{comment.author.firstName} {comment.author.lastName}</div>
+                            <div className="metadata">
+                                <span className="date">{date} at {time}</span>
+                            </div>
+                            <div className="text">
+                                {props.comment.content}
+                                <DeleteModal
+                                    trigger={
+                                        <i className="small trash icon delete-thread"></i>
+                                    }
+                                    id={comment._id}
+                                    model={"comment"}
+                                    modelType={CommentModel}
+                                    fetch={props.fetch}
+                                />
+                            </div>
+                        </div>
+                    </>
+                )}
+
         </div>
     );
 }
