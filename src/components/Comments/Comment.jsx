@@ -8,7 +8,6 @@ const Comment = props => {
     const date = formatDate(props.comment.createdAt, true, true);
     const time = getTime(props.comment.createdAt);
 
-
     return (
         <div className="comment">
             <div className="avatar">

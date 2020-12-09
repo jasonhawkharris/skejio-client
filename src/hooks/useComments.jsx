@@ -2,19 +2,28 @@ import { useEffect, useState } from 'react';
 
 import CommentModel from '../models/CommentModel';
 
-const useComments = (threadId) => {
+const useComments = (id, query = false) => {
     const [comments, setComments] = useState(null);
 
-    const fetchComments = () => {
-        CommentModel.show(threadId).then(response => {
-            if (response.msg) setComments([]);
-            setComments(response.foundComments);
-        });
+    const fetchComments = (id) => {
+        if (!query) {
+            CommentModel.show(id).then(response => {
+                console.log('using show');
+                if (response.msg) setComments([]);
+                setComments(response.foundComment);
+            });
+        } else {
+            CommentModel.index(id).then(response => {
+                console.log('using index')
+                if (response.msg) setComments([]);
+                setComments(response.foundComments);
+            });
+        }
     }
 
     useEffect(
         function () {
-            fetchComments()
+            fetchComments(id)
             // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []
     )

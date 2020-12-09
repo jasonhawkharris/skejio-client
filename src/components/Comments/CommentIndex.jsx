@@ -5,29 +5,31 @@ import Comment from './Comment';
 
 const CommentIndex = props => {
     const thread = props.thread;
-    const [comments, fetchComments] = useComments(thread._id);
+    const [comments, fetchComments] = useComments(props.thread._id, true);
     const [loading, setLoading] = useState(true);
+    console.log('comments', comments);
 
     const generateComments = () => {
         return comments.map(comment => {
             return (
                 <Comment
                     comment={comment}
-                    fetch={() => fetchComments(thread._id)}
+                    fetch={() => fetchComments(thread._id, true)}
                 />
             );
         });
     }
 
     useEffect(function () {
-        if (loading) {
-            fetchComments(thread._id);
+        if (!comments) {
+            props.fetch()
+        } else {
             setTimeout(() => {
                 setLoading(false);
             }, 1000);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
-    }, []);
+    });
 
     return (
         <>

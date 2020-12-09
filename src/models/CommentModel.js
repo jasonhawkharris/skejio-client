@@ -1,9 +1,24 @@
 const URL = 'http://localhost:3001/api/v1/comments';
 
 class CommentModel {
-    static show = async (query) => {
+    static index = async (query) => {
         try {
             const response = await fetch(`${URL}?thread=${query}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
+                }
+            });
+            return await response.json();
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
+    static show = async (id) => {
+        try {
+            const response = await fetch(`${URL}/${id}`, {
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
