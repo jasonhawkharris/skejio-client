@@ -31,7 +31,6 @@ const Todo = props => {
                         <strong>Created By: </strong>{todo.createdBy.firstName} {todo.createdBy.lastName}
                     </div>
                     <div className="item check">
-                        {/**The check box for completion must go here. */}
                         <strong>Completed:</strong><Checkbox todo={todo} fetch={props.fetch} />
                     </div>
                     <div className="ui inverted mini basic icon buttons" style={{ marginTop: '20px' }}>
@@ -58,10 +57,10 @@ const Todo = props => {
                     </div>
                 </>
             ) : (
-                    <div class="ui segment">
+                    <div className="ui segment">
                         <p></p>
-                        <div class="ui active dimmer">
-                            <div class="ui loader"></div>
+                        <div className="ui active dimmer">
+                            <div className="ui loader"></div>
                         </div>
                     </div>
                 )}

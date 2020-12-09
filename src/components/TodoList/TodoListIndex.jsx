@@ -10,14 +10,14 @@ const TodoListIndex = props => {
 
 
     const generateTodos = () => {
-        let index = 0;
+        let index = -1;
         return todos.map(todo => {
             index++
             return (
                 <>
                     <div className="ui divider"></div>
                     <Todo
-                        key={index}
+                        key={`todo-${index}`}
                         todo={todo}
                         fetch={() => fetchTodos()}
                     />

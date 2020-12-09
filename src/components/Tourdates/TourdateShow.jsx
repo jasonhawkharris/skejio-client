@@ -48,7 +48,12 @@ const TourdateShow = props => {
                     </div>
                 </>
             ) : (
-                    <div>Loading...</div>
+                    <div className="ui segment" style={{ height: "200px" }}>
+                        <p></p>
+                        <div className="ui active dimmer">
+                            <div className="ui loader"></div>
+                        </div>
+                    </div>
                 )}
         </div>
     )

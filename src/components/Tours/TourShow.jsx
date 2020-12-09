@@ -74,10 +74,10 @@ const TourShow = props => {
                     </div>
                 </>
             ) : (
-                    <div class="ui segment" style={{ height: "200px" }}>
+                    <div className="ui segment" style={{ height: "200px" }}>
                         <p></p>
-                        <div class="ui active dimmer">
-                            <div class="ui loader"></div>
+                        <div className="ui active dimmer">
+                            <div className="ui loader"></div>
                         </div>
                     </div>
                 )}

@@ -10,9 +10,12 @@ const ThreadIndex = props => {
     const [loading, setLoading] = useState(true);
 
     const generateThreads = () => {
+        let index = -1;
         return threads.map(thread => {
+            index++;
             return (
                 <Thread
+                    key={index}
                     thread={thread}
                     fetch={() => fetchThreads(tourdate._id, true)}
                 />

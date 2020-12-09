@@ -36,10 +36,10 @@ const TourdateIndex = props => {
         <div>
             <h1>All Tourdates</h1>
             {loading ? (
-                <div class="ui segment" style={{ height: "200px" }}>
+                <div className="ui segment" style={{ height: "200px" }}>
                     <p></p>
-                    <div class="ui active dimmer">
-                        <div class="ui loader"></div>
+                    <div className="ui active dimmer">
+                        <div className="ui loader"></div>
                     </div>
                 </div>
             ) : (

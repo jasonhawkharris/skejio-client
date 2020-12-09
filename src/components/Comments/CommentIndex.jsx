@@ -6,9 +6,12 @@ const CommentIndex = props => {
     const [loading, setLoading] = useState(true);
 
     const generateComments = () => {
+        let index = -1;
         return props.thread.comments.map(comment => {
+            index++;
             return (
                 <Comment
+                    key={index}
                     comment={comment}
                     fetch={props.fetch}
                 />
@@ -25,7 +28,7 @@ const CommentIndex = props => {
 
     return (
         <>
-            <div class="comments">
+            <div className="comments">
                 {!loading ? (
                     generateComments()
                 ) : (

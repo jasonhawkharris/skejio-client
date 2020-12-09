@@ -30,13 +30,15 @@ const NewComment = props => {
                 <>
                     <form className="ui form" onSubmit={handleSubmit}>
                         <div className="field">
-                            <input
-                                type="text"
-                                name="content"
-                                onChange={e => setContent(e.target.value)}
-                                value={content}
-                                placeholder="Type your comment here."
-                            />
+                            <div className="ui mini input">
+                                <input
+                                    type="text"
+                                    name="content"
+                                    onChange={e => setContent(e.target.value)}
+                                    value={content}
+                                    placeholder="Type your comment here."
+                                />
+                            </div>
                         </div>
                         <div className="field">
                             <button

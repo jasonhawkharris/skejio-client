@@ -7,7 +7,7 @@ import React, { useState } from 'react';
 import { Modal, Icon } from 'semantic-ui-react';
 
 const UploadContract = props => {
-    const [open, setOpen] = useState('');
+    const [open, setOpen] = useState(false);
     const [contractInput, setContractInput] = useState('');
     const [previewSource, setPreviewSource] = useState('');
 

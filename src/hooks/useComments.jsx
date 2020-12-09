@@ -8,13 +8,11 @@ const useComments = (id, query = false) => {
     const fetchComments = (id) => {
         if (!query) {
             CommentModel.show(id).then(response => {
-                console.log('using show');
                 if (response.msg) setComments([]);
                 setComments(response.foundComment);
             });
         } else {
             CommentModel.index(id).then(response => {
-                console.log('using index')
                 if (response.msg) setComments([]);
                 setComments(response.foundComments);
             });

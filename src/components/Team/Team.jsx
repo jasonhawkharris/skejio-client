@@ -22,23 +22,18 @@ const Team = props => {
     const handleAddMgmtClicked = e => {
         if (addMgmtClicked) {
             setAddMgmtClicked(false)
-            console.log(addMgmtClicked);
         } else {
             setAddMgmtClicked(true);
-            console.log(addMgmtClicked)
         }
     }
 
     const handleAddAgentClicked = e => {
         if (addAgentClicked) {
             setAddAgentClicked(false)
-            console.log(addAgentClicked);
         } else {
             setAddAgentClicked(true);
-            console.log(addAgentClicked);
         }
     }
-
 
     return (
         <div>
