@@ -12,7 +12,7 @@ const TodoListIndex = props => {
     const generateTodos = () => {
         let index = -1;
         return todos.map(todo => {
-            index++
+            index++;
             return (
                 <>
                     <div className="ui divider"></div>
@@ -30,10 +30,11 @@ const TodoListIndex = props => {
         <div className="ui inverted segment todo-list-index">
             <h3>To Do List</h3>
             <div>
-                {todos &&
+                {todos ? (
                     generateTodos()
-                }
-
+                ) : (
+                        <p>Nothing todo. Awesome!</p>
+                    )}
             </div>
         </div>
     )

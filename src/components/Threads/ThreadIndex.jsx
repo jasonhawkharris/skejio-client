@@ -15,12 +15,12 @@ const ThreadIndex = props => {
             index++;
             return (
                 <Thread
-                    key={index}
+                    key={`thread-${index}`}
                     thread={thread}
                     fetch={() => fetchThreads(tourdate._id, true)}
                 />
-            )
-        })
+            );
+        });
     }
 
     useEffect(function () {
