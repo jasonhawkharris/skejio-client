@@ -1,6 +1,7 @@
 import React from 'react';
 
 import DeleteModal from '../Modals/DeleteModal';
+import UpdateThread from '../Modals/UpdateThread';
 import { formatDate, getTime } from '../../utils/helpers';
 import ThreadModel from '../../models/ThreadModel';
 
@@ -24,6 +25,15 @@ const Thread = props => {
                 </div>
                 <div className="actions">
                     <button className="ui mini pink button">Reply</button>
+                    <UpdateThread
+                        trigger={
+                            <button className="ui mini pink icon button">
+                                <i className="edit icon"></i>
+                            </button>
+                        }
+                        thread={props.thread}
+                        fetch={props.fetch}
+                    />
                     <DeleteModal
                         trigger={
                             <button className="ui mini pink icon button">

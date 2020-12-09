@@ -8,13 +8,11 @@ const useThreads = (id, tourdate = false) => {
     const fetchThreads = (id) => {
         if (!tourdate) {
             ThreadModel.show(id).then(response => {
-                console.log(response);
                 if (response.msg) setThreads([]);
                 setThreads(response.foundThread);
             });
         } else {
             ThreadModel.all(id).then(response => {
-                console.log(response);
                 if (response.msg) setThreads([]);
                 setThreads(response.foundThreads);
             });
@@ -24,6 +22,7 @@ const useThreads = (id, tourdate = false) => {
     useEffect(
         function () {
             fetchThreads(id)
+            // eslint-disable-next-line react-hooks/exhaustive-deps
         }, []
     )
 

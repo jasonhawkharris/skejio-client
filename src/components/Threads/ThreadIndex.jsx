@@ -15,7 +15,6 @@ const ThreadIndex = props => {
                 <Thread
                     thread={thread}
                     fetch={() => fetchThreads(tourdate._id, true)}
-
                 />
             )
         })
