@@ -1,24 +1,47 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+
+import useComments from '../../hooks/useComments';
+import Comment from './Comment';
 
 const CommentIndex = props => {
-    console.log('commentIndexprops:', props);
+    const thread = props.thread;
+    const [comments, fetchComments] = useComments(thread._id);
+    const [loading, setLoading] = useState(true);
+
+    const generateComments = () => {
+        return comments.map(comment => {
+            return (
+                <Comment
+                    comment={comment}
+                    fetch={() => fetchComments(thread._id)}
+                />
+            );
+        });
+    }
+
+    useEffect(function () {
+        if (loading) {
+            fetchComments(thread._id);
+            setTimeout(() => {
+                setLoading(false);
+            }, 1000);
+        }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
+    }, []);
+
     return (
         <>
             <div class="comments">
-                <div class="comment">
-                    <div class="avatar">
-                        <img src="https://i.pravatar.cc/300" alt="avatar" />
-                    </div>
-                    <div class="content">
-                        <div class="author">Jenny Hess</div>
-                        <div class="metadata">
-                            <span class="date">Just now</span>
+                {!loading ? (
+                    generateComments()
+                ) : (
+                        <div className="ui segment">
+                            <p></p>
+                            <div className="ui active inverted dimmer">
+                                <div className="ui loader"></div>
+                            </div>
                         </div>
-                        <div class="text">
-                            Elliot you are always so right :)
-                        </div>
-                    </div>
-                </div>
+                    )}
             </div>
         </>
     )

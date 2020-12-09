@@ -1,0 +1,12 @@
+.edit-thread,
+.delete-thread {
+    cursor: pointer;
+    transition: .2s !important;
+    color: rgb(85, 85, 85);
+}
+
+.edit-thread:hover,
+.delete-thread:hover {
+    color: #e03997 !important;
+    transform: none !important;
+}

@@ -5,11 +5,16 @@ import UpdateThread from '../Modals/UpdateThread';
 import { formatDate, getTime } from '../../utils/helpers';
 import ThreadModel from '../../models/ThreadModel';
 import CommentIndex from '../Comments/CommentIndex';
+import './Threads.css';
+import useComments from '../../hooks/useComments';
 
 const Thread = props => {
+    const [comments, fetchComments] = useComments(props.thread._id);
     const author = `${props.thread.author.firstName} ${props.thread.author.lastName}`;
     const date = props.thread.createdAt;
     const content = props.thread.content;
+
+    console.log('comments', comments);
 
     return (
         <div className="ui segment">
@@ -24,31 +29,32 @@ const Thread = props => {
                     </div>
                     <div className="text">
                         {content}
-                    </div>
-                    <br />
-                    <CommentIndex thread={props.thread} />
-                    <div className="actions">
-                        <button className="ui mini pink button">Reply</button>
                         <UpdateThread
                             trigger={
-                                <button className="ui mini pink icon button">
-                                    <i className="edit icon"></i>
-                                </button>
+                                <i className="edit icon edit-thread"></i>
                             }
                             thread={props.thread}
                             fetch={props.fetch}
                         />
                         <DeleteModal
                             trigger={
-                                <button className="ui mini pink icon button">
-                                    <i className="trash icon"></i>
-                                </button>
+                                <i className="trash icon delete-thread"></i>
                             }
                             id={props.thread._id}
                             model={"thread"}
                             modelType={ThreadModel}
                             fetch={props.fetch}
+                            fetchComments={() => fetchComments(props.thread._id)}
                         />
+                    </div>
+                    <div className="thread-actions">
+
+                    </div>
+                    <br />
+                    <CommentIndex thread={props.thread} />
+                    <div className="actions">
+                        <button className="ui mini pink button">Reply</button>
+
                     </div>
                 </div>
                 {/** Comment index goes here. */}

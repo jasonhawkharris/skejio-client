@@ -40,7 +40,7 @@ const ThreadIndex = props => {
                     ) : (
                             <div className="ui segment">
                                 <p></p>
-                                <div className="ui active dimmer">
+                                <div className="ui active inverted dimmer">
                                     <div className="ui loader"></div>
                                 </div>
                             </div>

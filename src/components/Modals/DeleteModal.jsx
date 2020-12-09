@@ -8,6 +8,9 @@ const DeleteModal = props => {
         props.modelType.destroy(props.id)
             .then(response => {
                 props.fetch()
+                if (props.model === 'thread') {
+                    props.fetchComments();
+                }
                 setOpen(false);
             });
     }
