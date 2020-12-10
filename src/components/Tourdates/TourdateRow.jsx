@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { formatNumber } from 'humanize-plus';
 
 import DeleteModal from '../Modals/DeleteModal';
-import { Button, Icon } from 'semantic-ui-react';
+import { Button, Icon, Loader } from 'semantic-ui-react';
 import { formatDate } from '../../utils/helpers';
 import TourdateModel from '../../models/TourdateModel';
 import { getTime } from '../../utils/helpers';
@@ -16,7 +16,7 @@ const TourdateRow = props => {
         <>
             {!tdate ? (
                 <tr>
-                    <td>loading...</td>
+                    <Loader />
                 </tr>
             ) : (
                     <tr>

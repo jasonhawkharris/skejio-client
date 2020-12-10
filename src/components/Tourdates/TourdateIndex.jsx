@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button } from 'semantic-ui-react';
+import { Button, Loader } from 'semantic-ui-react';
 
 import useTourdates from '../../hooks/useTourdates';
 import TourdateRow from './TourdateRow';
@@ -36,12 +36,7 @@ const TourdateIndex = props => {
         <div>
             <h1>All Tourdates</h1>
             {loading ? (
-                <div className="ui segment" style={{ height: "200px" }}>
-                    <p></p>
-                    <div className="ui active dimmer">
-                        <div className="ui loader"></div>
-                    </div>
-                </div>
+                <Loader />
             ) : (
                     <>
 

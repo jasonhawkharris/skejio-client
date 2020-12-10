@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
 import Comment from './Comment';
+import Loader from '../Loader/Loader';
 
 const CommentIndex = props => {
     const [loading, setLoading] = useState(true);
@@ -32,12 +33,7 @@ const CommentIndex = props => {
                 {!loading ? (
                     generateComments()
                 ) : (
-                        <div className="ui segment">
-                            <p></p>
-                            <div className="ui active inverted dimmer">
-                                <div className="ui loader"></div>
-                            </div>
-                        </div>
+                        <Loader />
                     )}
             </div>
         </>

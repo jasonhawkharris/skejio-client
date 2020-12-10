@@ -17,9 +17,10 @@ const App = props => {
 
 	useEffect(() => {
 		if (localStorage.uid) {
-			UserModel.show().then(response => {
-				setUser(response.user);
-			});
+			UserModel.show()
+				.then(response => {
+					setUser(response.user);
+				});
 		}
 	}, []);
 

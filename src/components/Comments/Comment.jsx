@@ -4,6 +4,7 @@ import useComments from '../../hooks/useComments';
 import DeleteModal from '../Modals/DeleteModal';
 import { formatDate, getTime } from '../../utils/helpers';
 import CommentModel from '../../models/CommentModel';
+import { Loader } from 'semantic-ui-react';
 
 const Comment = props => {
     const [comment] = useComments(props.comment._id);
@@ -21,12 +22,7 @@ const Comment = props => {
 
         <div className="comment">
             {loading ? (
-                <div className="ui segment">
-                    <p></p>
-                    <div className="ui active inverted dimmer">
-                        <div className="ui loader"></div>
-                    </div>
-                </div>
+                <Loader />
             ) : (
                     <>
                         <div className="avatar">
@@ -52,7 +48,6 @@ const Comment = props => {
                         </div>
                     </>
                 )}
-
         </div>
     );
 }

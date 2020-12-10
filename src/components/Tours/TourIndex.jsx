@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useRecoilValue } from 'recoil';
-import { Icon } from 'semantic-ui-react';
+import { Icon, Loader } from 'semantic-ui-react';
 import useTours from '../../hooks/useTours';
 import TourModel from '../../models/TourModel';
 import { userState } from '../../recoil/atoms';
@@ -108,12 +108,7 @@ const TourIndex = props => {
 
                 </div>
             ) : (
-                    <div className="ui segment">
-                        <p></p>
-                        <div className="ui active dimmer">
-                            <div className="ui loader"></div>
-                        </div>
-                    </div>
+                    <Loader />
                 )
             }
         </div >

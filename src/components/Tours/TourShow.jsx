@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import { Button } from 'semantic-ui-react';
 
 import useTours from '../../hooks/useTours';
+import Loader from '../Loader/Loader';
 import TourdateRow from '../Tourdates/TourdateRow';
 
 
@@ -74,12 +75,7 @@ const TourShow = props => {
                     </div>
                 </>
             ) : (
-                    <div className="ui segment" style={{ height: "200px" }}>
-                        <p></p>
-                        <div className="ui active dimmer">
-                            <div className="ui loader"></div>
-                        </div>
-                    </div>
+                    <Loader />
                 )}
 
         </div>

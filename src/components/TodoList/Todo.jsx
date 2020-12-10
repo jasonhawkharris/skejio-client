@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Loader } from 'semantic-ui-react';
 import TodoModel from '../../models/TodoModel';
 
 import { formatDate } from '../../utils/helpers';
@@ -57,12 +58,7 @@ const Todo = props => {
                     </div>
                 </>
             ) : (
-                    <div className="ui segment">
-                        <p></p>
-                        <div className="ui active dimmer">
-                            <div className="ui loader"></div>
-                        </div>
-                    </div>
+                    <Loader />
                 )}
         </div >
     )

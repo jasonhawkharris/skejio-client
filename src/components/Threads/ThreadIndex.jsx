@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import useThreads from '../../hooks/useThreads';
 import Thread from './Thread';
 import NewThread from './NewThread';
+import { Loader } from 'semantic-ui-react';
 
 const ThreadIndex = props => {
     const tourdate = props.tourdate;
@@ -41,12 +42,7 @@ const ThreadIndex = props => {
                     {!loading ? (
                         generateThreads()
                     ) : (
-                            <div className="ui segment">
-                                <p></p>
-                                <div className="ui active inverted dimmer">
-                                    <div className="ui loader"></div>
-                                </div>
-                            </div>
+                            <Loader />
                         )}
                 </>
             ) : (
