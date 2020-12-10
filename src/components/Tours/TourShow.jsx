@@ -6,8 +6,6 @@ import useTours from '../../hooks/useTours';
 import Loader from '../Loader/Loader';
 import TourdateRow from '../Tourdates/TourdateRow';
 
-
-
 const TourShow = props => {
     const [tour, fetchTour] = useTours(props.match.params.id);
     const [loading, setLoading] = useState(true);
