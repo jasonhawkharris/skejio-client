@@ -1,14 +1,33 @@
 import React, { useState } from 'react';
-
+import { useHistory } from 'react-router-dom';
+import { useRecoilValue } from 'recoil';
 import { Modal, Icon, Button } from 'semantic-ui-react';
+
+import NotificationModel from '../../models/NotificationModel';
+import { userState } from '../../recoil/atoms';
 
 import './InviteModal.css'
 
 const InviteModal = props => {
+    console.log(props);
+    const history = useHistory();
     const [open, setOpen] = useState(false);
+    const currentUser = useRecoilValue(userState);
+
+    const message = `${currentUser.firstName} ${currentUser.lastName} has requested to work with you. Do you want to approve their request? They will have access to your tours, todos, threads and comments.`;
+    const sender = currentUser._id;
+    const user = props.artist._id;
+    const confirmable = true;
+    const data = { message, sender, user, confirmable }
 
     const handleSubmit = event => {
         event.preventDefault();
+        NotificationModel.create(data)
+            .then(response => {
+                console.log(response);
+                history.push('/success');
+            });
+        setOpen(false);
     }
 
     return (
@@ -31,11 +50,13 @@ const InviteModal = props => {
                 </div>
             </Modal.Header>
             <Modal.Content>
-                Would you like to send an invite to work with {props.artist.artistName}? Only do so if you already have a working relationship. If they denies your request, you will not be able to send another. However, they will still be able to request to work with you.
+                Would you like to send an invite to work with &nbsp;
+                <strong>{props.artist.artistName}</strong>?
+                If they reject the invite, you cannot ask again.
             </Modal.Content>
             <Modal.Actions>
                 <Button
-                    color="gray"
+                    color="grey"
                     onClick={() => setOpen(false)}
                 >
                     Cancel

@@ -1,3 +1,7 @@
 .next-to {
     display: inline-block;
 }
+
+.artist-result {
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@ const ArtistResult = props => {
     return (
         <InviteModal
             trigger={
-                <p>{props.artist.artistName}</p>
+                <p className="artist-result">{props.artist.artistName}</p>
             }
             artist={props.artist}
         />

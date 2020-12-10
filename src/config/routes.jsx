@@ -6,6 +6,7 @@ import { loggedInState } from '../recoil/selectors';
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
+import InviteSuccessful from '../pages/InviteSuccessful';
 import BasicNav from '../components/Nav/BasicNav';
 import Navigation from '../components/Nav/Navigation';
 import ArtistIndex from '../components/Artists/ArtistIndex';
@@ -47,6 +48,7 @@ const Routes = props => {
                                 <Route path='/create-tourdate' component={NewTourDate} />
                                 <Route path='/team' component={Team} />
                                 <Route path='/profile' component={Profile} />
+                                <Route path='/success' component={InviteSuccessful} />
                                 {/** Manager/Agent Specific */}
                                 <Route path='/artists' component={ArtistIndex} />
                             </div>
