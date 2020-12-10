@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
+import { useRecoilValue } from 'recoil';
 
 import './Nav.css';
 import 'semantic-ui-css/semantic.min.css'
 import { Menu } from 'semantic-ui-react';
 import { useHistory } from 'react-router-dom';
+import { userState } from '../../recoil/atoms';
 
 const Navigation = props => {
+    const user = useRecoilValue(userState);
     const history = useHistory();
     const [activeItem, setActiveItem] = useState('dashboard');
 
@@ -27,6 +30,13 @@ const Navigation = props => {
                 active={activeItem === 'profile'}
                 onClick={handleItemClick}
             />
+            {user.__t !== 'Artist' &&
+                <Menu.Item
+                    name='artists'
+                    active={activeItem === 'artists'}
+                    onClick={handleItemClick}
+                />
+            }
             <Menu.Item
                 name='tours'
                 active={activeItem === 'tours'}

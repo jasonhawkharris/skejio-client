@@ -96,7 +96,7 @@ const RegisterForm = props => {
                         <option value="Artist">Artist</option>
                         <option value="Manager">Manager</option>
                         <option value="Agent">Agent</option>
-                        <option value="Teammate">Teammate</option>
+                        {/**teammates can only join when invited by a manager or an agent. Make separate registration form for them with hidden input that details the manager or agent who invited them. */}
                     </select>
                 </div>
                 <div className="field">

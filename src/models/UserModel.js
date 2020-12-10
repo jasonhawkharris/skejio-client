@@ -17,6 +17,25 @@ class UserModel {
             console.log(error);
         }
     }
+
+    static search = async term => {
+        try {
+            if (term.includes(' ')) {
+                term = term.split(' ').join('%20');
+            }
+
+            const response = await fetch(`${URL}/search?artistName=${term}`, {
+                method: 'GET',
+                headers: {
+                    'Content-Type': 'application/json',
+                    authorization: `Bearer ${localStorage.uid}`,
+                },
+            });
+            return await response.json();
+        } catch (error) {
+            console.log(error);
+        }
+    }
 }
 
 export default UserModel;

@@ -8,6 +8,7 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import BasicNav from '../components/Nav/BasicNav';
 import Navigation from '../components/Nav/Navigation';
+import ArtistIndex from '../components/Artists/ArtistIndex';
 import TourIndex from '../components/Tours/TourIndex';
 import TourShow from '../components/Tours/TourShow';
 import TourdateIndex from '../components/Tourdates/TourdateIndex';
@@ -46,6 +47,8 @@ const Routes = props => {
                                 <Route path='/create-tourdate' component={NewTourDate} />
                                 <Route path='/team' component={Team} />
                                 <Route path='/profile' component={Profile} />
+                                {/** Manager/Agent Specific */}
+                                <Route path='/artists' component={ArtistIndex} />
                             </div>
                         </div>
                         <div>
