@@ -14,11 +14,11 @@ const InviteModal = props => {
     const [open, setOpen] = useState(false);
     const currentUser = useRecoilValue(userState);
 
-    const message = `${currentUser.firstName} ${currentUser.lastName} has requested to work with you. Do you want to approve their request? They will have access to your tours, todos, threads and comments.`;
+    const message = `${currentUser.firstName} ${currentUser.lastName} has requested to work with you. Do you want to approve their request?`;
     const sender = currentUser._id;
     const user = props.artist._id;
-    const confirmable = true;
-    const data = { message, sender, user, confirmable }
+    const invite = true;
+    const data = { message, sender, user, invite }
 
     const handleSubmit = event => {
         event.preventDefault();
@@ -40,7 +40,7 @@ const InviteModal = props => {
         >
             <Modal.Header>
                 <div className="update-tour-header">
-                    <h3>Edit Thread</h3>
+                    <h3>Send Invite</h3>
                     <div>
                         <Icon
                             name="remove"

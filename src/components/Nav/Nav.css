@@ -19,6 +19,11 @@
     transition: .2s;
 }
 
+.large.bell.icon {
+    cursor: pointer;
+    transition: .2s;
+}
+
 .logo:hover {
     transform: scale(1.05);
 }

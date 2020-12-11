@@ -1,0 +1,68 @@
+#notifications {
+    width: 350px;
+    height: fit-content;
+    margin: 0px;
+    padding: 0px;
+}
+
+.noti {
+    display: flex;
+    flex-flow: row nowrap;
+    border-bottom: 1px solid lightgray;
+    width: 350px;
+    height: fit-content;
+    padding: 15px 10px 10px 10px !important;
+    margin: 0px !important;
+}
+
+.header-icon {
+    align-self: flex-start;
+    padding-left: 7px;
+    padding-right: 10px;
+    color: rgb(255, 101, 191);
+}
+
+.message {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-right: 15px;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+.header {
+    padding-top: 5px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+}
+
+.invite-actions {
+    border: none;
+    text-align: right;
+}
+
+.approve,
+.reject {
+    font-size: 11px;
+    background-color: white;
+    cursor: pointer;
+    text-decoration: underline;
+    padding: 0px;
+    margin: 0px;
+    border: none;
+    transition: .2s;
+}
+
+.reject {
+    margin-right: 15px;
+}
+
+.approve:hover {
+    color: gray;
+}
+
+.reject:hover {
+    color: gray;
+}
+

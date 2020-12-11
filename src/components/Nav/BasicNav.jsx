@@ -24,6 +24,9 @@ const BasicNav = props => {
                                 <p>Welcome, <strong>{user.firstName}</strong></p>
                             </div>
                             <div className="ui item">
+                                <i className="large bell icon"></i>
+                            </div>
+                            <div className="ui item">
                                 <button className="ui inverted button" onClick={logout}>
                                     Logout
                                 </button>

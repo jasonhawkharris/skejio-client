@@ -8,6 +8,7 @@ import Login from '../pages/Login';
 import Dashboard from '../pages/Dashboard';
 import InviteSuccessful from '../pages/InviteSuccessful';
 import BasicNav from '../components/Nav/BasicNav';
+import Notifications from '../components/Notifications/Notifications';
 import Navigation from '../components/Nav/Navigation';
 import ArtistIndex from '../components/Artists/ArtistIndex';
 import TourIndex from '../components/Tours/TourIndex';
@@ -49,6 +50,7 @@ const Routes = props => {
                                 <Route path='/team' component={Team} />
                                 <Route path='/profile' component={Profile} />
                                 <Route path='/success' component={InviteSuccessful} />
+                                <Route path='/notifications-sandbox' component={Notifications} />
                                 {/** Manager/Agent Specific */}
                                 <Route path='/artists' component={ArtistIndex} />
                             </div>
