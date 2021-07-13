@@ -1,0 +1,76 @@
+.venue-card {
+    cursor: pointer;
+}
+
+.show-details {
+    text-align: left;
+}
+
+.venue-img {
+    max-width: 400px;
+}
+
+.other-details input {
+    margin-top: 30px !important;
+}
+
+.planning {
+    margin-top: 50px;
+}
+
+.ui.button {
+    margin-top: 50px;
+}
+
+.ui.mini.blue.icon.button {
+    margin-top: 10px;
+}
+
+.all-tour-dates {
+    margin-top: 100px;
+}
+
+.show-details {
+    margin-top: 100px;
+}
+
+.ui.checkbox {
+    margin-left: 30px;
+}
+
+.update {
+    margin-top: 100px;
+}
+
+.new-tour-date {
+    margin-top: 100px;
+}
+
+.other-details {
+    margin-top: 100px;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.venue-info {
+    margin-top: 20px;
+}
+
+.threads {
+    margin-bottom: 300px;
+}
+
+.TourDates {
+    padding-top: 20px;
+}
+
+.tourDateCard button {
+    margin-top: 10px !important;
+    margin-bottom: 10px !important;
+}
+
+.all-tour-dates button {
+    margin-top: 20px !important;
+}

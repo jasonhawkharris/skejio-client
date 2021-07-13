@@ -2,6 +2,29 @@
   text-align: center;
 }
 
+.main {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+  height: 100vh;
+}
+
+.feed {
+  min-width: 525px;
+  max-width: 525px;
+  width: calc(55% - 211px);
+  margin: 0px auto;
+}
+
+.todos {
+    min-width: 250px;
+    max-width: 250px;
+    height: 100vh;
+    position: fixed;
+    right: 0;
+    top: 0;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
